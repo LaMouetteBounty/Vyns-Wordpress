@@ -160,6 +160,10 @@ Tags: bootstrap
   font-weight: 700;
 }
 
+.main_home .contact {
+  margin-bottom: 5rem;
+}
+
 .main_home .contact form {
   padding: 15px;
   background-color: white;
@@ -185,5 +189,51 @@ Tags: bootstrap
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+footer {
+  margin-top: 5rem;
+  height: 100px;
+  border-top: #d1d2d4 solid .5px;
+}
+
+footer .content_footer {
+  margin-top: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+footer .content_footer .copyright {
+  font-family: "oswald";
+  font-weight: 300;
+  font-size: .9em;
+}
+
+footer .content_footer .menu_footer ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+footer .content_footer .menu_footer ul li {
+  list-style: none;
+  padding-right: .4rem;
+  padding-left: .4rem;
+}
+
+footer .content_footer .menu_footer ul li a {
+  text-decoration: none;
+  font-family: "oswald";
+  color: black;
+  font-weight: 600;
+  font-size: .9em;
 }
 /*# sourceMappingURL=style.css.map */
