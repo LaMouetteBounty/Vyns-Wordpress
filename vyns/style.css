@@ -1,0 +1,31 @@
+@charset "UTF-8";
+/*
+Theme Name: vyns
+Author: Léa Boutry
+Description: Mon premier thèmes
+Version: 0.0.1
+Tags: bootstrap
+*/
+@font-face {
+  font-family: "oswald light";
+  src: url("http://localhost:8080/wp-content/themes/vyns/assets/fonts/oswald/oswald.ttf");
+}
+
+.navbar-brand {
+  padding-right: 3rem;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: black;
+  font-family: "oswald light";
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+.bd-example {
+  margin-top: 30px;
+}
+/*# sourceMappingURL=style.css.map */
