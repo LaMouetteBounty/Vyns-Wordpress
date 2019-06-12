@@ -18,7 +18,7 @@
         <!-- ########################################################## -->
         <!-- #########################NAVBAR########################## -->
         <!-- ########################################################## -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container header">
                 <div class="row">
                     <a class="navbar-brand" href="#"><img src="http://localhost:8080/wp-content/themes/vyns/assets/images/logo.svg"></a>

@@ -7,7 +7,7 @@ Version: 0.0.1
 Tags: bootstrap
 */
 @font-face {
-  font-family: "oswald light";
+  font-family: "oswald";
   src: url("http://localhost:8080/wp-content/themes/vyns/assets/fonts/oswald/oswald.ttf");
 }
 
@@ -15,9 +15,14 @@ Tags: bootstrap
   padding-right: 3rem;
 }
 
+.navbar-light {
+  border-bottom: #d1d2d4 solid .5px;
+}
+
 .navbar-light .navbar-nav .nav-link {
   color: black;
-  font-family: "oswald light";
+  font-family: "oswald";
+  font-weight: 100;
 }
 
 .navbar-expand-lg .navbar-nav .nav-link {
@@ -27,5 +32,158 @@ Tags: bootstrap
 
 .bd-example {
   margin-top: 30px;
+}
+
+.main_home {
+  height: 800px;
+  background-image: url("http://localhost:8080/wp-content/themes/vyns/assets/images/background/music-1645561_1920.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.main_home .rubriques {
+  padding-top: 5rem;
+  margin-right: 10rem;
+  margin-left: 10rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.main_home .rubriques .rubrique_blues {
+  border: white 4px solid;
+  background-color: white;
+}
+
+.main_home .rubriques .rubrique_blues .rubrique_style {
+  font-size: 1.4em;
+  margin-bottom: 0;
+  margin-top: .7rem;
+  text-decoration: none;
+  text-align: center;
+  color: black;
+  font-family: "oswald";
+  font-weight: 600;
+}
+
+.main_home .rubriques .rubrique_blues .rubrique_nombre {
+  font-size: 1.2em;
+  text-decoration: none;
+  text-align: center;
+  color: black;
+  font-family: "oswald";
+  font-weight: 100;
+}
+
+.main_home .rubriques .rubrique_disco {
+  border: white 4px solid;
+  background-color: white;
+}
+
+.main_home .rubriques .rubrique_disco .rubrique_style {
+  font-size: 1.4em;
+  margin-bottom: 0;
+  margin-top: .7rem;
+  text-decoration: none;
+  text-align: center;
+  color: black;
+  font-family: "oswald";
+  font-weight: 600;
+}
+
+.main_home .rubriques .rubrique_disco .rubrique_nombre {
+  font-size: 1.2em;
+  text-decoration: none;
+  text-align: center;
+  color: black;
+  font-family: "oswald";
+  font-weight: 100;
+}
+
+.main_home .rubriques .rubrique_rock {
+  border: white 4px solid;
+  background-color: white;
+}
+
+.main_home .rubriques .rubrique_rock .rubrique_style {
+  font-size: 1.4em;
+  margin-bottom: 0;
+  margin-top: .7rem;
+  text-decoration: none;
+  text-align: center;
+  color: black;
+  font-family: "oswald";
+  font-weight: 600;
+}
+
+.main_home .rubriques .rubrique_rock .rubrique_nombre {
+  font-size: 1.2em;
+  text-decoration: none;
+  text-align: center;
+  color: black;
+  font-family: "oswald";
+  font-weight: 100;
+}
+
+.main_home .rubriques .rubrique_jazz {
+  border: white 4px solid;
+  background-color: white;
+}
+
+.main_home .rubriques .rubrique_jazz .rubrique_style {
+  font-size: 1.4em;
+  margin-bottom: 0;
+  margin-top: .7rem;
+  text-decoration: none;
+  text-align: center;
+  color: black;
+  font-family: "oswald";
+  font-weight: 600;
+}
+
+.main_home .rubriques .rubrique_jazz .rubrique_nombre {
+  font-size: 1.2em;
+  text-decoration: none;
+  text-align: center;
+  color: black;
+  font-family: "oswald";
+  font-weight: 100;
+}
+
+.main_home h1 {
+  margin-top: 5rem;
+  color: black;
+  font-family: "oswald";
+  font-weight: 700;
+}
+
+.main_home .contact form {
+  padding: 15px;
+  background-color: white;
+  -webkit-box-shadow: 3px 3px 10px 1px #656565;
+          box-shadow: 3px 3px 10px 1px #656565;
+}
+
+.main_home .contact form .h4 {
+  color: black;
+  font-family: "oswald";
+  font-weight: 100;
+  font-size: 1em;
+}
+
+.main_home .contact form button {
+  width: 100%;
+  font-family: "oswald";
+  font-weight: 700;
+  font-size: 1.2em;
+  color: white;
+  background-color: black;
+  border-color: black;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 /*# sourceMappingURL=style.css.map */
