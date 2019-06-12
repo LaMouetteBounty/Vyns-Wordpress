@@ -32,6 +32,7 @@ Tags: bootstrap
 
 .bd-example {
   margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .main_home {
@@ -51,6 +52,10 @@ Tags: bootstrap
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+}
+
+.main_home .rubriques a {
+  text-decoration: none;
 }
 
 .main_home .rubriques .rubrique_blues {
@@ -78,6 +83,18 @@ Tags: bootstrap
   font-weight: 100;
 }
 
+.main_home .rubriques .rubrique_blues img:hover {
+  opacity: .5;
+}
+
+.main_home .rubriques .rubrique_blues .rubrique_style:hover {
+  color: grey;
+}
+
+.main_home .rubriques .rubrique_blues .rubrique_nombre:hover {
+  color: grey;
+}
+
 .main_home .rubriques .rubrique_disco {
   border: white 4px solid;
   background-color: white;
@@ -101,6 +118,18 @@ Tags: bootstrap
   color: black;
   font-family: "oswald";
   font-weight: 100;
+}
+
+.main_home .rubriques .rubrique_disco img:hover {
+  opacity: .5;
+}
+
+.main_home .rubriques .rubrique_disco .rubrique_style:hover {
+  color: grey;
+}
+
+.main_home .rubriques .rubrique_disco .rubrique_nombre:hover {
+  color: grey;
 }
 
 .main_home .rubriques .rubrique_rock {
@@ -128,6 +157,18 @@ Tags: bootstrap
   font-weight: 100;
 }
 
+.main_home .rubriques .rubrique_rock img:hover {
+  opacity: .5;
+}
+
+.main_home .rubriques .rubrique_rock .rubrique_style:hover {
+  color: grey;
+}
+
+.main_home .rubriques .rubrique_rock .rubrique_nombre:hover {
+  color: grey;
+}
+
 .main_home .rubriques .rubrique_jazz {
   border: white 4px solid;
   background-color: white;
@@ -151,6 +192,18 @@ Tags: bootstrap
   color: black;
   font-family: "oswald";
   font-weight: 100;
+}
+
+.main_home .rubriques .rubrique_jazz img:hover {
+  opacity: .5;
+}
+
+.main_home .rubriques .rubrique_jazz .rubrique_style:hover {
+  color: grey;
+}
+
+.main_home .rubriques .rubrique_jazz .rubrique_nombre:hover {
+  color: grey;
 }
 
 .main_home h1 {
@@ -185,15 +238,19 @@ Tags: bootstrap
   font-size: 1.2em;
   color: white;
   background-color: black;
-  border-color: black;
+  border-color: white;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
+.main_home .contact form button:hover {
+  background-color: grey;
+}
+
 footer {
   margin-top: 5rem;
-  height: 100px;
+  height: 10vh;
   border-top: #d1d2d4 solid .5px;
 }
 
@@ -235,5 +292,18 @@ footer .content_footer .menu_footer ul li a {
   color: black;
   font-weight: 600;
   font-size: .9em;
+}
+
+footer .content_footer .menu_footer ul li a:hover {
+  color: grey;
+}
+
+footer .content_footer .reseaux img {
+  margin-right: .4rem;
+  margin-left: .4rem;
+}
+
+footer .content_footer .reseaux img:hover {
+  opacity: 0.5;
 }
 /*# sourceMappingURL=style.css.map */
