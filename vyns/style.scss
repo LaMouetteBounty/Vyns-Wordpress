@@ -297,62 +297,60 @@ footer {
 // ################ PAGE ######################
 // ############################################
 
-.page_type {
-    margin-top: 5rem;
-    padding-bottom: 5rem;
-    background-image:  url("http://localhost:8080/wp-content/themes/vyns/assets/images/background/bg_actu.jpg");
-    background-repeat: no-repeat;
-    background-size: contain; 
-    // height: 300vh;
-    background-position: center bottom;
-    .titre_style {
-        padding-top: 6px;
-        padding-bottom: 2px;
-        margin-left: auto;
-        margin-right: auto; 
-        background-color: black;
-        width: 15rem;
-        h2 {
-            text-align: center;
-            font-family: "anton";
-            color: white;
-            font-size: 3em;
-        }
-    }
-    h3 {
-        margin-top: 2rem;
-        font-family: "anton";
-        color: black;
-        font-size: 2em;
-    }
-    .ensemble_info {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    .info_article {
-        padding-top: 2rem; 
-        padding-bottom: 2rem; 
-        background-color: white;
-        box-shadow: 3px 3px 10px 1px #656565;
-        display: flex;
-        flex-direction: column;
-            .champ_info {
-                padding-left: 2rem;
-                padding-right: 2rem;
-                display: flex;
-                flex-direction: row;
-             
-                p {
-                font-family: "oswald";
-                font-size: 1em;
-                font-weight: 100;   
-                span {
-                    font-family: "oswald";
-                    font-size: 1.5em;
-                    font-weight: 600;
-                }
-                }
-            }
-    }
-}
-}
+// .page_type {
+//     margin-top: 5rem;
+//     padding-bottom: 5rem;
+//     background-image:  url("http://localhost:8080/wp-content/themes/vyns/assets/images/background/bg_actu.jpg");
+//     background-repeat: no-repeat;
+//     background-size: contain; 
+//     // height: 300vh;
+//     background-position: center bottom;
+//     .titre_style {
+//         padding-top: 6px;
+//         padding-bottom: 2px;
+//         margin-left: auto;
+//         margin-right: auto; 
+//         background-color: black;
+//         width: 15rem;
+//         h2 {
+//             text-align: center;
+//             font-family: "anton";
+//             color: white;
+//             font-size: 3em;
+//         }
+//     }
+//     h3 {
+//         margin-top: 2rem;
+//         font-family: "anton";
+//         color: black;
+//         font-size: 2em;
+//     }
+//     .ensemble_info {
+//         display: flex;
+//         flex-direction: row;
+//         justify-content: space-between;
+//     .info_article {
+//         padding-top: 2rem; 
+//         padding-bottom: 2rem; 
+//         background-color: white;
+//         box-shadow: 3px 3px 10px 1px #656565;
+//         display: flex;
+//         flex-direction: column;
+//             .champ_info {
+//                 padding-left: 2rem;
+//                 padding-right: 2rem;
+//                 display: flex;
+//                 flex-direction: row;
+//                 p {
+//                 font-family: "oswald";
+//                 font-size: 1em;
+//                 span {
+//                     font-family: "oswald";
+//                     font-size: 1em;
+//                     font-weight: 600;
+//                 }
+//                 }
+//             }
+//     }
+// }
+// }

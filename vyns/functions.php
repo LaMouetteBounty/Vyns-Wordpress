@@ -36,10 +36,41 @@ function wpm_custom_post_type_blues() {
 		'description'         => __( 'Tous sur le vinyles'),
 		'labels'              => $labels,
 		// On définit les options disponibles dans l'éditeur de notre custom post type ( un titre, un auteur...)
-		'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
+		// 'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
 		/* 
 		* Différentes options supplémentaires
-		*/
+        */// Définir un modèle
+        'template' => array( // Définir un modèle
+            array( 'core/paragraph', array(
+                'placeholder' => 'numero du vinyle',
+            ) ),
+            array( 'core/paragraph', array(
+                'placeholder' => 'Titre du vinyle',
+            ) ),
+            array( 'core/paragraph', array(
+                'placeholder' => 'Date de sortie',
+            ) ),
+            array( 'core/paragraph', array(
+                'placeholder' => 'Pressage',
+            ) ),
+            array( 'core/paragraph', array(
+                'placeholder' => 'Label',
+            ) ),
+            array( 'core/paragraph', array(
+                'placeholder' => 'Duree du vinyle',
+            ) ),
+            array( 'core/paragraph', array(
+                'placeholder' => 'Prix',
+            ) ),
+            array( 'core/paragraph', array(
+                'placeholder' => 'Description',
+            ) ),
+            array( 'core/image', array(
+                'align' => 'center',
+            ) ),
+        ),
+      	'template_lock' => 'all',
+
 		'show_in_rest' => true,
 		'hierarchical'        => false,
 		'public'              => true,
@@ -102,10 +133,36 @@ function wpc_excerpt_pages_blues() {
             'description'         => __( 'Tous sur le vinyle'),
             'labels'              => $labels,
             // On définit les options disponibles dans l'éditeur de notre custom post type ( un titre, un auteur...)
-            'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
-            /* 
-            * Différentes options supplémentaires
-            */
+            'template' => array( // Définir un modèle
+                array( 'core/paragraph', array(
+                    'placeholder' => 'numero du vinyle',
+                ) ),
+                array( 'core/paragraph', array(
+                    'placeholder' => 'Titre du vinyle',
+                ) ),
+                array( 'core/paragraph', array(
+                    'placeholder' => 'Date de sortie',
+                ) ),
+                array( 'core/paragraph', array(
+                    'placeholder' => 'Pressage',
+                ) ),
+                array( 'core/paragraph', array(
+                    'placeholder' => 'Label',
+                ) ),
+                array( 'core/paragraph', array(
+                    'placeholder' => 'Duree du vinyle',
+                ) ),
+                array( 'core/paragraph', array(
+                    'placeholder' => 'Prix',
+                ) ),
+                array( 'core/paragraph', array(
+                    'placeholder' => 'Description',
+                ) ),
+                array( 'core/image', array(
+                    'align' => 'center',
+                ) ),
+            ),
+              'template_lock' => 'all',
             'show_in_rest' => true,
             'hierarchical'        => false,
             'public'              => true,
@@ -167,10 +224,36 @@ function wpc_excerpt_pages_blues() {
             'description'         => __( 'Tous sur le vinyle'),
             'labels'              => $labels,
             // On définit les options disponibles dans l'éditeur de notre custom post type ( un titre, un auteur...)
-            'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
-            /* 
-            * Différentes options supplémentaires
-            */
+            'template' => array( // Définir un modèle
+                array( 'core/paragraph', array(
+                    'placeholder' => 'numero du vinyle',
+                ) ),
+                array( 'core/paragraph', array(
+                    'placeholder' => 'Titre du vinyle',
+                ) ),
+                array( 'core/paragraph', array(
+                    'placeholder' => 'Date de sortie',
+                ) ),
+                array( 'core/paragraph', array(
+                    'placeholder' => 'Pressage',
+                ) ),
+                array( 'core/paragraph', array(
+                    'placeholder' => 'Label',
+                ) ),
+                array( 'core/paragraph', array(
+                    'placeholder' => 'Duree du vinyle',
+                ) ),
+                array( 'core/paragraph', array(
+                    'placeholder' => 'Prix',
+                ) ),
+                array( 'core/paragraph', array(
+                    'placeholder' => 'Description',
+                ) ),
+                array( 'core/image', array(
+                    'align' => 'center',
+                ) ),
+            ),
+              'template_lock' => 'all',
             'show_in_rest' => true,
             'hierarchical'        => false,
             'public'              => true,
