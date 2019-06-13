@@ -342,12 +342,26 @@ function wpc_excerpt_pages_blues() {
         add_action( 'admin_menu', 'wpc_excerpt_pages_rock' );
 
 // ###################################################################
+// #############################EXTRAIT#############################
+// ###################################################################
         function wpcodex_add_excerpt_support_for_post_blues() {
             add_post_type_support( 'blues', 'excerpt' );
         }
         add_action( 'init', 'wpcodex_add_excerpt_support_for_post_blues' );
-        
+// ###################################################################   
         function wpcodex_add_excerpt_support_for_post_jazz() {
             add_post_type_support( 'jazz', 'excerpt' );
         }
         add_action( 'init', 'wpcodex_add_excerpt_support_for_post_jazz' );
+// ###################################################################
+        function wpcodex_add_excerpt_support_for_post_disco() {
+            add_post_type_support( 'disco', 'excerpt' );
+        }
+        add_action( 'init', 'wpcodex_add_excerpt_support_for_post_disco' );
+// ###################################################################   
+        function wpcodex_add_excerpt_support_for_post_rock() {
+            add_post_type_support( 'rock', 'excerpt' );
+        }
+        add_action( 'init', 'wpcodex_add_excerpt_support_for_post_rock' );
+// ###################################################################    
+// ###################################################################   
