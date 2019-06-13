@@ -291,66 +291,174 @@ footer {
     }
 }
 
+
 // ############################# PAGE.PHP ##################################
 
 // ############################################
 // ################ PAGE ######################
 // ############################################
 
-// .page_type {
-//     margin-top: 5rem;
-//     padding-bottom: 5rem;
-//     background-image:  url("http://localhost:8080/wp-content/themes/vyns/assets/images/background/bg_actu.jpg");
-//     background-repeat: no-repeat;
-//     background-size: contain; 
-//     // height: 300vh;
-//     background-position: center bottom;
-//     .titre_style {
-//         padding-top: 6px;
-//         padding-bottom: 2px;
-//         margin-left: auto;
-//         margin-right: auto; 
-//         background-color: black;
-//         width: 15rem;
-//         h2 {
-//             text-align: center;
-//             font-family: "anton";
-//             color: white;
-//             font-size: 3em;
-//         }
-//     }
-//     h3 {
-//         margin-top: 2rem;
-//         font-family: "anton";
-//         color: black;
-//         font-size: 2em;
-//     }
-//     .ensemble_info {
-//         display: flex;
-//         flex-direction: row;
-//         justify-content: space-between;
-//     .info_article {
-//         padding-top: 2rem; 
-//         padding-bottom: 2rem; 
-//         background-color: white;
-//         box-shadow: 3px 3px 10px 1px #656565;
-//         display: flex;
-//         flex-direction: column;
-//             .champ_info {
-//                 padding-left: 2rem;
-//                 padding-right: 2rem;
-//                 display: flex;
-//                 flex-direction: row;
-//                 p {
-//                 font-family: "oswald";
-//                 font-size: 1em;
-//                 span {
-//                     font-family: "oswald";
-//                     font-size: 1em;
-//                     font-weight: 600;
-//                 }
-//                 }
-//             }
-//     }
-// }
-// }
+.page_type {
+    margin-top: 5rem;
+    padding-bottom: 5rem;
+    background-repeat: no-repeat;
+    background-size: contain; 
+    // height: 300vh;
+    background-position: center bottom;
+    .titre_style {
+        padding-top: 6px;
+        padding-bottom: 2px;
+        margin-left: auto;
+        margin-right: auto; 
+        background-color: black;
+        width: 15rem;
+        h2 {
+            text-align: center;
+            font-family: "anton";
+            color: white;
+            font-size: 3em;
+        }
+    }
+    h3 {
+        margin-top: 2rem;
+        font-family: "anton";
+        color: black;
+        font-size: 2em;
+    }
+
+    .ligne_article {
+        padding-top: 5rem;
+        margin-right: 10rem;
+        margin-left:10rem;
+        display: flex;
+        justify-content: space-around;
+        a {
+            text-decoration: none;
+        }
+        .articles {
+            border: black 4px solid;
+            background-color: black;
+            width:250px !important;
+            .date_article{
+                color: white;
+                font-family: "oswald";
+                text-align: center;
+                font-size: 1.4em;
+            }
+            .titre_article {
+                font-size: 1.4em;
+                margin-bottom: 0;
+                margin-top: .7rem;
+                text-decoration: none;
+                text-align: center;
+                color: white;
+                font-family: "oswald";
+                font-weight: 600;
+            }
+            .img_article {
+                margin-left:auto;
+                margin-right:auto;
+               
+                text-align:center
+            }
+            .extrait_article{
+                font-size: 1em;
+                text-decoration: none;
+                text-align: center;
+                color: white;
+                font-family: "oswald";
+                font-weight: 100;
+            }
+            // img:hover {
+            //     opacity: .5;
+            // }
+            .titre_article:hover {
+                color: grey;
+            }
+            .extrait_article:hover {
+                color: grey;
+            }
+        }
+
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ############################# ACTU.PHP ##################################
+
+// ############################################
+// ################ ACTU ######################
+// ############################################
+
+.actu_type {
+    margin-top: 5rem;
+    padding-bottom: 5rem;
+    background-image:  url("http://localhost:8080/wp-content/themes/vyns/assets/images/background/bg_actu.jpg");
+    background-repeat: no-repeat;
+    background-size: contain; 
+    // height: 300vh;
+    background-position: center bottom;
+    .titre_style_inside {
+        padding-top: 6px;
+        padding-bottom: 2px;
+        margin-left: auto;
+        margin-right: auto; 
+        background-color: black;
+        width: 15rem;
+        h2 {
+            text-align: center;
+            font-family: "anton";
+            color: white;
+            font-size: 3em;
+        }
+    }
+    h3 {
+        margin-top: 2rem;
+        font-family: "anton";
+        color: black;
+        font-size: 2em;
+    }
+    .ensemble_info {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    .info_article {
+        padding-top: 2rem; 
+        padding-bottom: 2rem; 
+        background-color: white;
+        box-shadow: 3px 3px 10px 1px #656565;
+        display: flex;
+        flex-direction: column;
+            .champ_info {
+                padding-left: 2rem;
+                padding-right: 2rem;
+                display: flex;
+                flex-direction: row;
+                p {
+                font-family: "oswald";
+                font-size: 1em;
+                span {
+                    font-family: "oswald";
+                    font-size: 1em;
+                    font-weight: 600;
+                }
+                }
+            }
+    }
+}
+}

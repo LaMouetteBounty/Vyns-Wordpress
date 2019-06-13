@@ -6,7 +6,7 @@ wp_enqueue_script( 'script', get_stylesheet_directory_uri('http://localhost:8080
 add_action( 'wp_enqueue_scripts', 'wpm_enqueue_styles' );
 
 
-
+    
 function wpm_custom_post_type_blues() {
 
 	// On rentre les différentes dénominations de notre custom post type qui seront affichées dans l'administration
@@ -80,7 +80,8 @@ function wpm_custom_post_type_blues() {
 	);
 	
 	// On enregistre notre custom post type qu'on nomme ici "serietv" et ses arguments
-	register_post_type( 'blues', $args );
+    register_post_type( 'blues', $args );
+
 
 }
 
@@ -341,3 +342,8 @@ function wpc_excerpt_pages_blues() {
         add_action( 'admin_menu', 'wpc_excerpt_pages_rock' );
 
 
+        function wpcodex_add_excerpt_support_for_post() {
+            add_post_type_support( 'blues', 'excerpt' );
+        }
+        add_action( 'init', 'wpcodex_add_excerpt_support_for_post' );
+        
