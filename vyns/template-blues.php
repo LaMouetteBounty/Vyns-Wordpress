@@ -1,3 +1,9 @@
+<?php
+/*
+Template Name: BLUES LIST
+*/
+ 
+?>
 <?php get_header(); ?>
 <div class="container-fluid">
 	<section class="page_type">

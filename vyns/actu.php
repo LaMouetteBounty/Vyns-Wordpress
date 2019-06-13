@@ -71,28 +71,6 @@ $size =
 </div>
 <?php get_footer(); ?>
 
-The_categorie
-
-<?php
-			$query = new WP_Query(array(
-				$size =
-					'post_type' => 'blues',
-				'posts_per_page' => -1, // infini
-				'order' => 'ASC', // classé par ordre alphabétique
-				'orderby' => 'title', // par titre
-			));
-			?>
-			<?php while ($query->have_posts()) : $query->the_post(); ?>
-
-				<div class="row">
-					<h3><?php the_title(); ?></h3>
-				</div>
-
-				<li><?php the_date(); ?><br /><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_post_thumbnail(array(100, 100)); ?></a><br />
-					<?php the_title();
-					the_excerpt(); ?></li>
-			<?php endwhile; ?>
-            </ul>
             
 
 

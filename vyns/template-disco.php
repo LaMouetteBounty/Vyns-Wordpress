@@ -1,3 +1,9 @@
+<?php
+/*
+Template Name: DISCO LIST
+*/
+ 
+?>
 <?php get_header(); ?>
 <div class="container-fluid">
 	<section class="page_type">
@@ -5,7 +11,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="titre_style">
-					<h2> BLUES </h2>
+					<h2> DISCO </h2>
 				</div>
 			</div>
 
@@ -13,7 +19,7 @@
 			<?php
 			$query = new WP_Query(array(
 				$size =
-					'post_type' => 'blues',
+					'post_type' => 'disco',
 				'posts_per_page' => -1, // infini
 				'orderby' => 'date', // par titre
 			));

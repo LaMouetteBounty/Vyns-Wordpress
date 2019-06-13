@@ -16,6 +16,11 @@ Tags: bootstrap
     src: url("http://localhost:8080/wp-content/themes/vyns/assets/fonts/anton/anton_regular.ttf");
   }
 
+  @font-face {
+    font-family: "lato";
+    src: url("http://localhost:8080/wp-content/themes/vyns/assets/fonts/lato/Lato-Regular.ttf");
+  }
+
 // ############################ HEADER.PHP ################################
 
 // ############################################
@@ -298,13 +303,15 @@ footer {
 // ################ PAGE ######################
 // ############################################
 
-.page_type {
+.page_type {        
     margin-top: 5rem;
     padding-bottom: 5rem;
     background-repeat: no-repeat;
     background-size: contain; 
-    // height: 300vh;
-    background-position: center bottom;
+    background-position: center bottom;    
+    a {
+        text-decoration: none;
+    }
     .titre_style {
         padding-top: 6px;
         padding-bottom: 2px;
@@ -319,70 +326,63 @@ footer {
             font-size: 3em;
         }
     }
-    h3 {
-        margin-top: 2rem;
-        font-family: "anton";
-        color: black;
-        font-size: 2em;
-    }
 
-    .ligne_article {
-        padding-top: 5rem;
-        margin-right: 10rem;
-        margin-left:10rem;
-        display: flex;
-        justify-content: space-around;
-        a {
-            text-decoration: none;
-        }
-        .articles {
-            border: black 4px solid;
-            background-color: black;
-            width:250px !important;
-            .date_article{
-                color: white;
-                font-family: "oswald";
-                text-align: center;
-                font-size: 1.4em;
-            }
-            .titre_article {
-                font-size: 1.4em;
+
+        .titre_article {
+                font-size: 1.5em;
                 margin-bottom: 0;
                 margin-top: .7rem;
                 text-decoration: none;
                 text-align: center;
-                color: white;
+                color: black;
                 font-family: "oswald";
                 font-weight: 600;
-            }
-            .img_article {
-                margin-left:auto;
-                margin-right:auto;
-               
-                text-align:center
-            }
-            .extrait_article{
-                font-size: 1em;
-                text-decoration: none;
-                text-align: center;
-                color: white;
-                font-family: "oswald";
-                font-weight: 100;
-            }
-            // img:hover {
-            //     opacity: .5;
-            // }
+            }              
             .titre_article:hover {
                 color: grey;
             }
-            .extrait_article:hover {
-                color: grey;
+            .date_article{
+                color: black;
+                font-family: "oswald";
+                text-align: center;
+                font-size: 1.4em;
+            }          
+
+
+
+        .articles {
+            border: black 4px solid;
+            background-color: black;
+            display: flex;
+            flex-direction: row !important;
+            .img_article {
+                float: left !important;
             }
+            .extrait_article{
+                padding-left: 1rem;
+                font-size: 1em;
+                text-decoration: none;
+                color: white;
+                font-family: "lato";
+                font-weight: 100;
+            }
+            img:hover {
+                opacity: .5;
+            }
+
         }
+        .link_article {
+            color: black;
+            font-family: "oswald";
+            float: right;
+            margin-right: 1rem;
+        }
+        .link_article:hover {
+            color: grey;
+        }
+    }
 
-}
 
-}
 
 
 

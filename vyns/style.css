@@ -16,6 +16,11 @@ Tags: bootstrap
   src: url("http://localhost:8080/wp-content/themes/vyns/assets/fonts/anton/anton_regular.ttf");
 }
 
+@font-face {
+  font-family: "lato";
+  src: url("http://localhost:8080/wp-content/themes/vyns/assets/fonts/lato/Lato-Regular.ttf");
+}
+
 .navbar-brand {
   padding-right: 3rem;
 }
@@ -320,6 +325,10 @@ footer .content_footer .reseaux img:hover {
   background-position: center bottom;
 }
 
+.page_type a {
+  text-decoration: none;
+}
+
 .page_type .titre_style {
   padding-top: 6px;
   padding-bottom: 2px;
@@ -336,72 +345,65 @@ footer .content_footer .reseaux img:hover {
   font-size: 3em;
 }
 
-.page_type h3 {
-  margin-top: 2rem;
-  font-family: "anton";
-  color: black;
-  font-size: 2em;
-}
-
-.page_type .ligne_article {
-  padding-top: 5rem;
-  margin-right: 10rem;
-  margin-left: 10rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-}
-
-.page_type .ligne_article a {
-  text-decoration: none;
-}
-
-.page_type .ligne_article .articles {
-  border: black 4px solid;
-  background-color: black;
-  width: 250px !important;
-}
-
-.page_type .ligne_article .articles .date_article {
-  color: white;
-  font-family: "oswald";
-  text-align: center;
-  font-size: 1.4em;
-}
-
-.page_type .ligne_article .articles .titre_article {
-  font-size: 1.4em;
+.page_type .titre_article {
+  font-size: 1.5em;
   margin-bottom: 0;
   margin-top: .7rem;
   text-decoration: none;
   text-align: center;
-  color: white;
+  color: black;
   font-family: "oswald";
   font-weight: 600;
 }
 
-.page_type .ligne_article .articles .img_article {
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
-
-.page_type .ligne_article .articles .extrait_article {
-  font-size: 1em;
-  text-decoration: none;
-  text-align: center;
-  color: white;
-  font-family: "oswald";
-  font-weight: 100;
-}
-
-.page_type .ligne_article .articles .titre_article:hover {
+.page_type .titre_article:hover {
   color: grey;
 }
 
-.page_type .ligne_article .articles .extrait_article:hover {
+.page_type .date_article {
+  color: black;
+  font-family: "oswald";
+  text-align: center;
+  font-size: 1.4em;
+}
+
+.page_type .articles {
+  border: black 4px solid;
+  background-color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal !important;
+  -webkit-box-direction: normal !important;
+      -ms-flex-direction: row !important;
+          flex-direction: row !important;
+}
+
+.page_type .articles .img_article {
+  float: left !important;
+}
+
+.page_type .articles .extrait_article {
+  padding-left: 1rem;
+  font-size: 1em;
+  text-decoration: none;
+  color: white;
+  font-family: "lato";
+  font-weight: 100;
+}
+
+.page_type .articles img:hover {
+  opacity: .5;
+}
+
+.page_type .link_article {
+  color: black;
+  font-family: "oswald";
+  float: right;
+  margin-right: 1rem;
+}
+
+.page_type .link_article:hover {
   color: grey;
 }
 

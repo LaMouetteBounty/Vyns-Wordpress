@@ -34,16 +34,16 @@
                                 <a class="nav-link" href="#">ACTUALITÉS</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">BLUES</a>
+                                <a class="nav-link" href="http://localhost:8080/?page_id=39">BLUES</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">DISCO</a>
+                                <a class="nav-link" href="http://localhost:8080/?page_id=49">DISCO</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">ROCK</a>
+                                <a class="nav-link" href="http://localhost:8080/?page_id=46">ROCK</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">JAZZ</a>
+                                <a class="nav-link" href="http://localhost:8080/?page_id=51">JAZZ</a>
                             </li>
                         </ul>
                     </div>
