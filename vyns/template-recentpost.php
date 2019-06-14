@@ -15,35 +15,43 @@ Template Name: POST LIST
 				</div>
 			</div>
 
-
 			<?php
-			$query = new WP_Query(array(
-				$size =
-                    'post_type' => 'jazz', 
-                    'post_type' => 'rock', 
-                    'post_type' => 'disco', 
-                    'post_type' => 'blues', 
-				'posts_per_page' => -1, // infini
-				'orderby' => 'date', // par titre
-			));
-			?>
-			<?php while ($query->have_posts()) : $query->the_post(); ?>
-				<?php
-				$attachments = get_children(array('post_parent' => get_the_ID(), 'post_type' => 'attachment', 'post_mime_type' => 'image', 'orderby' => 'menu_order'));
-				if (!is_array($attachments)) continue;
-				$count = count($attachments);
-				$first_attachment = array_shift($attachments);
-				?>
-				<div class="row">
-					<p class="titre_article"><?php the_modified_date(); ?> <span> > </span> <?php the_title(); ?> </p>
-				</div>
+$all_terms = get_terms( 'all' );
+?>
 
-				<div class="row articles">
-					<div class="img_article"><?php echo wp_get_attachment_image($first_attachment->ID, 'thumbnail'); ?></div>
-					<div class="extrait_article"><p><?php the_excerpt(); ?></p></div>
-				</div>
-				<a class="link_article" href="<?php the_permalink(); ?>"> > Lire l'article complet </a>
-<?php endwhile; ?>
+<?php
+foreach ( $all_terms as $all_term ) {
+    $all_query = new WP_Query( array(
+        'post_type' => 'all',
+        'tax_query' => array(
+            array(
+                'taxonomy' => 'all',
+                'field' => 'slug',
+                'terms' => array( $all_term->slug ),
+                'operator' => 'IN'
+            )
+        )
+    ) );
+    ?>
+    <h2><?php echo $all_term->name; ?></h2>
+    <ul>
+    <?php
+    if ( $all_query->have_posts() ) : while ( $all_query->have_posts() ) : $all_query->the_post(); ?>
+        <li><?php echo the_title(); ?></li>
+    <?php endwhile; endif; ?>
+    </ul>
+    <?php
+    // Reset things, for good measure
+    $member_group_query = null;
+    wp_reset_postdata();
+}
+?>
+
+
+
+
+
+
 			</div>
 		
 </div>

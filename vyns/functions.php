@@ -34,7 +34,8 @@ function wpm_custom_post_type_blues() {
 	$args = array(
 		'label'               => __( 'Blues'),
 		'description'         => __( 'Tous sur le vinyles'),
-		'labels'              => $labels,
+        'labels'              => $labels,
+        'taxonomies' 	      => array('post_tag'),
 		// On définit les options disponibles dans l'éditeur de notre custom post type ( un titre, un auteur...)
 		// 'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
 		/* 
@@ -87,6 +88,44 @@ function wpm_custom_post_type_blues() {
 
 add_action( 'init', 'wpm_custom_post_type_blues', 0 );
 
+// ###################################################################
+// ###################################################################
+// ##########################TAXONIMIE###############################
+// ###################################################################
+
+
+// Let us create Taxonomy for Custom Post Type
+add_action( 'init', 'crunchify_create_deals_custom_taxonomy', 0 );
+ 
+//create a custom taxonomy name it "type" for your posts
+function crunchify_create_blues_custom_taxonomy() {
+ 
+  $labels = array(
+    'name' => _x( 'Types', 'taxonomy general name' ),
+    'singular_name' => _x( 'Type', 'taxonomy singular name' ),
+    'search_items' =>  __( 'Search Types' ),
+    'all_items' => __( 'All Types' ),
+    'parent_item' => __( 'Parent Type' ),
+    'parent_item_colon' => __( 'Parent Type:' ),
+    'edit_item' => __( 'Edit Type' ), 
+    'update_item' => __( 'Update Type' ),
+    'add_new_item' => __( 'Add New Type' ),
+    'new_item_name' => __( 'New Type Name' ),
+    'menu_name' => __( 'Types' ),
+  ); 	
+ 
+  register_taxonomy('types',array('blues'), array(
+    'hierarchical' => true,
+    'labels' => $labels,
+    'show_ui' => true,
+    'show_admin_column' => true,
+    'query_var' => true,
+    'rewrite' => array( 'slug' => 'type' ),
+  ));
+}
+
+
+// ############################################################################
 
 function wpc_excerpt_pages_blues() {
     add_meta_box('postexcerpt', __('Extrait'), 'post_excerpt_meta_box', 'page', 'normal', 'core');
@@ -133,6 +172,7 @@ function wpc_excerpt_pages_blues() {
             'label'               => __( 'Jazz'),
             'description'         => __( 'Tous sur le vinyle'),
             'labels'              => $labels,
+            'taxonomies' 	      => array('post_tag'),
             // On définit les options disponibles dans l'éditeur de notre custom post type ( un titre, un auteur...)
             'template' => array( // Définir un modèle
                 array( 'core/paragraph', array(
@@ -180,6 +220,44 @@ function wpc_excerpt_pages_blues() {
     add_action( 'init', 'wpm_custom_post_type_jazz', 0 );
     
     
+// ###################################################################
+// ###################################################################
+// ##########################TAXONIMIE###############################
+// ###################################################################
+
+
+// Let us create Taxonomy for Custom Post Type
+add_action( 'init', 'crunchify_create_jazz_custom_taxonomy', 0 );
+ 
+//create a custom taxonomy name it "type" for your posts
+function crunchify_create_jazz_custom_taxonomy() {
+ 
+  $labels = array(
+    'name' => _x( 'Types', 'taxonomy general name' ),
+    'singular_name' => _x( 'Type', 'taxonomy singular name' ),
+    'search_items' =>  __( 'Search Types' ),
+    'all_items' => __( 'All Types' ),
+    'parent_item' => __( 'Parent Type' ),
+    'parent_item_colon' => __( 'Parent Type:' ),
+    'edit_item' => __( 'Edit Type' ), 
+    'update_item' => __( 'Update Type' ),
+    'add_new_item' => __( 'Add New Type' ),
+    'new_item_name' => __( 'New Type Name' ),
+    'menu_name' => __( 'Types' ),
+  ); 	
+ 
+  register_taxonomy('types',array('jazz'), array(
+    'hierarchical' => true,
+    'labels' => $labels,
+    'show_ui' => true,
+    'show_admin_column' => true,
+    'query_var' => true,
+    'rewrite' => array( 'slug' => 'type' ),
+  ));
+}
+
+
+// ############################################################################
     function wpc_excerpt_pages_jazz() {
         add_meta_box('postexcerpt', __('Extrait'), 'post_excerpt_meta_box', 'page', 'normal', 'core');
         }
@@ -224,6 +302,7 @@ function wpc_excerpt_pages_blues() {
             'label'               => __( 'Disco'),
             'description'         => __( 'Tous sur le vinyle'),
             'labels'              => $labels,
+            'taxonomies' 	      => array('post_tag'),
             // On définit les options disponibles dans l'éditeur de notre custom post type ( un titre, un auteur...)
             'template' => array( // Définir un modèle
                 array( 'core/paragraph', array(
@@ -271,6 +350,45 @@ function wpc_excerpt_pages_blues() {
     add_action( 'init', 'wpm_custom_post_type_disco', 0 );
     
     
+// ###################################################################
+// ###################################################################
+// ##########################TAXONIMIE###############################
+// ###################################################################
+
+
+// Let us create Taxonomy for Custom Post Type
+add_action( 'init', 'crunchify_create_disco_custom_taxonomy', 0 );
+ 
+//create a custom taxonomy name it "type" for your posts
+function crunchify_create_disco_custom_taxonomy() {
+ 
+  $labels = array(
+    'name' => _x( 'Types', 'taxonomy general name' ),
+    'singular_name' => _x( 'Type', 'taxonomy singular name' ),
+    'search_items' =>  __( 'Search Types' ),
+    'all_items' => __( 'All Types' ),
+    'parent_item' => __( 'Parent Type' ),
+    'parent_item_colon' => __( 'Parent Type:' ),
+    'edit_item' => __( 'Edit Type' ), 
+    'update_item' => __( 'Update Type' ),
+    'add_new_item' => __( 'Add New Type' ),
+    'new_item_name' => __( 'New Type Name' ),
+    'menu_name' => __( 'Types' ),
+  ); 	
+ 
+  register_taxonomy('types',array('disco'), array(
+    'hierarchical' => true,
+    'labels' => $labels,
+    'show_ui' => true,
+    'show_admin_column' => true,
+    'query_var' => true,
+    'rewrite' => array( 'slug' => 'type' ),
+  ));
+}
+
+
+// ############################################################################
+
     function wpc_excerpt_pages_disco() {
         add_meta_box('postexcerpt', __('Extrait'), 'post_excerpt_meta_box', 'page', 'normal', 'core');
         }
@@ -315,6 +433,7 @@ function wpc_excerpt_pages_blues() {
             'label'               => __( 'Rock'),
             'description'         => __( 'Tous sur le vinyle'),
             'labels'              => $labels,
+            'taxonomies' 	      => array('post_tag'),
             // On définit les options disponibles dans l'éditeur de notre custom post type ( un titre, un auteur...)
             'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
             /* 
@@ -334,7 +453,46 @@ function wpc_excerpt_pages_blues() {
     }
     
     add_action( 'init', 'wpm_custom_post_type_rock', 0 );
+
     
+// ###################################################################
+// ###################################################################
+// ##########################TAXONIMIE###############################
+// ###################################################################
+
+
+// Let us create Taxonomy for Custom Post Type
+add_action( 'init', 'crunchify_create_rock_custom_taxonomy', 0 );
+ 
+//create a custom taxonomy name it "type" for your posts
+function crunchify_create_rock_custom_taxonomy() {
+ 
+  $labels = array(
+    'name' => _x( 'Types', 'taxonomy general name' ),
+    'singular_name' => _x( 'Type', 'taxonomy singular name' ),
+    'search_items' =>  __( 'Search Types' ),
+    'all_items' => __( 'All Types' ),
+    'parent_item' => __( 'Parent Type' ),
+    'parent_item_colon' => __( 'Parent Type:' ),
+    'edit_item' => __( 'Edit Type' ), 
+    'update_item' => __( 'Update Type' ),
+    'add_new_item' => __( 'Add New Type' ),
+    'new_item_name' => __( 'New Type Name' ),
+    'menu_name' => __( 'Types' ),
+  ); 	
+ 
+  register_taxonomy('types',array('rock'), array(
+    'hierarchical' => true,
+    'labels' => $labels,
+    'show_ui' => true,
+    'show_admin_column' => true,
+    'query_var' => true,
+    'rewrite' => array( 'slug' => 'type' ),
+  ));
+}
+
+
+// ############################################################################
     
     function wpc_excerpt_pages_rock() {
         add_meta_box('postexcerpt', __('Extrait'), 'post_excerpt_meta_box', 'page', 'normal', 'core');
@@ -365,3 +523,79 @@ function wpc_excerpt_pages_blues() {
         add_action( 'init', 'wpcodex_add_excerpt_support_for_post_rock' );
 // ###################################################################    
 // ###################################################################   
+
+
+function crunchify_deals_custom_post_type() {
+	$labels = array(
+		'name'                => __( 'Deals' ),
+		'singular_name'       => __( 'Deal'),
+		'menu_name'           => __( 'Deals'),
+		'parent_item_colon'   => __( 'Parent Deal'),
+		'all_items'           => __( 'All Deals'),
+		'view_item'           => __( 'View Deal'),
+		'add_new_item'        => __( 'Add New Deal'),
+		'add_new'             => __( 'Add New'),
+		'edit_item'           => __( 'Edit Deal'),
+		'update_item'         => __( 'Update Deal'),
+		'search_items'        => __( 'Search Deal'),
+		'not_found'           => __( 'Not Found'),
+		'not_found_in_trash'  => __( 'Not found in Trash')
+	);
+	$args = array(
+		'label'               => __( 'deals'),
+		'description'         => __( 'Best Crunchify Deals'),
+		'labels'              => $labels,
+		'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'revisions', 'custom-fields'),
+		'public'              => true,
+		'hierarchical'        => false,
+		'show_ui'             => true,
+		'show_in_menu'        => true,
+		'show_in_nav_menus'   => true,
+		'show_in_admin_bar'   => true,
+		'has_archive'         => true,
+		'can_export'          => true,
+		'exclude_from_search' => false,
+	        'yarpp_support'       => true,
+		'taxonomies' 	      => array('post_tag'),
+		'publicly_queryable'  => true,
+		'capability_type'     => 'page'
+);
+	register_post_type( 'deals', $args );
+}
+add_action( 'init', 'crunchify_deals_custom_post_type', 0 );
+
+
+
+
+
+
+
+// Let us create Taxonomy for Custom Post Type
+add_action( 'init', 'crunchify_create_deals_custom_taxonomy', 0 );
+ 
+//create a custom taxonomy name it "type" for your posts
+function crunchify_create_deals_custom_taxonomy() {
+ 
+  $labels = array(
+    'name' => _x( 'Types', 'taxonomy general name' ),
+    'singular_name' => _x( 'Type', 'taxonomy singular name' ),
+    'search_items' =>  __( 'Search Types' ),
+    'all_items' => __( 'All Types' ),
+    'parent_item' => __( 'Parent Type' ),
+    'parent_item_colon' => __( 'Parent Type:' ),
+    'edit_item' => __( 'Edit Type' ), 
+    'update_item' => __( 'Update Type' ),
+    'add_new_item' => __( 'Add New Type' ),
+    'new_item_name' => __( 'New Type Name' ),
+    'menu_name' => __( 'Types' ),
+  ); 	
+ 
+  register_taxonomy('types',array('deals'), array(
+    'hierarchical' => true,
+    'labels' => $labels,
+    'show_ui' => true,
+    'show_admin_column' => true,
+    'query_var' => true,
+    'rewrite' => array( 'slug' => 'type' ),
+  ));
+}

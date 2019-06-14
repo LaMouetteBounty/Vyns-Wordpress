@@ -9,22 +9,22 @@
             <div class="menu_footer">
                 <ul>
                     <li>
-                        <a href="#">HOME</a>
+                        <a href="http://localhost:8080/?page_id=88">HOME</a>
                     </li>
                     <li>
-                        <a href="#">ACTUALITÉS</a>
+                        <a href="http://localhost:8080/?page_id=85">ACTUALITÉS</a>
                     </li>
                     <li>
-                        <a href="#">BLUES</a>
+                        <a href="http://localhost:8080/?page_id=39">BLUES</a>
                     </li>
                     <li>
-                        <a href="#">DISCO</a>
+                        <a href="http://localhost:8080/?page_id=49">DISCO</a>
                     </li>
                     <li>
-                        <a href="#">ROCK</a>
+                        <a href="http://localhost:8080/?page_id=46">ROCK</a>
                     </li>
                     <li>
-                        <a href="#">JAZZ</a>
+                        <a href="http://localhost:8080/?page_id=51">JAZZ</a>
                     </li>
                 </ul>
             </div>

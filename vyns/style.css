@@ -217,9 +217,15 @@ Tags: bootstrap
   color: grey;
 }
 
-.main_home h1 {
+.main_home .titre_contact {
+  background-color: black;
+  width: 15%;
   margin-top: 5rem;
-  color: black;
+}
+
+.main_home .titre_contact h1 {
+  padding-left: 1rem;
+  color: white;
   font-family: "oswald";
   font-weight: 700;
 }
