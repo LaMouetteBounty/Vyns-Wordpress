@@ -42,7 +42,13 @@ function wpm_custom_post_type_blues() {
 		'hierarchical'        => false,
 		'public'              => true,
 		'has_archive'         => true,
-		'rewrite'			  => array( 'slug' => 'blues'),
+        'rewrite'			  => array( 'slug' => 'blues'),
+        'template' => array( // Définir un modèle
+            array( 'core/image', array(
+                'align' => 'center',
+            ) ),
+        ),
+          
 	);
 	// On enregistre notre custom post type qu'on nomme ici "serietv" et ses arguments
     register_post_type( 'blues', $args );
@@ -57,146 +63,168 @@ add_action( 'init', 'wpm_custom_post_type_blues', 0 );
 function blues_number_add_meta_box() {
     add_meta_box( 'blues_number', 'Numero vinyle', 'blues_number_callback' , 'blues' );
 }
-
-function blues_number_callback( $post ){
-    wp_nonce_field('blues_save_number_data', 'blues_number_meta_box_nonce');
-
-    $value = get_post_meta( $post->ID, '_blues_number_value_key', true);
-
-    echo '<label for="blues_number_field">Entrez le numero du vinyle</label>';
-    echo '<input type="text" id="blues_number_field" name="blues_number_field" value="' . esc_attr( $value ) . '"
-    size="25">';
-}
-
 add_action('add_meta_boxes', 'blues_number_add_meta_box');
 
+function blues_number_callback( $post ){
+    // wp_nonce_field('blues_save_number_data', 'blues_number_meta_box_nonce');
 
-//if nonce doesnt exist stop la function
-// function blues_save_number_data ( $post_id ) {
-//     if( ! isset( $_POST['blues_number_meta_box_nonce'] ) ) {
-//         return;
-//     }
-//     if ( ! wp_verify_nonce( $_POST['blues_number_meta_box_nonce'], ' blues_save_number_data' )) {
-//         return;
-//     }
-
-//     if( defined ('DOING_AUTOSAVE') && DOING_AUTOSAVE ) {
-//         return;
-//     }
-
-//     if ( ! curent_user_can('edit_post', $post_id)) {
-//         return;
-//     }
-
-//     if ( ! isset ( $_POST['blues_number_field'])){
-//         return;
-//     }
-
-//     $my_data = sanitize_text_field($_POST['blues_number_field']);
-
-//     update_post_meta( $post_id, '_blues_number_value_key', $my_data);
-
-// }
-
-// add_action ('save_post', ' blues_save_number_data');
-
-// ###################################################################
-// ###################################################################
-
-function blues_date_add_meta_box() {
-    add_meta_box( 'blues_date', 'Date de sortie', 'blues_date_callback' , 'blues' );
-}
-
-function blues_date_callback( $post ){
-    wp_nonce_field('blues_save_date_data', 'blues_date_meta_box_nonce');
-
-    $value = get_post_meta( $post->ID, '_blues_date_value_key', true);
-
-    echo '<label for="blues_date_field">Entrez la date de sortie du vinyle : </label>';
-    echo '<input type="text" id="blues_date_field" name="blues_date_field" value="' . esc_attr( $value ) . '"
+    $value = get_post_meta(get_the_ID(), 'blues_number', true);
+    if(isset( $_POST['blues_number'] ) ) {
+        var_dump( $_POST['blues_number']);
+    }
+    echo '<label for="blues_number">Entrez le numero du vinyle</label>';
+    echo '<input type="text" id="blues_number" name="blues_number" value="' . $post->ID . '"
     size="25">';
 }
 
-add_action('add_meta_boxes', 'blues_date_add_meta_box');
+//SAVE
+function blues_save_number_data ( $post_ID ) {
+    // $my_data = sanitize_text_field($_POST['blues_number_field']);
+    if(isset( $_POST['blues_number'] ) ) {
+        update_post_meta( $post_ID, 'blues_number', $_POST['blues_number']);
+    }
+    
+}
+
+add_action ('save_post', ' blues_save_number_data');
+    // if ( ! wp_verify_nonce( $_POST['blues_number_meta_box_nonce'], ' blues_save_number_data' )) {
+    //     return;
+    // }
+
+    // if( defined ('DOING_AUTOSAVE') && DOING_AUTOSAVE ) {
+    //     return;
+    // }
+
+    // if ( ! curent_user_can('edit_post', $post_id)) {
+    //     return;
+    // }
+
+    // if ( ! isset ( $_POST['blues_number_field'])){
+    //     return;
+    // }
+
+    // $my_data = sanitize_text_field($_POST['blues_number_field']);
+
+    // update_post_meta( $post_id, '_blues_number_value_key', $my_data);
+
 
 
 // ###################################################################
 // ###################################################################
 
-function blues_pressage_add_meta_box() {
-    add_meta_box( 'blues_pressage', 'Pressage', 'blues_pressage_callback' , 'blues' );
-}
+// function blues_date_add_meta_box() {
+//     add_meta_box( 'blues_date', 'Date de sortie', 'blues_date_callback' , 'blues' );
+// }
 
-function blues_pressage_callback( $post ){
-    wp_nonce_field('blues_save_pressage_data', 'blues_pressage_meta_box_nonce');
+// function blues_date_callback( $post ){
+//     wp_nonce_field('blues_save_date_data', 'blues_date_meta_box_nonce');
 
-    $value = get_post_meta( $post->ID, '_blues_pressage_value_key', true);
+//     $value = get_post_meta( $post->ID, '_blues_date_value_key', true);
 
-    echo '<label for="blues_pressage_field">Entrez le lieu de pressage du vinyle : </label>';
-    echo '<input type="text" id="blues_pressage_field" name="blues_pressage_field" value="' . esc_attr( $value ) . '"
-    size="35">';
-}
+//     echo '<label for="blues_date_field">Entrez la date de sortie du vinyle : </label>';
+//     echo '<input type="text" id="blues_date_field" name="blues_date_field" value="' . esc_attr( $value ) . '"
+//     size="25">';
+// }
 
-add_action('add_meta_boxes', 'blues_pressage_add_meta_box');
-
-
-// ###################################################################
-// ###################################################################
-
-function blues_label_add_meta_box() {
-    add_meta_box( 'blues_label', 'Label', 'blues_label_callback' , 'blues' );
-}
-
-function blues_label_callback( $post ){
-    wp_nonce_field('blues_save_label_data', 'blues_label_meta_box_nonce');
-
-    $value = get_post_meta( $post->ID, '_blues_label_value_key', true);
-
-    echo '<label for="blues_label_field">Entrez le label du vinyle : </label>';
-    echo '<input type="text" id="blues_label_field" name="blues_label_field" value="' . esc_attr( $value ) . '"
-    size="30">';
-}
-
-add_action('add_meta_boxes', 'blues_label_add_meta_box');
-
-// ###################################################################
-// ###################################################################
-
-function blues_duree_add_meta_box() {
-    add_meta_box( 'blues_duree', 'Duree', 'blues_duree_callback' , 'blues' );
-}
-
-function blues_duree_callback( $post ){
-    wp_nonce_field('blues_save_duree_data', 'blues_duree_meta_box_nonce');
-
-    $value = get_post_meta( $post->ID, '_blues_duree_value_key', true);
-
-    echo '<label for="blues_duree_field">Entrez la durée du vinyle : </label>';
-    echo '<input type="text" id="blues_duree_field" name="blues_duree_field" value="' . esc_attr( $value ) . '"
-    size="20">';
-}
-
-add_action('add_meta_boxes', 'blues_duree_add_meta_box');
+// add_action('add_meta_boxes', 'blues_date_add_meta_box');
 
 
 // ###################################################################
 // ###################################################################
 
-function blues_prix_add_meta_box() {
-    add_meta_box( 'blues_prix', 'Prix', 'blues_prix_callback' , 'blues' );
-}
+// function blues_pressage_add_meta_box() {
+//     add_meta_box( 'blues_pressage', 'Pressage', 'blues_pressage_callback' , 'blues' );
+// }
 
-function blues_prix_callback( $post ){
-    wp_nonce_field('blues_save_prix_data', 'blues_prix_meta_box_nonce');
+// function blues_pressage_callback( $post ){
+//     wp_nonce_field('blues_save_pressage_data', 'blues_pressage_meta_box_nonce');
 
-    $value = get_post_meta( $post->ID, '_blues_prix_value_key', true);
+//     $value = get_post_meta( $post->ID, '_blues_pressage_value_key', true);
 
-    echo '<label for="blues_prix_field">Entrez le prix du vinyle : </label>';
-    echo '<input type="text" id="blues_prix_field" name="blues_prix_field" value="' . esc_attr( $value ) . '"
-    size="20">';
-}
+//     echo '<label for="blues_pressage_field">Entrez le lieu de pressage du vinyle : </label>';
+//     echo '<input type="text" id="blues_pressage_field" name="blues_pressage_field" value="' . esc_attr( $value ) . '"
+//     size="35">';
+// }
 
-add_action('add_meta_boxes', 'blues_prix_add_meta_box');
+// add_action('add_meta_boxes', 'blues_pressage_add_meta_box');
+
+
+// ###################################################################
+// ###################################################################
+
+// function blues_label_add_meta_box() {
+//     add_meta_box( 'blues_label', 'Label', 'blues_label_callback' , 'blues' );
+// }
+
+// function blues_label_callback( $post ){
+//     wp_nonce_field('blues_save_label_data', 'blues_label_meta_box_nonce');
+
+//     $value = get_post_meta( $post->ID, '_blues_label_value_key', true);
+
+//     echo '<label for="blues_label_field">Entrez le label du vinyle : </label>';
+//     echo '<input type="text" id="blues_label_field" name="blues_label_field" value="' . esc_attr( $value ) . '"
+//     size="30">';
+// }
+
+// add_action('add_meta_boxes', 'blues_label_add_meta_box');
+
+// ###################################################################
+// ###################################################################
+
+// function blues_duree_add_meta_box() {
+//     add_meta_box( 'blues_duree', 'Duree', 'blues_duree_callback' , 'blues' );
+// }
+
+// function blues_duree_callback( $post ){
+//     wp_nonce_field('blues_save_duree_data', 'blues_duree_meta_box_nonce');
+
+//     $value = get_post_meta( $post->ID, '_blues_duree_value_key', true);
+
+//     echo '<label for="blues_duree_field">Entrez la durée du vinyle : </label>';
+//     echo '<input type="text" id="blues_duree_field" name="blues_duree_field" value="' . esc_attr( $value ) . '"
+//     size="20">';
+// }
+
+// add_action('add_meta_boxes', 'blues_duree_add_meta_box');
+
+
+// ###################################################################
+// ###################################################################
+
+// function blues_prix_add_meta_box() {
+//     add_meta_box( 'blues_prix', 'Prix', 'blues_prix_callback' , 'blues' );
+// }
+
+// function blues_prix_callback( $post ){
+//     wp_nonce_field('blues_save_prix_data', 'blues_prix_meta_box_nonce');
+
+//     $value = get_post_meta( $post->ID, '_blues_prix_value_key', true);
+
+//     echo '<label for="blues_prix_field">Entrez le prix du vinyle : </label>';
+//     echo '<input type="text" id="blues_prix_field" name="blues_prix_field" value="' . esc_attr( $value ) . '"
+//     size="20">';
+// }
+
+// add_action('add_meta_boxes', 'blues_prix_add_meta_box');
+
+// ###################################################################
+// ###################################################################
+
+// function blues_desc_add_meta_box() {
+//     add_meta_box( 'blues_desc', 'Description', 'blues_desc_callback' , 'blues' );
+// }
+
+// function blues_desc_callback( $post ){
+//     wp_nonce_field('blues_save_desc_data', 'blues_desc_meta_box_nonce');
+
+//     $value = get_post_meta( $post->ID, '_blues_desc_value_key', true);
+
+//     echo '<label for="blues_desc_field">Description du vinyle : </label>';
+//     echo '<input type="text" id="blues_desc_field" name="blues_desc_field" value="' . esc_attr( $value ) . '"
+//     size="100">';
+// }
+
+// add_action('add_meta_boxes', 'blues_desc_add_meta_box');
 
 
 
