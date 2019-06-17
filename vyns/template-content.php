@@ -94,7 +94,7 @@ Template Name: HOME
           <div class="rubrique_rock">
             <img src="http://localhost:8080/wp-content/themes/vyns/assets/images/rubriques/rock.jpg" width="150" height="150" alt="photo guitare électrique rubrique rock">
             <p class="rubrique_style">ROCK</p>
-            <p class="rubrique_nombre">              
+            <p class="rubrique_nombre">
               <?php echo wp_count_posts('rock')->publish; ?>
               <?php $posts = get_posts('post_type=album&category=0');
               $cat = get_categories();
@@ -108,7 +108,7 @@ Template Name: HOME
           <div class="rubrique_jazz">
             <img src="http://localhost:8080/wp-content/themes/vyns/assets/images/rubriques/jazz.jpg" width="150" height="150" alt="photo saxophone rubrique jazz">
             <p class="rubrique_style">JAZZ</p>
-            <p class="rubrique_nombre"> 
+            <p class="rubrique_nombre">
               <?php echo wp_count_posts('jazz')->publish; ?>
               <?php $posts = get_posts('post_type=album&category=0');
               $cat = get_categories();
@@ -148,7 +148,18 @@ Template Name: HOME
           <div class="clearfix"></div>
         </form>
         <div class="map offset-1 col-5">
-          <img src="http://localhost:8080/wp-content/themes/vyns/assets/images/map.png" width="500">
+          <!-- <form>
+            <label for="adresse">Entrez votre adresse postale</label>
+            <input type="text" name="adresse" id="adresse">
+            <input type="submit" class="btn" name="valider" value="Valider l'adresse" id="envoyer">
+            <span>
+              <ul id="suggestions">
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+            </span>
+          </form> -->
         </div>
       </div>
 

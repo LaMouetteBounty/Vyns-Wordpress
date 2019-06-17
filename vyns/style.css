@@ -21,6 +21,10 @@ Tags: bootstrap
   src: url("http://localhost:8080/wp-content/themes/vyns/assets/fonts/lato/Lato-Regular.ttf");
 }
 
+body {
+  background-color: white;
+}
+
 .navbar-brand {
   padding-right: 3rem;
 }

@@ -1,11 +1,6 @@
-<?php
-/*
-Template Name: ACTUALITE
-*/
-?>
-
 
 <?php get_header(); ?>
+
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="container-fluid">
 		<section class="actu_type">
@@ -35,9 +30,8 @@ Template Name: ACTUALITE
 						<div class="row ensemble_info">
 							<div class="info_article col-5">
 								<div class="champ_info">
-									<?php if (get_the_title()) : ?> 
-								<p class="post-title"><?php the_title(); ?></p>
-							<?php endif; ?></p>
+                                <p><span>Numéro du vinyle :</span>
+										intergration bdd</p>
 								</div>
 								<div class="champ_info">
 									<p><span>Date de sortie :</span>
@@ -63,7 +57,14 @@ Template Name: ACTUALITE
 									<p><span>Description :</span>
 										intergration bdd</p>
 								</div>
-							</div>
+                            </div>
+                    
+                    <?php
+				$attachments = get_children(array('post_parent' => get_the_ID(), 'post_type' => 'attachment', 'post_mime_type' => 'image', 'orderby' => 'menu_order'));
+				if (!is_array($attachments)) continue;
+				$count = count($attachments);
+				$first_attachment = array_shift($attachments);
+				?>
 							<div class="image_album offset-1 col-5">
 							<?php echo wp_get_attachment_image($first_attachment->ID, 'thumbnail'); ?>
 							</div>
@@ -78,4 +79,5 @@ Template Name: ACTUALITE
 		</section>
 	</div>
 </article>
+
 <?php get_footer(); ?>
