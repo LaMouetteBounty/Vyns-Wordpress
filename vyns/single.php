@@ -5,112 +5,58 @@
         <section class="actu_type">
 
             <div class="container">
-
-
                 <?php
-
                 if (have_posts()) :
-
                     // Loop Start
                     while (have_posts()) :
-
                         the_post();
-
                         ?>
-
-
-                        <div>
+                        <div class="titre_style_inside">
                             <?php if (get_the_title()) : ?>
-                                <h1><?php the_title(); ?></h1>
+                                <h2><?php the_title(); ?></h2>
                             <?php endif; ?>
                         </div>
-
 
                         <div class="row ensemble_info">
                             <div class="info_article col-5">
                                 <div class="champ_info">
-                                    <p><span>Numéro du vinyle :</span></p>
-                                        <p>
-                                        <?php
-                                        // if (get_post_custom($post_id)) :
-                                        // return get_post_meta( $post_id, '_blues_number_value_key', true)['number'];
-                                        // endif;
-
-                                        // if (get_post_custom($post->ID)) :
-                                        //  get_post_meta( $post->ID, '_blues_number_value_key', true);
-                                        //  echo $post->ID;
-                                        // endif;
-
-                                        // $meta_number = get_post_custom( $post->ID, '_blues_number_value_key', true);
-                                        //     echo $meta_number;
-
-                                        // if (get_post_custom($post->ID)) :
-                                        // $meta_number = get_post_meta( $post->ID, '_blues_number_value_key', true);
-                                        // echo $meta_number;
-                                        // endif;
-
-                                        // $meta_number = get_post_meta($post->ID,'_blues_number_value_key', true );
-                                        //     echo  $value . $meta_number;
-
-                                        // $meta_number = get_post_meta($post->ID,'blues_number_field', true );
-                                        // echo $meta_number;
-
-                                        // if ($meta_number = get_post_meta($post->ID,'blues_number_field', true )) :   
-                                        //  echo $meta_number;
-                                        // endif;
-
-
-                                        //  if (get_post_custom($post_id)) :   
-                                        //   $meta_number = get_post_meta($post->ID,'blues_number_field', true);
-                                        //   echo $meta_number;
-                                        // endif;
-
-                                        // var_dump (get_post_meta($post->ID,'_blues_number', true));
-                                        var_dump (get_post_meta(160));
-                                        ?>
-
-                                        
-                                        <br>
-                                         
-                                        </p>
-                                       
-                                        
+                                    <span>Titre du vinyle : </span>
+                                    <p> <?php echo get_post_meta($post->ID, 'vinyle_titre', true); ?></p>
                                 </div>
                                 <div class="champ_info">
-                                    <p><span>Date de sortie :</span>
-                                        intergration bdd</p>
+                                    <span>Numéro du vinyle : </span>
+                                    <p> <?php echo get_post_meta($post->ID, 'blues_number', true); ?></p>
                                 </div>
                                 <div class="champ_info">
-                                    <p><span>Pressage :</span>
-                                        intergration bdd</p>
+                                    <span>Date de sortie : </span>
+                                    <p> <?php echo get_post_meta($post->ID, 'vinyle_date', true); ?></p>
                                 </div>
                                 <div class="champ_info">
-                                    <p><span>Label :</span>
-                                        intergration bdd</p>
+                                    <span>Pressage : </span>
+                                    <p> <?php echo get_post_meta($post->ID, 'vinyle_pressage', true); ?></p>
                                 </div>
                                 <div class="champ_info">
-                                    <p><span>Durée :</span>
-                                        intergration bdd</p>
+                                    <span>Label : </span>
+                                    <p> <?php echo get_post_meta($post->ID, 'vinyle_label', true); ?></p>
                                 </div>
                                 <div class="champ_info">
-                                    <p><span>Prix :</span>
-                                        intergration bdd</p>
+                                    <span>Durée : </span>
+                                    <p> <?php echo get_post_meta($post->ID, 'vinyle_duree', true); ?> minutes</p>
                                 </div>
                                 <div class="champ_info">
-                                    <p><span>Description :</span>
-                                        intergration bdd</p>
+                                    <span>Prix : </span>
+                                    <p><?php echo get_post_meta($post->ID, 'vinyle_prix', true); ?> €</p>
                                 </div>
+
                             </div>
-
-                            <?php
-                            $attachments = get_children(array('post_parent' => get_the_ID(), 'post_type' => 'attachment', 'post_mime_type' => 'image', 'orderby' => 'menu_order'));
-                            if (!is_array($attachments)) continue;
-                            $count = count($attachments);
-                            $first_attachment = array_shift($attachments);
-                            ?>
                             <div class="image_album offset-1 col-5">
-                                <?php echo wp_get_attachment_image($first_attachment->ID, 'thumbnail'); ?>
+                                <?php the_post_thumbnail('large'); ?>
                             </div>
+                        </div>
+
+                        <div class="row champ_description">
+                            <span>Description : </span>
+                            <p> <?php echo get_post_meta($post->ID, 'vinyle_description', true); ?></p>
                         </div>
                     <?php
 

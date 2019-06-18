@@ -61,7 +61,7 @@ Template Name: HOME
   <div class="main_home">
     <div class="container">
       <div class="row rubriques">
-        <a href="#">
+        <a href="http://localhost:8080/?page_id=39">
           <div class="rubrique_blues">
             <img src="http://localhost:8080/wp-content/themes/vyns/assets/images/rubriques/blues.jpg" width="150" height="150" alt="photo harmonica rubrique blues">
             <p class="rubrique_style">BLUES</p>
@@ -75,7 +75,7 @@ Template Name: HOME
           </div>
         </a>
 
-        <a href="#">
+        <a href="http://localhost:8080/?page_id=49">
           <div class="rubrique_disco">
             <img src="http://localhost:8080/wp-content/themes/vyns/assets/images/rubriques/disco.jpg" width="150" height="150" alt="photo synthétiseur rubrique disco">
             <p class="rubrique_style">DISCO</p>
@@ -90,7 +90,7 @@ Template Name: HOME
           </div>
         </a>
 
-        <a href="#">
+        <a href="http://localhost:8080/?page_id=46">
           <div class="rubrique_rock">
             <img src="http://localhost:8080/wp-content/themes/vyns/assets/images/rubriques/rock.jpg" width="150" height="150" alt="photo guitare électrique rubrique rock">
             <p class="rubrique_style">ROCK</p>
@@ -104,7 +104,7 @@ Template Name: HOME
           </div>
         </a>
 
-        <a href="#">
+        <a href="http://localhost:8080/?page_id=51">
           <div class="rubrique_jazz">
             <img src="http://localhost:8080/wp-content/themes/vyns/assets/images/rubriques/jazz.jpg" width="150" height="150" alt="photo saxophone rubrique jazz">
             <p class="rubrique_style">JAZZ</p>

@@ -30,7 +30,7 @@ body {
 }
 
 .navbar-light {
-  border-bottom: #d1d2d4 solid .5px;
+  border-bottom: #d1d2d4 solid 0.5px;
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -81,7 +81,7 @@ body {
 .main_home .rubriques .rubrique_blues .rubrique_style {
   font-size: 1.4em;
   margin-bottom: 0;
-  margin-top: .7rem;
+  margin-top: 0.7rem;
   text-decoration: none;
   text-align: center;
   color: black;
@@ -99,7 +99,7 @@ body {
 }
 
 .main_home .rubriques .rubrique_blues img:hover {
-  opacity: .5;
+  opacity: 0.5;
 }
 
 .main_home .rubriques .rubrique_blues .rubrique_style:hover {
@@ -118,7 +118,7 @@ body {
 .main_home .rubriques .rubrique_disco .rubrique_style {
   font-size: 1.4em;
   margin-bottom: 0;
-  margin-top: .7rem;
+  margin-top: 0.7rem;
   text-decoration: none;
   text-align: center;
   color: black;
@@ -136,7 +136,7 @@ body {
 }
 
 .main_home .rubriques .rubrique_disco img:hover {
-  opacity: .5;
+  opacity: 0.5;
 }
 
 .main_home .rubriques .rubrique_disco .rubrique_style:hover {
@@ -155,7 +155,7 @@ body {
 .main_home .rubriques .rubrique_rock .rubrique_style {
   font-size: 1.4em;
   margin-bottom: 0;
-  margin-top: .7rem;
+  margin-top: 0.7rem;
   text-decoration: none;
   text-align: center;
   color: black;
@@ -173,7 +173,7 @@ body {
 }
 
 .main_home .rubriques .rubrique_rock img:hover {
-  opacity: .5;
+  opacity: 0.5;
 }
 
 .main_home .rubriques .rubrique_rock .rubrique_style:hover {
@@ -192,7 +192,7 @@ body {
 .main_home .rubriques .rubrique_jazz .rubrique_style {
   font-size: 1.4em;
   margin-bottom: 0;
-  margin-top: .7rem;
+  margin-top: 0.7rem;
   text-decoration: none;
   text-align: center;
   color: black;
@@ -210,7 +210,7 @@ body {
 }
 
 .main_home .rubriques .rubrique_jazz img:hover {
-  opacity: .5;
+  opacity: 0.5;
 }
 
 .main_home .rubriques .rubrique_jazz .rubrique_style:hover {
@@ -271,7 +271,7 @@ body {
 
 footer {
   height: 10vh;
-  border-top: #d1d2d4 solid .5px;
+  border-top: #d1d2d4 solid 0.5px;
 }
 
 footer .content_footer {
@@ -287,7 +287,7 @@ footer .content_footer {
 footer .content_footer .copyright {
   font-family: "oswald";
   font-weight: 300;
-  font-size: .9em;
+  font-size: 0.9em;
 }
 
 footer .content_footer .menu_footer ul {
@@ -302,8 +302,8 @@ footer .content_footer .menu_footer ul {
 
 footer .content_footer .menu_footer ul li {
   list-style: none;
-  padding-right: .4rem;
-  padding-left: .4rem;
+  padding-right: 0.4rem;
+  padding-left: 0.4rem;
 }
 
 footer .content_footer .menu_footer ul li a {
@@ -311,7 +311,7 @@ footer .content_footer .menu_footer ul li a {
   font-family: "oswald";
   color: black;
   font-weight: 600;
-  font-size: .9em;
+  font-size: 0.9em;
 }
 
 footer .content_footer .menu_footer ul li a:hover {
@@ -319,8 +319,8 @@ footer .content_footer .menu_footer ul li a:hover {
 }
 
 footer .content_footer .reseaux img {
-  margin-right: .4rem;
-  margin-left: .4rem;
+  margin-right: 0.4rem;
+  margin-left: 0.4rem;
 }
 
 footer .content_footer .reseaux img:hover {
@@ -358,7 +358,7 @@ footer .content_footer .reseaux img:hover {
 .page_type .titre_article {
   font-size: 1.5em;
   margin-bottom: 0;
-  margin-top: .7rem;
+  margin-top: 0.7rem;
   text-decoration: none;
   text-align: center;
   color: black;
@@ -403,7 +403,7 @@ footer .content_footer .reseaux img:hover {
 }
 
 .page_type .articles img:hover {
-  opacity: .5;
+  opacity: 0.5;
 }
 
 .page_type .link_article {
@@ -427,12 +427,12 @@ footer .content_footer .reseaux img:hover {
 }
 
 .actu_type .titre_style_inside {
-  padding-top: 6px;
-  padding-bottom: 2px;
+  padding: 8px 9px 2px 10px;
   margin-left: auto;
   margin-right: auto;
   background-color: black;
   width: 15rem;
+  margin-bottom: 5rem;
 }
 
 .actu_type .titre_style_inside h2 {
@@ -489,14 +489,36 @@ footer .content_footer .reseaux img:hover {
           flex-direction: row;
 }
 
-.actu_type .ensemble_info .info_article .champ_info p {
+.actu_type .ensemble_info .info_article .champ_info span {
   font-family: "oswald";
-  font-size: 1em;
+  font-size: 1.35em;
+  font-weight: 600;
 }
 
-.actu_type .ensemble_info .info_article .champ_info p span {
+.actu_type .ensemble_info .info_article .champ_info p {
   font-family: "oswald";
-  font-size: 1em;
+  font-size: 1.35em;
+}
+
+.actu_type .champ_description {
+  margin-top: 5rem;
+  padding: 3rem;
+  background-color: white;
+  -webkit-box-shadow: 3px 3px 10px 1px #656565;
+          box-shadow: 3px 3px 10px 1px #656565;
+}
+
+.actu_type .champ_description span {
+  font-family: "oswald";
+  font-size: 1.35em;
   font-weight: 600;
+  padding-bottom: 1rem;
+}
+
+.actu_type .champ_description p {
+  font-family: "lato";
+  color: black;
+  font-size: 1em;
+  text-align: justify;
 }
 /*# sourceMappingURL=style.css.map */
