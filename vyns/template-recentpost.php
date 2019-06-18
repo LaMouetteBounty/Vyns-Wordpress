@@ -2,62 +2,45 @@
 /*
 Template Name: POST LIST
 */
- 
 ?>
 <?php get_header(); ?>
+<?php
+$query = new WP_Query(array(
+	$size =
+	'post_type' => 'post', // type de posts
+	'posts_per_page' => -1, // infini
+	'orderby' => 'date', // par titre
+)); ?>
 <div class="container-fluid">
-	<section class="page_type">
-
-		<div class="container">
-			<div class="row">
-				<div class="titre_style">
-					<h2> ACTUALITÉS </h2>
-				</div>
-            </div>
-            
-<!-- ############################################################## -->
-<!-- ############################################################## -->
-<!-- ############################################################## -->
-            <?php
-			$query = new WP_Query(array(
-				$size =
-					// 'post_type' => 'posts',
-				'posts_per_page' => -1, // infini
-				'orderby' => 'date', // par titre
-			));
-			?>
-			<?php while ($query->have_posts()) : $query->the_post(); ?>
-				<?php
-				$attachments = get_children(array('post_parent' => get_the_ID(), 'post_type' => 'attachment', 'post_mime_type' => 'image', 'orderby' => 'menu_order'));
-				if (!is_array($attachments)) continue;
-				$count = count($attachments);
-				$first_attachment = array_shift($attachments);
-                ?>
- <!-- ############################################################## -->
-<!-- ############################################################## -->
-<!-- ############################################################## -->
-
-<div class="row">
-					<p class="titre_article"><?php the_modified_date(); ?> <span> > </span> <?php the_title(); ?> </p>
-				</div>
-
-				<div class="row articles">
-					<div class="img_article"><?php echo wp_get_attachment_image($first_attachment->ID, 'thumbnail'); ?></div>
-					<div class="extrait_article"><p><?php the_excerpt(); ?></p></div>
-				</div>
-				<a class="link_article" href="<?php the_permalink(); ?>"> > Lire l'article complet </a>
-                
-
- <!-- ############################################################## -->
-<!-- ############################################################## -->
-<!-- ############################################################## -->   
-<?php endwhile; ?>
+	<div class="container">
+		<div class="row">
+			<div class="titre_style_actu">
+				<h2> ACTUALITÉS </h2>
 			</div>
-		
-</div>
-</section>
-</div>
+		</div>
+		<!-- ############################################################## -->
+
+		<?php while ($query->have_posts()) : $query->the_post(); ?>
+			<!-- ############################################################## -->
+			<div class="underline_actu"></div>
+			<div class=" row actu_content">
+
+				<div class="img_actu col-3">
+					<?php the_post_thumbnail('medium') ?>
+				</div>
+
+				<div class="content_post offset-1 col-8">
+					<p class="titre_article_actu"><?php the_title(); ?> </p>
+					<p><?php the_content(); ?></p>
+					<p><?php the_modified_date(); ?></p>
+				</div>
+			</div>
+
+			<div class="underline_actu"></div>
+
+			<!-- ############################################################## -->
+<?php endwhile; ?>
+		</div>
+	</div>
 
 <?php get_footer(); ?>
-
-

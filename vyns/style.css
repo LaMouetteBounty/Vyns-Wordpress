@@ -44,9 +44,24 @@ body {
   padding-left: 1rem;
 }
 
-.bd-example {
-  margin-top: 30px;
-  margin-bottom: 30px;
+.carousel {
+  margin: 56px;
+}
+
+.carousel .carousel-caption {
+  background-color: rgba(0, 0, 0, 0.6);
+  right: 0;
+  left: 0;
+}
+
+.carousel .carousel-caption h2 {
+  font-family: "oswald";
+  color: white;
+}
+
+.carousel .carousel-caption p {
+  font-family: "lato";
+  color: white;
 }
 
 .main_home {
@@ -520,5 +535,48 @@ footer .content_footer .reseaux img:hover {
   color: black;
   font-size: 1em;
   text-align: justify;
+}
+
+.titre_style_actu {
+  padding: 8px 9px 2px 10px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: black;
+  width: 15rem;
+  margin-top: 5rem;
+}
+
+.titre_style_actu h2 {
+  text-align: center;
+  font-family: "anton";
+  color: white;
+  font-size: 3em;
+}
+
+.actu_content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.actu_content .img_actu {
+  float: left;
+}
+
+.actu_content .content_post .titre_article_actu {
+  font-size: 1.5em;
+  color: black;
+  font-family: "oswald";
+  font-weight: 600;
+}
+
+.underline_actu {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border-bottom: #d1d2d4 solid 0.5px;
 }
 /*# sourceMappingURL=style.css.map */

@@ -4,52 +4,60 @@ Template Name: HOME
 */
 ?>
 <?php get_header(); ?>
+<?php
+$query = new WP_Query(array(
+
+  'post_type' => 'post',
+  'posts_per_page' => 3, // infini
+  'orderby' => 'date_post',
+  'order' => 'DESC' // par titre
+)); ?>
 <div class="container-fluid">
   <div class="container">
     <div class="row">
 
-      <div class="bd-example">
-        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-          <ol class="carousel-indicators">
-            <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-            <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-          </ol>
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="http://localhost:8080/wp-content/themes/vyns/assets/images/blues/guitar-839168_1280.jpg" class="d-block w-100" alt="...">
+
+
+      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <?php if ($query->have_posts()) : $query->the_post(); ?>
+              <div class="d-block w-100"><?php the_post_thumbnail('large') ?></div>
               <div class="carousel-caption d-none d-md-block">
-                <h5>First slide label</h5>
-                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img src="http://localhost:8080/wp-content/themes/vyns/assets/images/jazz/pub-3284641_1920.jpg" class="d-block w-100" alt="...">
-              <div class="carousel-caption d-none d-md-block">
-                <h5>Second slide label</h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img src="http://localhost:8080/wp-content/themes/vyns/assets/images/rock/musician-2708190_1920.jpg" class="d-block w-100" alt="...">
-              <div class="carousel-caption d-none d-md-block">
-                <h5>Third slide label</h5>
-                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-              </div>
+                <h2><?php the_title(); ?></h2>
+                <p><?php the_excerpt(); ?></p>
+              <?php endif; ?>
             </div>
           </div>
-          <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
+
+          <div class="carousel-item">
+            <?php if ($query->have_posts()) : $query->the_post(); ?>
+              <div class="d-block w-100"><?php the_post_thumbnail('large') ?></div>
+              <div class="carousel-caption d-none d-md-block">
+                <h2><?php the_title(); ?></h2>
+                <p><?php the_excerpt(); ?></p>
+              <?php endif; ?>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <?php if ($query->have_posts()) : $query->the_post(); ?>
+              <div class="d-block w-100"><?php the_post_thumbnail('large') ?></div>
+              <div class="carousel-caption d-none d-md-block">
+                <h2><?php the_title(); ?></h2>
+                <p><?php the_excerpt(); ?></p>
+              <?php endif; ?>
+            </div>
+          </div>
         </div>
+
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span></a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span></a>
       </div>
-
-
     </div>
   </div>
 </div>
