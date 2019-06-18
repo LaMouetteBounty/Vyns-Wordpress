@@ -133,28 +133,30 @@ $query = new WP_Query(array(
         <h1> CONTACT </h1>
       </div>
       <div class="row contact">
-        <form role="form" id="contactForm" data-toggle="validator" class="shake col-5">
-          <div class="row">
+      <form role="form" id="contactForm" data-toggle="validator" class="shake col-5">
+        <div class="row">
             <div class="form-group col-sm-6">
-              <label for="name" class="h4">Nom</label>
-              <input type="text" class="form-control" id="name" required data-error="NEW ERROR MESSAGE">
-              <div class="help-block with-errors"></div>
+                <label for="name" class="h4">Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter name" required data-error="NEW ERROR MESSAGE">
+                <div class="help-block with-errors"></div>
             </div>
             <div class="form-group col-sm-6">
-              <label for="email" class="h4">Email</label>
-              <input type="email" class="form-control" id="email" required>
-              <div class="help-block with-errors"></div>
+                <label for="email" class="h4">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter email" required>
+                <div class="help-block with-errors"></div>
             </div>
-          </div>
-          <div class="form-group">
+        </div>
+        <div class="form-group">
             <label for="message" class="h4 ">Message</label>
-            <textarea id="message" class="form-control" rows="5" required></textarea>
+            <textarea id="message" class="form-control" rows="5" placeholder="Enter your message" required></textarea>
             <div class="help-block with-errors"></div>
-          </div>
-          <button type="submit" id="form-submit" class="btn btn-success btn-lg pull-right ">ENVOYER</button>
-          <div id="msgSubmit" class="h3 text-center hidden"></div>
-          <div class="clearfix"></div>
-        </form>
+        </div>
+        <button type="submit" id="form-submit" class="btn btn-success btn-lg pull-right ">Submit</button>
+        <div id="msgSubmit" class="h3 text-center hidden"></div>
+        <div class="clearfix"></div>
+    </form>
+
+
         <div class="map offset-1 col-5">
           <!-- <form>
             <label for="adresse">Entrez votre adresse postale</label>

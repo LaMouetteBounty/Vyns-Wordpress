@@ -6,7 +6,8 @@ add_theme_support( 'post-thumbnails' );
 // Ajout des styles
 function wpm_enqueue_styles(){
     wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
-    wp_enqueue_script( 'script', get_stylesheet_directory_uri() . '/script.js' );
+	wp_enqueue_script( 'script', get_stylesheet_directory_uri() . '/script.js' );
+	wp_enqueue_script( 'script', get_stylesheet_directory_uri() . '/validator.min.js' );
     }
     add_action( 'wp_enqueue_scripts', 'wpm_enqueue_styles' );
 
