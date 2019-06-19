@@ -45,7 +45,7 @@ body {
 }
 
 .carousel {
-  margin: 56px;
+  margin: 2rem 0 2rem 0;
 }
 
 .carousel .carousel-caption {
@@ -65,7 +65,7 @@ body {
 }
 
 .main_home {
-  height: 800px;
+  height: 115vh;
   background-image: url("http://localhost:8080/wp-content/themes/vyns/assets/images/background/music-1645561_1920.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -578,5 +578,23 @@ footer .content_footer .reseaux img:hover {
   margin-top: 2rem;
   margin-bottom: 2rem;
   border-bottom: #d1d2d4 solid 0.5px;
+}
+
+@media (max-width: 576px) {
+  .main_home {
+    height: 250vh;
+  }
+  .main_home .rubriques {
+    padding-top: 2rem;
+  }
+  .main_home .rubriques .rubrique_blues {
+    margin-bottom: 1rem;
+  }
+  .main_home .rubriques .rubrique_rock {
+    margin-bottom: 1rem;
+  }
+  .main_home .rubriques .rubrique_disco {
+    margin-bottom: 1rem;
+  }
 }
 /*# sourceMappingURL=style.css.map */

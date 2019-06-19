@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+    
     <title>Vyns</title>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet'/>
     <link crossorigin="" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" rel="stylesheet"/>
@@ -23,7 +24,7 @@
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container header">
                 <div class="row">
-                    <a class="navbar-brand" href="#"><img src="http://localhost:8080/wp-content/themes/vyns/assets/images/logo.svg"></a>
+                    <a class="navbar-brand" href="http://localhost:8080/?page_id=88""><img src="http://localhost:8080/wp-content/themes/vyns/assets/images/logo.svg"></a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>

@@ -39,7 +39,9 @@ Template Name: BLUES LIST
 					<div class="img_article"><?php echo wp_get_attachment_image($first_attachment->ID, 'thumbnail'); ?></div>
 					<div class="extrait_article"><p><?php the_excerpt(); ?></p></div>
 				</div>
+				
 				<a class="link_article" href="<?php the_permalink(); ?>"> > Lire l'article complet </a>
+				<a class="link_article" href="#"> > Haut de page </a>
 <?php endwhile; ?>
 			</div>
 		

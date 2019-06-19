@@ -50,7 +50,7 @@ body {
 // ############################################
 
 .carousel {
-  margin: 56px;
+  margin: 2rem 0 2rem 0;
 
   .carousel-caption {
     background-color: rgba($color: #000000, $alpha: 0.6);
@@ -74,7 +74,7 @@ body {
 // ############################################
 
 .main_home {
-  height: 800px;
+  height: 115vh;
   background-image: url("http://localhost:8080/wp-content/themes/vyns/assets/images/background/music-1645561_1920.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -492,7 +492,7 @@ footer {
   background-color: black;
   width: 15rem;
   margin-top: 5rem;
-  
+
   h2 {
     text-align: center;
     font-family: "anton";
@@ -515,12 +515,63 @@ footer {
       font-weight: 600;
     }
   }
-
-  
 }
 
-.underline_actu{
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    border-bottom: #d1d2d4 solid 0.5px;
+.underline_actu {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border-bottom: #d1d2d4 solid 0.5px;
 }
+
+// ##################################################################
+// ##################################################################
+// ########################  RESPONSIVE  ############################
+// ##################################################################
+// ##################################################################
+// Small devices (landscape phones, 576px and up)
+@media (max-width: 576px) {
+  .main_home {
+    height: 250vh;
+    .rubriques {
+      padding-top: 2rem;
+      .rubrique_blues {
+        margin-bottom: 1rem;
+      }
+      .rubrique_rock {
+        margin-bottom: 1rem;
+      }
+      .rubrique_disco {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
+
+// ###############################################
+// ###  Medium devices (tablets, 768px and up) ###
+// ###############################################
+// @media (min-width: 576px) and (max-width: 767.98px) {
+
+//  }
+
+// ###############################################
+// Large devices (desktops, 992px and up)
+// ###############################################
+// @media (min-width: 768px) and (max-width: 991.98px) {
+
+//  }
+
+// ###############################################
+// Large devices (desktops, 992px and up)
+// ###############################################
+
+// @media (min-width: 992px) and (max-width: 1199.98px) {
+
+//  }
+
+// ###############################################
+// Extra large devices (large desktops, 1200px and up)
+// ###############################################
+// @media (min-width: 1200px) {
+
+// }

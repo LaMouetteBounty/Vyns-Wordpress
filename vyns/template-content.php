@@ -19,10 +19,10 @@ $query = new WP_Query(array(
 
 
       <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
+        <div class="carousel-inner  col-12">
           <div class="carousel-item active">
             <?php if ($query->have_posts()) : $query->the_post(); ?>
-              <div class="d-block w-100"><?php the_post_thumbnail('large') ?></div>
+              <img class="d-block w-100 img-fluid" src="http://localhost:8080/wp-content/themes/vyns/assets/images/jazz/pub-3284641_1920.jpg">
               <div class="carousel-caption d-none d-md-block">
                 <h2><?php the_title(); ?></h2>
                 <p><?php the_excerpt(); ?></p>
@@ -32,7 +32,7 @@ $query = new WP_Query(array(
 
           <div class="carousel-item">
             <?php if ($query->have_posts()) : $query->the_post(); ?>
-              <div class="d-block w-100"><?php the_post_thumbnail('large') ?></div>
+            <img class="d-block w-100 img-fluid" src="http://localhost:8080/wp-content/themes/vyns/assets/images/blues/guitar-839168_1280.jpg">
               <div class="carousel-caption d-none d-md-block">
                 <h2><?php the_title(); ?></h2>
                 <p><?php the_excerpt(); ?></p>
@@ -42,7 +42,7 @@ $query = new WP_Query(array(
 
           <div class="carousel-item">
             <?php if ($query->have_posts()) : $query->the_post(); ?>
-              <div class="d-block w-100"><?php the_post_thumbnail('large') ?></div>
+            <img class="d-block w-100 img-fluid" src="http://localhost:8080/wp-content/themes/vyns/assets/images/rock/musician-2708190_1920.jpg">
               <div class="carousel-caption d-none d-md-block">
                 <h2><?php the_title(); ?></h2>
                 <p><?php the_excerpt(); ?></p>
@@ -127,13 +127,15 @@ $query = new WP_Query(array(
         </a>
       </div>
     </div>
+
+
     <!-- #################FORMULAIRE CONTACT###################### -->
     <div class="container">
       <div class="row titre_contact">
         <h1> CONTACT </h1>
       </div>
       <div class="row contact">
-      <form role="form" id="contactForm" data-toggle="validator" class="shake col-5">
+      <form role="form" id="contactForm" data-toggle="validator" class="shake xs-col-12 sm-col-12 md-col-12 lg-col-5 xl-col-5">
         <div class="row">
             <div class="form-group col-sm-6">
                 <label for="name" class="h4">Name</label>
@@ -157,6 +159,7 @@ $query = new WP_Query(array(
     </form>
 
 
+    
         <div class="map offset-1 col-5">
           <!-- <form>
             <label for="adresse">Entrez votre adresse postale</label>

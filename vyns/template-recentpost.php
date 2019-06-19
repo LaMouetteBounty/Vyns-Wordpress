@@ -32,7 +32,7 @@ $query = new WP_Query(array(
 				<div class="content_post offset-1 col-8">
 					<p class="titre_article_actu"><?php the_title(); ?> </p>
 					<p><?php the_content(); ?></p>
-					<p><?php the_modified_date(); ?></p>
+					<p> Publié le <?php the_modified_date(); ?></p>
 				</div>
 			</div>
 
