@@ -25,11 +25,17 @@ $query = new WP_Query(array(
 			<div class="underline_actu"></div>
 			<div class=" row actu_content">
 
-				<div class="img_actu col-3">
+				<div class="img_actu 
+				xs-col-12 sm-col-12 
+				md-col-3 lg-col-3 xl-col-3">
 					<?php the_post_thumbnail('medium') ?>
 				</div>
 
-				<div class="content_post offset-1 col-8">
+				<div class="content_post 
+				sm-col-12 xs-col-12
+				md-offset-1 md-col-8 
+				lg-offset-1 lg-col-8 
+				xl-offset-1 xl-col-8">
 					<p class="titre_article_actu"><?php the_title(); ?> </p>
 					<p><?php the_content(); ?></p>
 					<p> Publié le <?php the_modified_date(); ?></p>

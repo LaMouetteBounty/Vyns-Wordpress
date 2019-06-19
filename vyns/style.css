@@ -44,6 +44,18 @@ body {
   padding-left: 1rem;
 }
 
+.navbar-light .navbar-toggler {
+  height: 50px;
+  margin-top: 14px;
+  color: black;
+  border-color: white;
+}
+
+button:focus {
+  outline: 1px dotted;
+  outline: 5px auto rgba(0, 0, 0, 0.6);
+}
+
 .carousel {
   margin: 2rem 0 2rem 0;
 }
@@ -370,7 +382,7 @@ footer .content_footer .reseaux img:hover {
   font-size: 3em;
 }
 
-.page_type .titre_article {
+.page_type .titre_article p {
   font-size: 1.5em;
   margin-bottom: 0;
   margin-top: 0.7rem;
@@ -385,27 +397,20 @@ footer .content_footer .reseaux img:hover {
   color: grey;
 }
 
-.page_type .date_article {
-  color: black;
-  font-family: "oswald";
-  text-align: center;
-  font-size: 1.4em;
-}
-
 .page_type .articles {
   border: black 4px solid;
   background-color: black;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal !important;
-  -webkit-box-direction: normal !important;
-      -ms-flex-direction: row !important;
-          flex-direction: row !important;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
 .page_type .articles .img_article {
-  float: left !important;
+  float: left;
 }
 
 .page_type .articles .extrait_article {
@@ -421,14 +426,14 @@ footer .content_footer .reseaux img:hover {
   opacity: 0.5;
 }
 
-.page_type .link_article {
+.page_type .link_article a {
   color: black;
   font-family: "oswald";
   float: right;
   margin-right: 1rem;
 }
 
-.page_type .link_article:hover {
+.page_type .link_article a:hover {
   color: grey;
 }
 
@@ -574,6 +579,11 @@ footer .content_footer .reseaux img:hover {
   font-weight: 600;
 }
 
+.actu_content .content_post .contenue_text_actu {
+  font-size: 1em;
+  font-family: "lato";
+}
+
 .underline_actu {
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -581,8 +591,14 @@ footer .content_footer .reseaux img:hover {
 }
 
 @media (max-width: 576px) {
+  .navbar-light .navbar-nav .nav-link {
+    color: black;
+    font-family: "oswald";
+    font-weight: 100;
+    font-size: 1.35em;
+  }
   .main_home {
-    height: 250vh;
+    height: 260vh;
   }
   .main_home .rubriques {
     padding-top: 2rem;
@@ -595,6 +611,227 @@ footer .content_footer .reseaux img:hover {
   }
   .main_home .rubriques .rubrique_disco {
     margin-bottom: 1rem;
+  }
+  .main_home .rubriques .rubrique_jazz {
+    margin-bottom: 3rem;
+  }
+  footer {
+    height: 60vh;
+  }
+  footer .content_footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  footer .content_footer .menu_footer ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-right: 28px;
+  }
+  footer .content_footer .menu_footer ul li {
+    padding: 0;
+    text-align: center;
+  }
+  footer .content_footer .menu_footer ul li a {
+    font-size: 1.4em;
+  }
+  footer .content_footer .reseaux {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .actu_content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .actu_content .img_actu {
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .actu_content .content_post .titre_article_actu {
+    text-align: center;
+  }
+  .actu_content .content_post p {
+    font-size: 1.3em;
+    font-family: "lato";
+  }
+  .page_type .titre_article {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    margin: 0;
+    width: 100%;
+    padding-top: 1rem;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .page_type .titre_article p {
+    padding: 0;
+    color: black;
+    font-size: 1.7em;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .page_type .articles {
+    background-color: white;
+    border-color: white;
+  }
+  .page_type .articles .img_article {
+    float: none;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .page_type .articles .extrait_article {
+    color: black;
+    font-size: 1.2em;
+  }
+  .page_type .link_article {
+    padding-bottom: 3.5rem;
+    border-bottom: #656565 1px solid;
+    font-size: 1.3em;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .main_home {
+    height: 260vh;
+  }
+  .main_home .rubriques {
+    padding-top: 2rem;
+    margin-left: 5.5rem;
+    margin-right: 4.5rem;
+  }
+  .main_home .rubriques .rubrique_blues {
+    margin-bottom: 1rem;
+  }
+  .main_home .rubriques .rubrique_rock {
+    margin-bottom: 1rem;
+  }
+  .main_home .rubriques .rubrique_disco {
+    margin-bottom: 1rem;
+  }
+  .main_home .rubriques .rubrique_jazz {
+    margin-bottom: 3rem;
+  }
+  .page_type .titre_article {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    margin: 0;
+    width: 100%;
+    padding-top: 1rem;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .page_type .titre_article p {
+    padding: 0;
+    color: black;
+    font-size: 1.7em;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .page_type .articles {
+    background-color: white;
+    border-color: white;
+  }
+  .page_type .articles .img_article {
+    float: none;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .page_type .articles .extrait_article {
+    color: black;
+    font-size: 1.2em;
+  }
+  .page_type .link_article {
+    padding-bottom: 3.5rem;
+    border-bottom: #656565 1px solid;
+    font-size: 1.3em;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .main_home {
+    height: 260vh;
+  }
+  .main_home .rubriques {
+    padding-top: 2rem;
+  }
+  .main_home .rubriques .rubrique_blues {
+    margin-bottom: 1rem;
+  }
+  .main_home .rubriques .rubrique_rock {
+    margin-bottom: 1rem;
+  }
+  .main_home .rubriques .rubrique_disco {
+    margin-bottom: 1rem;
+  }
+  .main_home .rubriques .rubrique_jazz {
+    margin-bottom: 3rem;
+  }
+  .page_type .titre_article {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    margin: 0;
+    width: 100%;
+    padding-top: 1rem;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .page_type .titre_article p {
+    padding: 0;
+    color: black;
+    font-size: 1.7em;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .page_type .articles {
+    background-color: white;
+    border-color: white;
+  }
+  .page_type .articles .img_article {
+    float: none;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .page_type .articles .extrait_article {
+    color: black;
+    font-size: 1.2em;
+  }
+  .page_type .link_article {
+    padding-bottom: 3.5rem;
+    border-bottom: #656565 1px solid;
+    font-size: 1.3em;
   }
 }
 /*# sourceMappingURL=style.css.map */

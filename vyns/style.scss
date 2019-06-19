@@ -44,6 +44,17 @@ body {
   padding-right: 1rem;
   padding-left: 1rem;
 }
+.navbar-light .navbar-toggler {
+  height: 50px;
+  // float: right !important;
+  margin-top: 14px;
+  color: black;
+  border-color: white;
+}
+button:focus {
+  outline: 1px dotted;
+  outline: 5px auto rgba($color: #000000, $alpha: 0.6);
+}
 
 // ############################################
 // ################ CAROUSEL ####################
@@ -349,32 +360,27 @@ footer {
   }
 
   .titre_article {
-    font-size: 1.5em;
-    margin-bottom: 0;
-    margin-top: 0.7rem;
-    text-decoration: none;
-    text-align: center;
-    color: black;
-    font-family: "oswald";
-    font-weight: 600;
+    p {
+      font-size: 1.5em;
+      margin-bottom: 0;
+      margin-top: 0.7rem;
+      text-decoration: none;
+      text-align: center;
+      color: black;
+      font-family: "oswald";
+      font-weight: 600;
+    }
   }
   .titre_article:hover {
     color: grey;
   }
-  .date_article {
-    color: black;
-    font-family: "oswald";
-    text-align: center;
-    font-size: 1.4em;
-  }
-
   .articles {
     border: black 4px solid;
     background-color: black;
     display: flex;
-    flex-direction: row !important;
+    flex-direction: row;
     .img_article {
-      float: left !important;
+      float: left;
     }
     .extrait_article {
       padding-left: 1rem;
@@ -389,12 +395,14 @@ footer {
     }
   }
   .link_article {
-    color: black;
-    font-family: "oswald";
-    float: right;
-    margin-right: 1rem;
+    a {
+      color: black;
+      font-family: "oswald";
+      float: right;
+      margin-right: 1rem;
+    }
   }
-  .link_article:hover {
+  .link_article a:hover {
     color: grey;
   }
 }
@@ -514,6 +522,10 @@ footer {
       font-family: "oswald";
       font-weight: 600;
     }
+    .contenue_text_actu {
+      font-size: 1em;
+      font-family: "lato";
+    }
   }
 }
 
@@ -530,8 +542,16 @@ footer {
 // ##################################################################
 // Small devices (landscape phones, 576px and up)
 @media (max-width: 576px) {
+  .navbar-light .navbar-nav .nav-link {
+    color: black;
+    font-family: "oswald";
+    font-weight: 100;
+    font-size: 1.35em;
+    // text-align: center;
+  }
+
   .main_home {
-    height: 250vh;
+    height: 260vh;
     .rubriques {
       padding-top: 2rem;
       .rubrique_blues {
@@ -543,23 +563,225 @@ footer {
       .rubrique_disco {
         margin-bottom: 1rem;
       }
+      .rubrique_jazz {
+        margin-bottom: 3rem;
+      }
+    }
+  }
+
+  footer {
+    height: 60vh;
+    .content_footer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .menu_footer {
+        ul {
+          display: flex;
+          flex-direction: column;
+          margin-right: 28px;
+          // text-align: center !important;
+          li {
+            padding: 0;
+            text-align: center;
+            a {
+              font-size: 1.4em;
+              // text-align: center;
+            }
+          }
+        }
+      }
+      .reseaux {
+        align-items: center;
+      }
+    }
+  }
+  // PAGE ACTUALITE
+  .actu_content {
+    display: flex;
+    flex-direction: column;
+    .img_actu {
+      margin-right: auto;
+      margin-left: auto;
+    }
+    .content_post {
+      .titre_article_actu {
+        text-align: center;
+      }
+      p {
+        font-size: 1.3em;
+        font-family: "lato";
+      }
+    }
+  }
+  // TEMPLATES
+  .page_type {
+    .titre_article {
+      display: flex;
+      flex-direction: row;
+      margin: 0;
+      width: 100%;
+      padding-top: 1rem;
+      margin-right: auto;
+      margin-left: auto;
+      p {
+        padding: 0;
+        color: black;
+        font-size: 1.7em;
+        margin-right: auto;
+        margin-left: auto;
+      }
+    }
+    .articles {
+      background-color: white;
+      border-color: white;
+      .img_article {
+        float: none;
+        margin-right: auto;
+        margin-left: auto;
+      }
+      .extrait_article {
+        color: black;
+        font-size: 1.2em;
+      }
+    }
+    .link_article {
+      padding-bottom: 3.5rem;
+      border-bottom: #656565 1px solid;
+      font-size: 1.3em;
+    }
+  }
+}
+// ###############################################
+// ###  Medium devices (tablets, 768px and up) ###
+// ###############################################
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .main_home {
+    height: 260vh;
+    .rubriques {
+      padding-top: 2rem;
+      margin-left: 5.5rem;
+      margin-right: 4.5rem;
+      .rubrique_blues {
+        margin-bottom: 1rem;
+      }
+      .rubrique_rock {
+        margin-bottom: 1rem;
+      }
+      .rubrique_disco {
+        margin-bottom: 1rem;
+      }
+      .rubrique_jazz {
+        margin-bottom: 3rem;
+      }
+    }
+  }
+
+  // TEMPLATES
+  .page_type {
+    .titre_article {
+      display: flex;
+      flex-direction: row;
+      margin: 0;
+      width: 100%;
+      padding-top: 1rem;
+      margin-right: auto;
+      margin-left: auto;
+      p {
+        padding: 0;
+        color: black;
+        font-size: 1.7em;
+        margin-right: auto;
+        margin-left: auto;
+      }
+    }
+    .articles {
+      background-color: white;
+      border-color: white;
+      .img_article {
+        float: none;
+        margin-right: auto;
+        margin-left: auto;
+      }
+      .extrait_article {
+        color: black;
+        font-size: 1.2em;
+      }
+    }
+    .link_article {
+      padding-bottom: 3.5rem;
+      border-bottom: #656565 1px solid;
+      font-size: 1.3em;
     }
   }
 }
 
 // ###############################################
-// ###  Medium devices (tablets, 768px and up) ###
-// ###############################################
-// @media (min-width: 576px) and (max-width: 767.98px) {
-
-//  }
-
-// ###############################################
 // Large devices (desktops, 992px and up)
 // ###############################################
-// @media (min-width: 768px) and (max-width: 991.98px) {
+@media (min-width: 768px) and (max-width: 991.98px) {
 
-//  }
+  .main_home {
+    height: 260vh;
+    .rubriques {
+      padding-top: 2rem;
+      .rubrique_blues {
+        margin-bottom: 1rem;
+      }
+      .rubrique_rock {
+        margin-bottom: 1rem;
+      }
+      .rubrique_disco {
+        margin-bottom: 1rem;
+      }
+      .rubrique_jazz {
+        margin-bottom: 3rem;
+      }
+    }
+  }
+
+
+  // TEMPLATES
+  .page_type {
+    .titre_article {
+      display: flex;
+      flex-direction: row;
+      margin: 0;
+      width: 100%;
+      padding-top: 1rem;
+      margin-right: auto;
+      margin-left: auto;
+      p {
+        padding: 0;
+        color: black;
+        font-size: 1.7em;
+        margin-right: auto;
+        margin-left: auto;
+      }
+    }
+    .articles {
+      background-color: white;
+      border-color: white;
+      .img_article {
+        float: none;
+        margin-right: auto;
+        margin-left: auto;
+      }
+      .extrait_article {
+        color: black;
+        font-size: 1.2em;
+      }
+    }
+    .link_article {
+      padding-bottom: 3.5rem;
+      border-bottom: #656565 1px solid;
+      font-size: 1.3em;
+    }
+  }
+
+
+
+ }
 
 // ###############################################
 // Large devices (desktops, 992px and up)

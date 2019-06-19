@@ -135,7 +135,13 @@ $query = new WP_Query(array(
         <h1> CONTACT </h1>
       </div>
       <div class="row contact">
-      <form role="form" id="contactForm" data-toggle="validator" class="shake xs-col-12 sm-col-12 md-col-12 lg-col-5 xl-col-5">
+      <form role="form" id="contactForm" data-toggle="validator" 
+      class="shake 
+      xs-col-12 
+      sm-col-12 
+      md-col-12 
+      lg-col-5 
+      xl-col-5">
         <div class="row">
             <div class="form-group col-sm-6">
                 <label for="name" class="h4">Name</label>
@@ -160,7 +166,12 @@ $query = new WP_Query(array(
 
 
     
-        <div class="map offset-1 col-5">
+        <div class="map 
+        xs-offset-0 xs-col-12
+        sm-offset-0 sm-col-12
+        md-offset-0 md-col-12
+        lg-offset-1 lg-col-5
+        xl-offset-1 xl-col-5">
           <!-- <form>
             <label for="adresse">Entrez votre adresse postale</label>
             <input type="text" name="adresse" id="adresse">

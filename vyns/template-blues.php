@@ -31,17 +31,18 @@ Template Name: BLUES LIST
 				$count = count($attachments);
 				$first_attachment = array_shift($attachments);
 				?>
-				<div class="row">
-					<p class="titre_article"><?php the_modified_date(); ?> <span> > </span> <?php the_title(); ?> </p>
+				<div class="row titre_article">
+					<p><?php the_modified_date(); ?> <span> > </span> <?php the_title(); ?> </p>
 				</div>
 
 				<div class="row articles">
 					<div class="img_article"><?php echo wp_get_attachment_image($first_attachment->ID, 'thumbnail'); ?></div>
 					<div class="extrait_article"><p><?php the_excerpt(); ?></p></div>
 				</div>
-				
-				<a class="link_article" href="<?php the_permalink(); ?>"> > Lire l'article complet </a>
-				<a class="link_article" href="#"> > Haut de page </a>
+				<div class="link_article">
+				<a href="<?php the_permalink(); ?>"> > Lire l'article complet </a>
+				<a href="#"> > Haut de page </a>
+		</div>
 <?php endwhile; ?>
 			</div>
 		
