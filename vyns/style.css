@@ -296,6 +296,12 @@ button:focus {
   background-color: grey;
 }
 
+.main_home #map {
+  margin-left: 159px;
+  height: 316px;
+  width: 250%;
+}
+
 footer {
   height: 10vh;
   border-top: #d1d2d4 solid 0.5px;

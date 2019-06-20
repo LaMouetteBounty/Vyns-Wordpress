@@ -32,7 +32,7 @@ $query = new WP_Query(array(
 
           <div class="carousel-item">
             <?php if ($query->have_posts()) : $query->the_post(); ?>
-            <img class="d-block w-100 img-fluid" src="http://localhost:8080/wp-content/themes/vyns/assets/images/blues/guitar-839168_1280.jpg">
+              <img class="d-block w-100 img-fluid" src="http://localhost:8080/wp-content/themes/vyns/assets/images/blues/guitar-839168_1280.jpg">
               <div class="carousel-caption d-none d-md-block">
                 <h2><?php the_title(); ?></h2>
                 <p><?php the_excerpt(); ?></p>
@@ -42,7 +42,7 @@ $query = new WP_Query(array(
 
           <div class="carousel-item">
             <?php if ($query->have_posts()) : $query->the_post(); ?>
-            <img class="d-block w-100 img-fluid" src="http://localhost:8080/wp-content/themes/vyns/assets/images/rock/musician-2708190_1920.jpg">
+              <img class="d-block w-100 img-fluid" src="http://localhost:8080/wp-content/themes/vyns/assets/images/rock/musician-2708190_1920.jpg">
               <div class="carousel-caption d-none d-md-block">
                 <h2><?php the_title(); ?></h2>
                 <p><?php the_excerpt(); ?></p>
@@ -135,57 +135,131 @@ $query = new WP_Query(array(
         <h1> CONTACT </h1>
       </div>
       <div class="row contact">
-      <form role="form" id="contactForm" data-toggle="validator" 
-      class="shake 
+        <form role="form" id="contactForm" data-toggle="validator" class="shake 
       xs-col-12 
       sm-col-12 
       md-col-12 
       lg-col-5 
       xl-col-5">
-        <div class="row">
+          <div class="row">
             <div class="form-group col-sm-6">
-                <label for="name" class="h4">Name</label>
-                <input type="text" class="form-control" id="name" placeholder="Enter name" required data-error="NEW ERROR MESSAGE">
-                <div class="help-block with-errors"></div>
+              <label for="name" class="h4">Name</label>
+              <input type="text" class="form-control" id="name" placeholder="Enter name" required data-error="NEW ERROR MESSAGE">
+              <div class="help-block with-errors"></div>
             </div>
             <div class="form-group col-sm-6">
-                <label for="email" class="h4">Email</label>
-                <input type="email" class="form-control" id="email" placeholder="Enter email" required>
-                <div class="help-block with-errors"></div>
+              <label for="email" class="h4">Email</label>
+              <input type="email" class="form-control" id="email" placeholder="Enter email" required>
+              <div class="help-block with-errors"></div>
             </div>
-        </div>
-        <div class="form-group">
+          </div>
+          <div class="form-group">
             <label for="message" class="h4 ">Message</label>
             <textarea id="message" class="form-control" rows="5" placeholder="Enter your message" required></textarea>
             <div class="help-block with-errors"></div>
-        </div>
-        <button type="submit" id="form-submit" class="btn btn-success btn-lg pull-right ">Submit</button>
-        <div id="msgSubmit" class="h3 text-center hidden"></div>
-        <div class="clearfix"></div>
-    </form>
+          </div>
+          <button type="submit" id="form-submit" class="btn btn-success btn-lg pull-right ">Submit</button>
+          <div id="msgSubmit" class="h3 text-center hidden"></div>
+          <div class="clearfix"></div>
+        </form>
 
 
-    
-        <div class="map 
+
+        <div class="
         xs-offset-0 xs-col-12
         sm-offset-0 sm-col-12
         md-offset-0 md-col-12
         lg-offset-1 lg-col-5
         xl-offset-1 xl-col-5">
-          <!-- <form>
-            <label for="adresse">Entrez votre adresse postale</label>
-            <input type="text" name="adresse" id="adresse">
-            <input type="submit" class="btn" name="valider" value="Valider l'adresse" id="envoyer">
-            <span>
-              <ul id="suggestions">
-                <li></li>
-                <li></li>
-                <li></li>
-              </ul>
-            </span>
-          </form> -->
+
+          <input type="text" class="input_map">
+          <button id="btn-change">Changer d'adress</button>
+          <div id="map">
+            <!-- Ici s'affichera la carte -->
+
+          </div>
+
+
+
+
+
+          <!-- ############################################## -->
         </div>
       </div>
-
+    </div>
+  </div>
 </section>
+
+<!-- ############################################## -->
+
+<?php
+global $wpdb;
+
+// Interrogation de la base de données
+$resultats = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}options WHERE option_name = 'adress_client'");
+// Parcours des resultats obtenus
+foreach ($resultats as $post) {
+  echo $post->option_value;
+  echo '<br/>';
+}
+?>
+<script>
+  var adress_client = '<?PHP echo $post->option_value; ?>';
+  console.log(adress_client);
+
+  // var input = document.querySelector('.input_map');
+  // var btnX = document.querySelector('#btn-change');
+  // // btnX.addEventListener("click"Goto());
+
+  function Goto(adress) {
+    var L = window.L;
+    var xmlhttp = new XMLHttpRequest();
+    var url = "https://nominatim.openstreetmap.org/search?format=json&limit=3&q=" + adress;
+    xmlhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        if (this.responseText != '[]') {
+          var myArr = JSON.parse(this.responseText);
+          var latitudex = myArr[0]['lat'];
+          var longitudex = myArr[0]['lon'];
+          console.log('latitude=' + latitudex + ' et longitude=' + longitudex);
+          var marker = L.marker([latitudex, longitudex]).addTo(macarte);
+        } else {
+          alert('pas trouvé');
+        }
+      }
+    };
+
+
+    xmlhttp.open("GET", url, true);
+    xmlhttp.send();
+  }
+
+
+
+  // On initialise la latitude et la longitude de Paris (centre de la carte)
+  var lat = 47.95;
+  var lon = 5.349903;
+
+  var macarte = null;
+  // Fonction d'initialisation de la carte
+  function initMap() {
+    // Créer l'objet "macarte" et l'insèrer dans l'élément HTML qui a l'ID "map"
+    macarte = L.map('map').setView([lat, lon], 11);
+    // Leaflet ne récupère pas les cartes (tiles) sur un serveur par défaut. Nous devons lui préciser où nous souhaitons les récupérer. Ici, openstreetmap.fr
+    L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+      // Il est toujours bien de laisser le lien vers la source des données
+      attribution: 'donnsées © <a href="osm.org/copyright">OpenStreetMap</a>/ODbL - rendu <a href="openstreetmap.fr">OSM France</a>',
+      minZoom: 1,
+      maxZoom: 20
+    }).addTo(macarte);
+
+
+  }
+  window.onload = function() {
+    // Fonction d'initialisation qui s'exécute lorsque le DOM est chargé
+    initMap();
+  };
+  Goto(adress_client);
+  console.log('fin script');
+</script>
 <?php get_footer(); ?>

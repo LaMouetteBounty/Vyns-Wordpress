@@ -351,6 +351,37 @@ if(isset($_POST['vinyle_description'])){
 }
 add_action('save_post', 'vinyle_save_metaboxes');
 
+// ##############################################################
+// ####################### INPUT MAP ############################
+// ##############################################################
+?>
 
 
 
+<?php
+add_action( 'admin_menu', 'my_admin_menu' );
+
+function my_admin_menu() {
+	add_menu_page( 'My Map Menu', 'Adresse', 'manage_options', 'myplugin/myplugin-admin-page.php', 'mymap_admin_page', 'dashicons-admin-site-alt2', 6  );
+}
+
+function mymap_admin_page(){
+	
+	echo '<h1>Salut tous le monde!</h1> 
+<form id="form_reply" method="post">
+
+<input type="text" id="new-value" name="new-value">
+<button type="submit" id="submit-position">envoyer</button>
+<span id="resultat"></span>
+</form>';
+
+global $wpdb;
+
+$wpdb->update(
+$wpdb->prefix . 'options',
+array('option_value' => $_POST['new-value']),
+array('option_name' => 'adress_client')
+);
+
+}
+?>
