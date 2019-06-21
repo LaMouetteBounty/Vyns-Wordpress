@@ -275,9 +275,9 @@ button:focus {
     }
   }
   #map {
-    margin-left: 159px;
-    height: 316px;
-    width: 250%;
+    margin-left: 146px;
+    height: 350px;
+    width: 280%;
   }
 }
 
@@ -572,10 +572,17 @@ footer {
         margin-bottom: 3rem;
       }
     }
+    #map {
+      height: 400px;
+      margin-left: 0;
+      width: 346px;
+      margin-top: 2rem;
+  }
+    }
   }
 
   footer {
-    height: 60vh;
+    height: 40vh;
     .content_footer {
       display: flex;
       flex-direction: column;
