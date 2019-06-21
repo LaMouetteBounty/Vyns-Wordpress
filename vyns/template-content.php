@@ -16,8 +16,6 @@ $query = new WP_Query(array(
   <div class="container">
     <div class="row">
 
-
-
       <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner  col-12">
           <div class="carousel-item active">
@@ -26,6 +24,7 @@ $query = new WP_Query(array(
               <div class="carousel-caption d-none d-md-block">
                 <h2><?php the_title(); ?></h2>
                 <p><?php the_excerpt(); ?></p>
+                <a class="lien_article_mobile" href="http://localhost:8080/?page_id=85"> > Lire l'article < </a>
               <?php endif; ?>
             </div>
           </div>
@@ -36,6 +35,7 @@ $query = new WP_Query(array(
               <div class="carousel-caption d-none d-md-block">
                 <h2><?php the_title(); ?></h2>
                 <p><?php the_excerpt(); ?></p>
+                <a class="lien_article_mobile" href="http://localhost:8080/?page_id=85"> > Lire l'article < </a>
               <?php endif; ?>
             </div>
           </div>
@@ -46,6 +46,7 @@ $query = new WP_Query(array(
               <div class="carousel-caption d-none d-md-block">
                 <h2><?php the_title(); ?></h2>
                 <p><?php the_excerpt(); ?></p>
+                <a class="lien_article_mobile" href="http://localhost:8080/?page_id=85"> > Lire l'article < </a>
               <?php endif; ?>
             </div>
           </div>
@@ -58,10 +59,15 @@ $query = new WP_Query(array(
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="sr-only">Next</span></a>
       </div>
+
+
+      <!-- #######################ACTU FORMAT MOBILE#################### -->
+
+
+
     </div>
   </div>
-</div>
-
+</div>    
 <!-- ###################################################### -->
 
 
@@ -128,7 +134,6 @@ $query = new WP_Query(array(
       </div>
     </div>
 
-
     <!-- #################FORMULAIRE CONTACT###################### -->
     <div class="container">
       <div class="row titre_contact">
@@ -165,26 +170,21 @@ $query = new WP_Query(array(
 
 
 
-        <div class="
-        xs-offset-0 xs-col-12
-        sm-offset-0 sm-col-12
-        md-offset-0 md-col-12
-        lg-offset-1 lg-col-5
-        xl-offset-1 xl-col-5">
 
-          <!-- <input type="text" class="input_map">
+
+        <!-- <input type="text" class="input_map">
           <button id="btn-change">Changer d'adress</button> -->
-          <div id="map">
-            <!-- Ici s'affichera la carte -->
+        <div id="map">
+          <!-- Ici s'affichera la carte -->
 
-          </div>
-
-
-
-
-
-          <!-- ############################################## -->
         </div>
+
+
+
+
+
+        <!-- ############################################## -->
+
       </div>
     </div>
   </div>
@@ -197,7 +197,7 @@ $query = new WP_Query(array(
   $resultats = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}options WHERE option_name = 'adress_client'");
   // Parcours des resultats obtenus
   foreach ($resultats as $post) {
-    echo $post->option_value;
+    // echo $post->option_value;
     echo '<br/>';
   }
   ?>

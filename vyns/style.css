@@ -25,6 +25,109 @@ body {
   background-color: white;
 }
 
+.equalizer {
+  font-size: 0;
+}
+
+.equalizer i {
+  background-color: #d1d2d4;
+  content: '';
+  display: inline-block;
+  height: 30px;
+  width: 3px;
+  margin: 0 3px;
+  -webkit-animation: move-up-and-down .3s infinite alternate;
+          animation: move-up-and-down .3s infinite alternate;
+  -webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
+}
+
+i:nth-of-type(1) {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+}
+
+i:nth-of-type(2) {
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
+}
+
+i:nth-of-type(3) {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+
+i:nth-of-type(4) {
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
+}
+
+i:nth-of-type(5) {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+
+i:nth-of-type(6) {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+
+i:nth-of-type(7) {
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
+}
+
+i:nth-of-type(8) {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+
+i:nth-of-type(9) {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+
+i:nth-of-type(10) {
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
+}
+
+i:nth-of-type(11) {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+}
+
+i:nth-of-type(12) {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+
+@-webkit-keyframes move-up-and-down {
+  0% {
+    opacity: .3;
+    -webkit-transform: scaleY(0.05);
+            transform: scaleY(0.05);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+  }
+}
+
+@keyframes move-up-and-down {
+  0% {
+    opacity: .3;
+    -webkit-transform: scaleY(0.05);
+            transform: scaleY(0.05);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+  }
+}
+
 .navbar-brand {
   padding-right: 3rem;
 }
@@ -74,6 +177,10 @@ button:focus {
 .carousel .carousel-caption p {
   font-family: "lato";
   color: white;
+}
+
+.carousel .carousel-caption .lien_article_mobile {
+  display: none;
 }
 
 .main_home {
@@ -297,9 +404,9 @@ button:focus {
 }
 
 .main_home #map {
-  margin-left: 146px;
+  margin-left: 90px;
   height: 350px;
-  width: 280%;
+  width: 50%;
 }
 
 footer {
@@ -603,8 +710,25 @@ footer .content_footer .reseaux img:hover {
     font-weight: 100;
     font-size: 1.35em;
   }
+  .carousel .carousel-caption {
+    display: block !important;
+  }
+  .carousel .carousel-caption h2 {
+    font-family: "oswald";
+    color: white;
+    font-size: 1.4em;
+  }
+  .carousel .carousel-caption p {
+    display: none;
+  }
+  .carousel .carousel-caption .lien_article_mobile {
+    display: block;
+    text-decoration: none;
+    font-family: "lato";
+    color: white;
+  }
   .main_home {
-    height: 260vh;
+    height: 250vh;
   }
   .main_home .rubriques {
     padding-top: 2rem;
@@ -621,9 +745,14 @@ footer .content_footer .reseaux img:hover {
   .main_home .rubriques .rubrique_jazz {
     margin-bottom: 3rem;
   }
+  .main_home .titre_contact {
+    width: 170px;
+  }
   .main_home #map {
-    margin: 0;
-    height: 350px;
+    height: 400px;
+    margin-left: 0;
+    width: 346px;
+    margin-top: 2rem;
   }
   footer {
     height: 40vh;
@@ -787,7 +916,7 @@ footer .content_footer .reseaux img:hover {
 
 @media (min-width: 768px) and (max-width: 991.98px) {
   .main_home {
-    height: 260vh;
+    height: 130vh;
   }
   .main_home .rubriques {
     padding-top: 2rem;
@@ -802,7 +931,99 @@ footer .content_footer .reseaux img:hover {
     margin-bottom: 1rem;
   }
   .main_home .rubriques .rubrique_jazz {
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
+  }
+  .main_home .titre_contact {
+    margin-top: 0;
+    width: 160px;
+  }
+  .main_home .contact form {
+    width: 100%;
+  }
+  .main_home #map {
+    margin-left: 0;
+    margin-top: 2rem;
+    width: 100%;
+  }
+  footer {
+    height: 5vh;
+  }
+  .page_type .titre_article {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    margin: 0;
+    width: 100%;
+    padding-top: 1rem;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .page_type .titre_article p {
+    padding: 0;
+    color: black;
+    font-size: 1.7em;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .page_type .articles {
+    background-color: white;
+    border-color: white;
+  }
+  .page_type .articles .img_article {
+    float: none;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .page_type .articles .extrait_article {
+    color: black;
+    font-size: 1.2em;
+  }
+  .page_type .link_article {
+    padding-bottom: 3.5rem;
+    border-bottom: #656565 1px solid;
+    font-size: 1.3em;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .main_home {
+    height: 100vh;
+  }
+  .main_home .rubriques {
+    margin-right: 18rem;
+    margin-left: 18rem;
+    padding-top: 2rem;
+  }
+  .main_home .rubriques .rubrique_blues {
+    margin-bottom: 1rem;
+  }
+  .main_home .rubriques .rubrique_rock {
+    margin-bottom: 1rem;
+  }
+  .main_home .rubriques .rubrique_disco {
+    margin-bottom: 1rem;
+  }
+  .main_home .rubriques .rubrique_jazz {
+    margin-bottom: 4rem;
+  }
+  .main_home .titre_contact {
+    margin-top: 0;
+    width: 160px;
+  }
+  .main_home .contact form {
+    width: 100%;
+  }
+  .main_home #map {
+    margin-left: 0;
+    margin-top: 2rem;
+    width: 100%;
+  }
+  footer {
+    height: 5vh;
   }
   .page_type .titre_article {
     display: -webkit-box;
