@@ -30,23 +30,36 @@ body {
 // ################ NAVBAR ####################
 // ############################################
 
-
 .equalizer {
   font-size: 0;
   i {
     background-color: #d1d2d4;
-    content: '';
+    content: "";
     display: inline-block;
     height: 30px;
     width: 3px;
     margin: 0 3px;
-    animation: move-up-and-down .3s infinite alternate;
+    animation: move-up-and-down 0.3s infinite alternate;
     transform-origin: bottom left;
   }
 }
 
-$delay: (.3s, .1s, .2s, .1s, .2s, .2s, .1s, .2s, .2s, .1s, .3s, .2s);
-$bgcolors: (#9400d3, #4b0082, #0000ff, #00ff00, #ffff00, #ff7f00, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3);
+$delay: (0.3s, 0.1s, 0.2s, 0.1s, 0.2s, 0.2s, 0.1s, 0.2s, 0.2s, 0.1s, 0.3s, 0.2s);
+$bgcolors: (
+  #9400d3,
+  #4b0082,
+  #0000ff,
+  #00ff00,
+  #ffff00,
+  #ff7f00,
+  #ff0000,
+  #ff7f00,
+  #ffff00,
+  #00ff00,
+  #0000ff,
+  #4b0082,
+  #9400d3
+);
 
 @for $i from 1 through length($delay) {
   i:nth-of-type(#{$i}) {
@@ -57,15 +70,14 @@ $bgcolors: (#9400d3, #4b0082, #0000ff, #00ff00, #ffff00, #ff7f00, #ff0000, #ff7f
 
 @keyframes move-up-and-down {
   0% {
-    opacity: .3;
-    transform: scaleY(.05);
+    opacity: 0.3;
+    transform: scaleY(0.05);
   }
   100% {
     opacity: 1;
     transform: scaleY(1);
   }
 }
-
 
 // ######################################
 // ####################################
@@ -549,7 +561,7 @@ footer {
   background-color: black;
   width: 15rem;
   margin-top: 5rem;
-
+margin-bottom: 2rem;
   h2 {
     text-align: center;
     font-family: "anton";
@@ -559,12 +571,14 @@ footer {
 }
 
 .actu_content {
+  #actu {
   display: flex;
   flex-direction: row;
   .img_actu {
     float: left;
   }
   .content_post {
+    margin-bottom: 2rem;
     .titre_article_actu {
       font-size: 1.5em;
       color: black;
@@ -576,14 +590,15 @@ footer {
       font-family: "lato";
     }
   }
-}
 
-.underline_actu {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  border-bottom: #d1d2d4 solid 0.5px;
+  .underline_actu {
+    height: 25px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border-bottom: #d1d2d4 solid 0.5px;
+  }
 }
-
+}
 // ##################################################################
 // ##################################################################
 // ########################  RESPONSIVE  ############################

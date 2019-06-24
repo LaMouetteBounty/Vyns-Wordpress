@@ -1,3 +1,9 @@
+<?php
+/*
+Template Name: ROCK
+*/
+ 
+?>
 <?php get_header(); ?>
 <div class="container-fluid">
 	<section class="page_type">
@@ -5,7 +11,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="titre_style">
-					<h2> BLUES </h2>
+					<h2> ROCK </h2>
 				</div>
 			</div>
 
@@ -13,7 +19,7 @@
 			<?php
 			$query = new WP_Query(array(
 				$size =
-					'post_type' => 'blues',
+					'post_type' => 'rock',
 				'posts_per_page' => -1, // infini
 				'orderby' => 'date', // par titre
 			));
@@ -25,15 +31,18 @@
 				$count = count($attachments);
 				$first_attachment = array_shift($attachments);
 				?>
-				<div class="row">
-					<p class="titre_article"><?php the_modified_date(); ?> <span> > </span> <?php the_title(); ?> </p>
+				<div class="row titre_article">
+					<p><?php the_modified_date(); ?> <span> > </span> <?php the_title(); ?> </p>
 				</div>
 
 				<div class="row articles">
 					<div class="img_article"><?php echo wp_get_attachment_image($first_attachment->ID, 'thumbnail'); ?></div>
 					<div class="extrait_article"><p><?php the_excerpt(); ?></p></div>
 				</div>
-				<a class="link_article" href="<?php the_permalink(); ?>"> > Lire l'article complet </a>
+				<div class="link_article">
+				<a href="<?php the_permalink(); ?>"> > Lire l'article complet </a>
+				<a href="#"> > Haut de page </a>
+		</div>
 <?php endwhile; ?>
 			</div>
 		

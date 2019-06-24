@@ -58,19 +58,19 @@
                                 <a class="nav-link" href="http://localhost:8080/?page_id=88">HOME<span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="http://localhost:8080/?page_id=85">ACTUALITÉS</a>
+                                <a class="nav-link" href="http://localhost:8080/category/articles/">ACTUALITÉS</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="http://localhost:8080/?page_id=39">BLUES</a>
+                                <a class="nav-link" href="http://localhost:8080/vinyles-blues/">BLUES</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="http://localhost:8080/?page_id=49">DISCO</a>
+                                <a class="nav-link" href="http://localhost:8080/vinyles-disco/">DISCO</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="http://localhost:8080/?page_id=46">ROCK</a>
+                                <a class="nav-link" href="http://localhost:8080/vinyles-rock/">ROCK</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="http://localhost:8080/?page_id=51">JAZZ</a>
+                                <a class="nav-link" href="http://localhost:8080/vinyles-jazz/">JAZZ</a>
                             </li>
                             <div class="equalizer">
   <i></i>

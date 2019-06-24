@@ -31,13 +31,13 @@ body {
 
 .equalizer i {
   background-color: #d1d2d4;
-  content: '';
+  content: "";
   display: inline-block;
   height: 30px;
   width: 3px;
   margin: 0 3px;
-  -webkit-animation: move-up-and-down .3s infinite alternate;
-          animation: move-up-and-down .3s infinite alternate;
+  -webkit-animation: move-up-and-down 0.3s infinite alternate;
+          animation: move-up-and-down 0.3s infinite alternate;
   -webkit-transform-origin: bottom left;
           transform-origin: bottom left;
 }
@@ -104,7 +104,7 @@ i:nth-of-type(12) {
 
 @-webkit-keyframes move-up-and-down {
   0% {
-    opacity: .3;
+    opacity: 0.3;
     -webkit-transform: scaleY(0.05);
             transform: scaleY(0.05);
   }
@@ -117,7 +117,7 @@ i:nth-of-type(12) {
 
 @keyframes move-up-and-down {
   0% {
-    opacity: .3;
+    opacity: 0.3;
     -webkit-transform: scaleY(0.05);
             transform: scaleY(0.05);
   }
@@ -662,6 +662,7 @@ footer .content_footer .reseaux img:hover {
   background-color: black;
   width: 15rem;
   margin-top: 5rem;
+  margin-bottom: 2rem;
 }
 
 .titre_style_actu h2 {
@@ -671,7 +672,7 @@ footer .content_footer .reseaux img:hover {
   font-size: 3em;
 }
 
-.actu_content {
+.actu_content #actu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -681,23 +682,28 @@ footer .content_footer .reseaux img:hover {
           flex-direction: row;
 }
 
-.actu_content .img_actu {
+.actu_content #actu .img_actu {
   float: left;
 }
 
-.actu_content .content_post .titre_article_actu {
+.actu_content #actu .content_post {
+  margin-bottom: 2rem;
+}
+
+.actu_content #actu .content_post .titre_article_actu {
   font-size: 1.5em;
   color: black;
   font-family: "oswald";
   font-weight: 600;
 }
 
-.actu_content .content_post .contenue_text_actu {
+.actu_content #actu .content_post .contenue_text_actu {
   font-size: 1em;
   font-family: "lato";
 }
 
-.underline_actu {
+.actu_content #actu .underline_actu {
+  height: 25px;
   margin-top: 2rem;
   margin-bottom: 2rem;
   border-bottom: #d1d2d4 solid 0.5px;

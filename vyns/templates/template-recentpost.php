@@ -16,6 +16,7 @@ $query = new WP_Query(array(
 		<div class="row">
 			<div class="titre_style_actu">
 				<h2> ACTUALITÉS </h2>
+				<?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
 			</div>
 		</div>
 		<!-- ############################################################## -->
@@ -50,3 +51,4 @@ $query = new WP_Query(array(
 	</div>
 
 <?php get_footer(); ?>
+

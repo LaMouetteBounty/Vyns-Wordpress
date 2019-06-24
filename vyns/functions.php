@@ -5,16 +5,18 @@ add_theme_support('post-thumbnails');
 
 // Ajout des styles
 function wpm_enqueue_styles()
-{
-	
+{	
 	wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
-	wp_enqueue_script('script', get_stylesheet_directory_uri() . '/script.js');
-	wp_enqueue_script('script', get_stylesheet_directory_uri() . '/validator.min.js');
-
-
 }
 add_action('wp_enqueue_scripts', 'wpm_enqueue_styles');
 
+
+function add_theme_scripts() {
+	wp_enqueue_script('script_validator', get_stylesheet_directory_uri() . '/validator.min.js');
+	wp_enqueue_script('script_map', get_stylesheet_directory_uri() . '/map_script.js');
+	wp_enqueue_script('script', get_stylesheet_directory_uri() . '/script.js');
+}
+add_action('wp_footer', 'add_theme_scripts');
 
 // ###########################################################################
 // ###############################    BLUES     ##############################
@@ -389,4 +391,11 @@ function mymap_admin_page()
 		array('option_name' => 'adress_client')
 	);
 }
+
+function register_my_menu() {
+	register_nav_menu('header-menu',__( 'Header Menu' ));
+  }
+  add_action( 'init', 'register_my_menu' );
+
+
 ?>

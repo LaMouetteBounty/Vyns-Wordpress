@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: BLUES LIST
+Template Name: JAZZ
 */
  
 ?>
@@ -11,7 +11,7 @@ Template Name: BLUES LIST
 		<div class="container">
 			<div class="row">
 				<div class="titre_style">
-					<h2> ROCK </h2>
+					<h2> JAZZ </h2>
 				</div>
 			</div>
 
@@ -19,7 +19,7 @@ Template Name: BLUES LIST
 			<?php
 			$query = new WP_Query(array(
 				$size =
-					'post_type' => 'rock',
+					'post_type' => 'jazz',
 				'posts_per_page' => -1, // infini
 				'orderby' => 'date', // par titre
 			));
