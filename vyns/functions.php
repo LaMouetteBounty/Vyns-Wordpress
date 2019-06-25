@@ -5,13 +5,14 @@ add_theme_support('post-thumbnails');
 
 // Ajout des styles
 function wpm_enqueue_styles()
-{	
+{
 	wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
 }
 add_action('wp_enqueue_scripts', 'wpm_enqueue_styles');
 
 
-function add_theme_scripts() {
+function add_theme_scripts()
+{
 	wp_enqueue_script('script_validator', get_stylesheet_directory_uri() . '/validator.min.js');
 	wp_enqueue_script('script_map', get_stylesheet_directory_uri() . '/map_script.js');
 	wp_enqueue_script('script', get_stylesheet_directory_uri() . '/script.js');
@@ -61,6 +62,8 @@ function wpm_custom_post_type_blues()
 		'public'              => true,
 		'has_archive'         => true,
 		'rewrite'			  => array('slug' => 'blues'),
+		'show_in_rest'		=> true,
+		'rest_base'			=> 'blues_api'
 
 	);
 	// On enregistre notre custom post type qu'on nomme ici "serietv" et ses arguments
@@ -110,6 +113,8 @@ function wpm_custom_post_type_jazz()
 		'public'              => true,
 		'has_archive'         => true,
 		'rewrite'			  => array('slug' => 'jazz'),
+		'show_in_rest'		=> true,
+		'rest_base'			=> 'jazz_api'
 
 	);
 	// On enregistre notre custom post type qu'on nomme ici "serietv" et ses arguments
@@ -160,6 +165,8 @@ function wpm_custom_post_type_disco()
 		'public'              => true,
 		'has_archive'         => true,
 		'rewrite'			  => array('slug' => 'disco'),
+		'show_in_rest'		=> true,
+		'rest_base'			=> 'disco_api'
 
 	);
 	// On enregistre notre custom post type qu'on nomme ici "serietv" et ses arguments
@@ -210,6 +217,8 @@ function wpm_custom_post_type_rock()
 		'public'              => true,
 		'has_archive'         => true,
 		'rewrite'			  => array('slug' => 'rock'),
+		'show_in_rest'		=> true,
+		'rest_base'			=> 'rock_api'
 
 	);
 	// On enregistre notre custom post type qu'on nomme ici "serietv" et ses arguments
@@ -392,10 +401,82 @@ function mymap_admin_page()
 	);
 }
 
-function register_my_menu() {
-	register_nav_menu('header-menu',__( 'Header Menu' ));
-  }
-  add_action( 'init', 'register_my_menu' );
+function register_my_menu()
+{
+	register_nav_menu('header-menu', __('Header Menu'));
+}
+add_action('init', 'register_my_menu');
 
+
+// ###########################################################
+##############################################################
+##############################################################
+
+function vinyles_rest_api_custom_values()
+{
+
+	register_rest_field(
+		'blues',
+		'blues_meta',
+		array(
+			'get_callback' => 'blues_meta_information',
+			'schema' => null,
+			'update_callback' => null
+		)
+	);
+	register_rest_field(
+		'jazz',
+		'jazz_meta',
+		array(
+			'get_callback' => 'jazz_meta_information',
+			'schema' => null,
+			'update_callback' => null
+		)
+	);
+	register_rest_field(
+		'disco',
+		'disco_meta',
+		array(
+			'get_callback' => 'disco_meta_information',
+			'schema' => null,
+			'update_callback' => null
+		)
+	);
+	register_rest_field(
+		'rock',
+		'rock_meta',
+		array(
+			'get_callback' => 'rock_meta_information',
+			'schema' => null,
+			'update_callback' => null
+		)
+	);
+}
+
+function blues_meta_information(){
+	global $post;
+	$post_id = $post->ID;
+	return get_post_meta ( $post_id);
+}
+
+function jazz_meta_information(){
+	global $post;
+	$post_id = $post->ID;
+	return get_post_meta ( $post_id);
+}
+
+function disco_meta_information(){
+	global $post;
+	$post_id = $post->ID;
+	return get_post_meta ( $post_id);
+}
+
+function rock_meta_information(){
+	global $post;
+	$post_id = $post->ID;
+	return get_post_meta ( $post_id);
+}
+
+add_action('rest_api_init', 'vinyles_rest_api_custom_values');
 
 ?>

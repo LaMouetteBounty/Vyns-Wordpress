@@ -14,40 +14,9 @@ Template Name: JAZZ
 					<h2> JAZZ </h2>
 				</div>
 			</div>
-
-
-			<?php
-			$query = new WP_Query(array(
-				$size =
-					'post_type' => 'jazz',
-				'posts_per_page' => -1, // infini
-				'orderby' => 'date', // par titre
-			));
-			?>
-			<?php while ($query->have_posts()) : $query->the_post(); ?>
-				<?php
-				$attachments = get_children(array('post_parent' => get_the_ID(), 'post_type' => 'attachment', 'post_mime_type' => 'image', 'orderby' => 'menu_order'));
-				if (!is_array($attachments)) continue;
-				$count = count($attachments);
-				$first_attachment = array_shift($attachments);
-				?>
-				<div class="row titre_article">
-					<p><?php the_modified_date(); ?> <span> > </span> <?php the_title(); ?> </p>
-				</div>
-
-				<div class="row articles">
-					<div class="img_article"><?php echo wp_get_attachment_image($first_attachment->ID, 'thumbnail'); ?></div>
-					<div class="extrait_article"><p><?php the_excerpt(); ?></p></div>
-				</div>
-				<div class="link_article">
-				<a href="<?php the_permalink(); ?>"> > Lire l'article complet </a>
-				<a href="#"> > Haut de page </a>
+			<div class="row" id="vinyles" data-url="<?php echo get_rest_url(null, '/wp/v2/jazz_api'); ?>" >
+            </div>
 		</div>
-<?php endwhile; ?>
-			</div>
-		
+	</section>
 </div>
-</section>
-</div>
-
 <?php get_footer(); ?>
