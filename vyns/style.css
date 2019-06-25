@@ -21,6 +21,11 @@ Tags: bootstrap
   src: url("http://localhost:8080/wp-content/themes/vyns/assets/fonts/lato/Lato-Regular.ttf");
 }
 
+@font-face {
+  font-family: "lato italic";
+  src: url("http://localhost:8080/wp-content/themes/vyns/assets/fonts/lato/Lato-Italic.ttf");
+}
+
 body {
   background-color: white;
 }
@@ -498,7 +503,7 @@ footer .content_footer .reseaux img:hover {
 .page_type .titre_article p {
   font-size: 1.5em;
   margin-bottom: 0;
-  margin-top: 0.7rem;
+  margin-top: 3rem;
   text-decoration: none;
   text-align: center;
   color: black;
@@ -533,10 +538,13 @@ footer .content_footer .reseaux img:hover {
   color: white;
   font-family: "lato";
   font-weight: 100;
+  width: 77%;
 }
 
-.page_type .articles img:hover {
-  opacity: 0.5;
+.page_type .articles .extrait_article span {
+  font-family: "lato italic";
+  font-size: 1em;
+  color: white;
 }
 
 .page_type .link_article a {

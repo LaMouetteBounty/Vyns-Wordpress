@@ -75,7 +75,7 @@ const appli = {
                  <div class="content_post sm-col-12 xs-col-12 md-offset-1 md-col-8 lg-offset-1 lg-col-8 xl-offset-1 xl-col-8">
                         <p class="titre_article_actu">${post.title.rendered}</p>
                         <p>${post.content.rendered}</p>
-                        <p> Publié le ${post.date} </p>
+                        <p> Publié le ${post.date.substr(-20, 10)} </p>
                         <div class="underline_actu"></div>
                         </div>
                  `
@@ -95,18 +95,24 @@ const appli = {
             for (post of data) {
                 console.log(post);
                 if( post.featured_media!== 0 ){
-                    dispImg = `<img src="${post._embedded['wp:featuredmedia'][0].media_details.sizes.medium.source_url}" class="card-img-top"></img>`;
+                    dispImg = `<img src="${post._embedded['wp:featuredmedia'][0].media_details.sizes.medium.source_url}" height="200" width="200"></img>`;
                 }else{
                     dispImg = `<img src="https://placeholder.com/400/400" class="card-img-top"></img>`;
                 }
                 this.SELECTOR.elVinyles.innerHTML += `
 
                 <div class="row titre_article">
-                    <p> ${post.date} <span> > </span>${post.title.rendered} </p>
+                    <p> ${post.title.rendered}</p>
 				</div>
 				<div class="row articles">
 					<div class="img_article">${dispImg}</div>
-					<div class="extrait_article"><p>${post.excerpt.rendered}</p></div>
+                    <div class="extrait_article">
+                    <p>${post.excerpt.rendered}
+                    <span> Publié le : 
+                        ${post.date.substring(8,10)}/${post.date.substring(5,7)}/${post.date.substring(0,4)}
+                    </span></p>
+                    
+                    </div>
 				</div>
 				<div class="link_article">
 				    <a href="${post.guid.rendered}"> > Lire l'article complet </a>

@@ -15,7 +15,7 @@ Template Name: DISCO
 					<h2> DISCO </h2>
 				</div>
 			</div>
-			<div class="row" id="vinyles" data-url="<?php echo get_rest_url(null, '/wp/v2/disco_api'); ?>" >
+			<div id="vinyles" data-url="<?php echo get_rest_url(null, '/wp/v2/disco_api'); ?>" >
             </div>
 		</div>
 	</section>
