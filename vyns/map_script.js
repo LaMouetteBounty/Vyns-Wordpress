@@ -1,4 +1,7 @@
-document.querySelector('#form_reply').addEventListener('submit', function() {
+
+window.onload= function (){
+    var form_reply = document.querySelector('#form_reply');
+form_reply.addEventListener('submit', function() {
     event.preventDefault();
     
     var xhr = new XMLHttpRequest(); // jusqu'a IE7 (entreprise ont minimum IE11)
@@ -12,4 +15,4 @@ document.querySelector('#form_reply').addEventListener('submit', function() {
     xhr.send(data);
     console.log('freezer');
     });
-    
+}

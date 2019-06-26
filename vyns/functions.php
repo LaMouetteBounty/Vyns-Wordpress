@@ -385,21 +385,22 @@ function mymap_admin_page()
 {
 
 	echo '<h1>Changement adresse</h1> 
-<form id="form_reply" method="post">
+<form id="adresse_input" method="post">
 
 <input type="text" id="new-value" name="new-value">
 <button type="submit" id="submit-position">envoyer</button>
 <span id="resultat"></span>
 </form>';
-
+if (!$_POST['new-value'] == '') {
 	global $wpdb;
-
+	
 	$wpdb->update(
-		$wpdb->prefix . 'options',
-		array('option_value' => $_POST['new-value']),
-		array('option_name' => 'adress_client')
+	$wpdb->prefix . 'options',
+	array('option_value' => $_POST['new-value']),
+	array('option_name' => 'adress_client')
 	);
-}
+	}
+	}
 
 function register_my_menu()
 {
@@ -479,4 +480,23 @@ function rock_meta_information(){
 
 add_action('rest_api_init', 'vinyles_rest_api_custom_values');
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function add_theme_scripts_map()
+// {
+// 	wp_enqueue_script('script_map', get_stylesheet_directory_uri() . '/map_script.js');
+// }
+// add_action('wp_footer', 'add_theme_scripts_map');
 ?>

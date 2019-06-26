@@ -149,7 +149,7 @@ $query = new WP_Query(array(
           <div class="row">
             <div class="form-group col-sm-6">
               <label for="name" class="h4">Name</label>
-              <input type="text" class="form-control" id="name" placeholder="Enter name" required data-error="NEW ERROR MESSAGE">
+              <input type="text" class="form-control" id="name" placeholder="Enter name" required >
               <div class="help-block with-errors"></div>
             </div>
             <div class="form-group col-sm-6">
@@ -187,7 +187,7 @@ $query = new WP_Query(array(
 
       </div>
     </div>
-  </div>
+  </div>  
   <?php
   global $wpdb;
 
@@ -203,7 +203,7 @@ $query = new WP_Query(array(
   ?>
 
   <script>
-    mymap = L.map('map');
+    var mymap = L.map('map');
     var mondayLayer = L.geoJSON()
     var adress_client = '<?PHP echo $post->option_value; ?>';
     console.log(adress_client);
@@ -233,15 +233,16 @@ $query = new WP_Query(array(
     function initMap() {
       // Créer l'objet "macarte" et l'insèrer dans l'élément HTML qui a l'ID "map"
 
-      // Leaflet ne récupère pas les cartes (tiles) sur un serveur par défaut. Nous devons lui préciser où nous souhaitons les récupérer. Ici, openstreetmap.fr
-      L.tileLayer('https://api.mapbox.com/styles/v1/mgaaintjrae/cjw1s9oo30hlo1co1l7mgq804/tiles/256/{z}/{x}/{y}?&access_token=pk.eyJ1IjoibWdhYWludGpyYWUiLCJhIjoiY2p3MXMzMzJqMG4xcDQwa3Q1a25heGtnbyJ9.DMXg-P_uxnVml82Ki6SmUQ#10.0/42.362400/-71.020000/0}', {
+      // Leaflet ne récupère pas les cartes (tiles) sur un serveur par défaut. Nous devons lui préciser où nous souhaitons les récupérer. Ici, mapbox.com
+      L.tileLayer('https://api.mapbox.com/styles/v1/niska/cjw20ghtr0ove1co13ss3x4ya/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoibmlza2EiLCJhIjoiY2p3MXB4djQwMDE2eDQ0bzBucXJ6OXBuYyJ9.iXi5iGMj1Ea9FZdA2GDeBA', {
+        
         // Il est toujours bien de laisser le lien vers la source des données
+        // id: 'niska.v1',
+        // accessToken: 'pk.eyJ1Ijoibmlza2EiLCJhIjoiY2p3MXB4djQwMDE2eDQ0bzBucXJ6OXBuYyJ9.iXi5iGMj1Ea9FZdA2GDeBA'
         attribution: 'Mapbox',
         minZoom: 1,
         maxZoom: 20
       }).addTo(mymap);
-
-
 
     }
     window.onload = function() {
