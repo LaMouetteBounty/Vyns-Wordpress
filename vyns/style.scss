@@ -89,6 +89,7 @@ $bgcolors: (
 // ######################################
 .navbar-brand {
   padding-right: 3rem;
+  margin-right: 4rem;
 }
 .navbar-light {
   border-bottom: #d1d2d4 solid 0.5px;
@@ -132,6 +133,16 @@ button:focus {
     p {
       font-family: "lato";
       color: white;
+    }
+    .liens {
+      text-decoration:none;
+      font-family: "lato";
+      padding: 2px;
+      color: white;
+    }
+    .liens:hover {
+      text-decoration:none;
+      color: gray;
     }
     .lien_article_mobile {
       display: none;
@@ -618,6 +629,9 @@ margin-bottom: 2rem;
 // ##################################################################
 // Small devices (landscape phones, 576px and up)
 @media (max-width: 576px) {
+  .equalizer {
+    display:none;
+  }
   .navbar-light .navbar-nav .nav-link {
     color: black;
     font-family: "oswald";
@@ -787,6 +801,10 @@ margin-bottom: 2rem;
 // ###  Medium devices (tablets, 768px and up) ###
 // ###############################################
 @media (min-width: 576px) and (max-width: 767.98px) {
+  .equalizer {
+    display:none;
+  }
+
   .main_home {
     height: 260vh;
     .rubriques {
@@ -851,6 +869,9 @@ margin-bottom: 2rem;
 // Large devices (desktops, 992px and up)
 // ###############################################
 @media (min-width: 768px) and (max-width: 991.98px) {
+  .equalizer {
+    display:none;
+  }
   .main_home {
     height: 130vh;
     .rubriques {
@@ -931,6 +952,9 @@ margin-bottom: 2rem;
 // ###############################################
 
 @media (min-width: 992px) and (max-width: 1199.98px) {
+  .navbar-brand {
+    margin-right: 0;
+  }
   .main_home {
     height: 100vh;
     .rubriques {

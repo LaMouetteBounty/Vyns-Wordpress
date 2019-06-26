@@ -135,6 +135,7 @@ i:nth-of-type(12) {
 
 .navbar-brand {
   padding-right: 3rem;
+  margin-right: 4rem;
 }
 
 .navbar-light {
@@ -182,6 +183,18 @@ button:focus {
 .carousel .carousel-caption p {
   font-family: "lato";
   color: white;
+}
+
+.carousel .carousel-caption .liens {
+  text-decoration: none;
+  font-family: "lato";
+  padding: 2px;
+  color: white;
+}
+
+.carousel .carousel-caption .liens:hover {
+  text-decoration: none;
+  color: gray;
 }
 
 .carousel .carousel-caption .lien_article_mobile {
@@ -718,6 +731,9 @@ footer .content_footer .reseaux img:hover {
 }
 
 @media (max-width: 576px) {
+  .equalizer {
+    display: none;
+  }
   .navbar-light .navbar-nav .nav-link {
     color: black;
     font-family: "oswald";
@@ -867,6 +883,9 @@ footer .content_footer .reseaux img:hover {
 }
 
 @media (min-width: 576px) and (max-width: 767.98px) {
+  .equalizer {
+    display: none;
+  }
   .main_home {
     height: 260vh;
   }
@@ -929,6 +948,9 @@ footer .content_footer .reseaux img:hover {
 }
 
 @media (min-width: 768px) and (max-width: 991.98px) {
+  .equalizer {
+    display: none;
+  }
   .main_home {
     height: 130vh;
   }
@@ -1004,6 +1026,9 @@ footer .content_footer .reseaux img:hover {
 }
 
 @media (min-width: 992px) and (max-width: 1199.98px) {
+  .navbar-brand {
+    margin-right: 0;
+  }
   .main_home {
     height: 100vh;
   }

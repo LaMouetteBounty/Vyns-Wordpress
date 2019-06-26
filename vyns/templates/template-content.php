@@ -24,7 +24,8 @@ $query = new WP_Query(array(
               <div class="carousel-caption d-none d-md-block">
                 <h2><?php the_title(); ?></h2>
                 <p><?php the_excerpt(); ?></p>
-                <a class="lien_article_mobile" href="http://localhost:8080/?page_id=85"> > Lire l'article < </a>
+                <a class="liens" href="http://localhost:8080/category/articles/">  Lire l'article  </a>
+                <a class="lien_article_mobile" href="http://localhost:8080/category/articles/">  Lire l'article  </a>
               <?php endif; ?>
             </div>
           </div>
@@ -35,7 +36,8 @@ $query = new WP_Query(array(
               <div class="carousel-caption d-none d-md-block">
                 <h2><?php the_title(); ?></h2>
                 <p><?php the_excerpt(); ?></p>
-                <a class="lien_article_mobile" href="http://localhost:8080/?page_id=85"> > Lire l'article < </a>
+                <a class="liens" href="http://localhost:8080/category/articles/">  Lire l'article  </a>
+                <a class="lien_article_mobile" href="http://localhost:8080/category/articles/">  Lire l'article  </a>
               <?php endif; ?>
             </div>
           </div>
@@ -46,7 +48,8 @@ $query = new WP_Query(array(
               <div class="carousel-caption d-none d-md-block">
                 <h2><?php the_title(); ?></h2>
                 <p><?php the_excerpt(); ?></p>
-                <a class="lien_article_mobile" href="http://localhost:8080/?page_id=85"> > Lire l'article < </a>
+                <a  class="liens" href="http://localhost:8080/category/articles/">  Lire l'article  </a>
+                <a class="lien_article_mobile" href="http://localhost:8080/category/articles/">  Lire l'article  </a>
               <?php endif; ?>
             </div>
           </div>
@@ -188,6 +191,7 @@ $query = new WP_Query(array(
       </div>
     </div>
   </div>  
+  
   <?php
   global $wpdb;
 
@@ -218,7 +222,7 @@ $query = new WP_Query(array(
         .then(function(data) {
           var lat = data[0]['lat'];
           var long = data[0]['lon'];
-          var marker = L.marker([lat, long]).addTo(mymap).bindPopup('<strong>Je suis ici !</strong>');
+          var marker = L.marker([lat, long]).addTo(mymap);
 
           mymap.setView([lat, long], 15);
 
@@ -232,13 +236,16 @@ $query = new WP_Query(array(
     // Fonction d'initialisation de la carte
     function initMap() {
       // Créer l'objet "macarte" et l'insèrer dans l'élément HTML qui a l'ID "map"
-
+      // L.tileLayer('https://api.mapbox.com/styles/v1/niska/cjw20ghtr0ove1co13ss3x4ya/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoibmlza2EiLCJhIjoiY2p3MXB4djQwMDE2eDQ0bzBucXJ6OXBuYyJ9.iXi5iGMj1Ea9FZdA2GDeBA', {
       // Leaflet ne récupère pas les cartes (tiles) sur un serveur par défaut. Nous devons lui préciser où nous souhaitons les récupérer. Ici, mapbox.com
-      L.tileLayer('https://api.mapbox.com/styles/v1/niska/cjw20ghtr0ove1co13ss3x4ya/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoibmlza2EiLCJhIjoiY2p3MXB4djQwMDE2eDQ0bzBucXJ6OXBuYyJ9.iXi5iGMj1Ea9FZdA2GDeBA', {
-        
+      L.tileLayer('https://api.mapbox.com/styles/v1/mgaaintjrae/cjw1s9oo30hlo1co1l7mgq804/tiles/256/{z}/{x}/{y}?&access_token=pk.eyJ1IjoibWdhYWludGpyYWUiLCJhIjoiY2p3MXMzMzJqMG4xcDQwa3Q1a25heGtnbyJ9.DMXg-P_uxnVml82Ki6SmUQ#10.0/42.362400/-71.020000/0}', {
+       
+        // https://api.mapbox.com/styles/v1/{username}/{style_id}?access_token=pk.eyJ1IjoibGFtb3VldHRlYm91bnR5IiwiYSI6ImNqdzFwcnV6bjAxYXEzenFyYzA4aDB5d2MifQ.XZ-DlACC490xTvA7jnC_SA
+        // mapbox://styles/lamouettebounty/cjxd68jxz0oic1cp7bwl5jabn
+        // https://api.mapbox.com/styles/v1/mapbox/streets-v11.html?title=true&access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NDg1bDA1cjYzM280NHJ5NzlvNDMifQ.d6e-nNyBDtmQCVwVNivz7A#2/0/0
         // Il est toujours bien de laisser le lien vers la source des données
-        // id: 'niska.v1',
-        // accessToken: 'pk.eyJ1Ijoibmlza2EiLCJhIjoiY2p3MXB4djQwMDE2eDQ0bzBucXJ6OXBuYyJ9.iXi5iGMj1Ea9FZdA2GDeBA'
+        // id: 'lamouettebounty.v1',
+        // accessToken: 'pk.eyJ1IjoibGFtb3VldHRlYm91bnR5IiwiYSI6ImNqdzFwcnV6bjAxYXEzenFyYzA4aDB5d2MifQ.XZ-DlACC490xTvA7jnC_SA',
         attribution: 'Mapbox',
         minZoom: 1,
         maxZoom: 20
@@ -251,6 +258,7 @@ $query = new WP_Query(array(
     };
 
     Goto(adress_client);
+    console.log('FINISH HIM')
   </script>
 </section>
 <?php get_footer(); ?>
