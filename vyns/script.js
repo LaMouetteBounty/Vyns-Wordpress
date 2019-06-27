@@ -19,17 +19,17 @@ const appli = {
         totalPage: 0,
         currentPage: 1,
         etatScroll: false,
-        mapAddress : ''
+        mapAddress: ''
     },
 
-    EVENT : {
-        defile : function(){
-            document.addEventListener('scroll', function(){
+    EVENT: {
+        defile: function () {
+            document.addEventListener('scroll', function () {
                 appli.displayPosts();
             })
         },
-        defileVinyles : function(){
-            document.addEventListener('scroll', function(){
+        defileVinyles: function () {
+            document.addEventListener('scroll', function () {
                 appli.displayVinyles();
             })
         }
@@ -46,35 +46,35 @@ const appli = {
             }
         }
 
-        if(this.SELECTOR.elVinyles !== null ) {
+        if (this.SELECTOR.elVinyles !== null) {
             this.PROPERTIES.urlApiRest = this.SELECTOR.elVinyles.dataset.url;
             //dataset recupere la propriété data de l'html
-            
+
             if (this.PROPERTIES.urlApiRest !== '') {
                 this.infiniteScrollVinyles();
                 this.EVENT.defileVinyles();
             }
         }
-        
-        if( this.SELECTOR.elMap !== null){
-           this.PROPERTIES.mapAddress = this.SELECTOR.elMap.dataset.address;
-           if(this.PROPERTIES.mapAddress.length > 0 ){
-               this.showMap();
-           }
+
+        if (this.SELECTOR.elMap !== null) {
+            this.PROPERTIES.mapAddress = this.SELECTOR.elMap.dataset.address;
+            if (this.PROPERTIES.mapAddress.length > 0) {
+                this.showMap();
+            }
         }
 
     },
     infiniteScrollActu: async function () {
         this.PROPERTIES.offset = (this.PROPERTIES.currentPage - 1) * this.PROPERTIES.postPerPage;
-        response = await fetch(this.PROPERTIES.urlApiRest + '?_embed=true&per_page=' + this.PROPERTIES.postPerPage + '&offset=' + this.PROPERTIES.offset+'&categories='+this.PROPERTIES.categoryID);
+        response = await fetch(this.PROPERTIES.urlApiRest + '?_embed=true&per_page=' + this.PROPERTIES.postPerPage + '&offset=' + this.PROPERTIES.offset + '&categories=' + this.PROPERTIES.categoryID);
         this.PROPERTIES.totalPage = response.headers.get('X-WP-TotalPages')
         data = await response.json();
         if (data.length > 0) {
             for (post of data) {
                 console.log(post);
-                                if( post.featured_media!== 0 ){
+                if (post.featured_media !== 0) {
                     dispImg = `<img src="${post._embedded['wp:featuredmedia'][0].media_details.sizes.medium.source_url}" class="card-img-top"></img>`;
-                }else{
+                } else {
                     dispImg = `<img src="https://placeholder.com/400/400" class="card-img-top"></img>`;
                 }
                 this.SELECTOR.elActu.innerHTML += `
@@ -95,7 +95,7 @@ const appli = {
         }
     },
 
-        infiniteScrollVinyles: async function () {
+    infiniteScrollVinyles: async function () {
         this.PROPERTIES.offset = (this.PROPERTIES.currentPage - 1) * this.PROPERTIES.postPerPage;
         response = await fetch(this.PROPERTIES.urlApiRest + '?_embed=true&per_page=' + this.PROPERTIES.postPerPage + '&offset=' + this.PROPERTIES.offset);
         this.PROPERTIES.totalPage = response.headers.get('X-WP-TotalPages')
@@ -103,9 +103,9 @@ const appli = {
         if (data.length > 0) {
             for (post of data) {
                 console.log(post);
-                if( post.featured_media!== 0 ){
+                if (post.featured_media !== 0) {
                     dispImg = `<img src="${post._embedded['wp:featuredmedia'][0].source_url}" height="200" width="200"></img>`;
-                }else{
+                } else {
                     dispImg = `<img src="https://placeholder.com/400/400" class="card-img-top"></img>`;
                 }
                 this.SELECTOR.elVinyles.innerHTML += `
@@ -118,7 +118,7 @@ const appli = {
                     <div class="extrait_article">
                     <p>${post.excerpt.rendered}
                     <span> Publié le : 
-                        ${post.date.substring(8,10)}/${post.date.substring(5,7)}/${post.date.substring(0,4)}
+                        ${post.date.substring(8, 10)}/${post.date.substring(5, 7)}/${post.date.substring(0, 4)}
                     </span></p>
                     
                     </div>
@@ -135,28 +135,28 @@ const appli = {
         }
     },
 
-    displayPosts : function(){
+    displayPosts: function () {
         pageHeight = document.documentElement.offsetHeight;
         windowHeight = window.innerHeight;
-        scrollPosition = window.scrollY ||  window.pageYOffset || document.body.scrollTop + (document.documentElement && document.documentElement.scrollTop || 0 );
+        scrollPosition = window.scrollY || window.pageYOffset || document.body.scrollTop + (document.documentElement && document.documentElement.scrollTop || 0);
 
-        if (pageHeight <= windowHeight+scrollPosition){
-            if (this.PROPERTIES.currentPage <= this.PROPERTIES.totalPage){
-                if (this.PROPERTIES.etatScroll === false ){
+        if (pageHeight <= windowHeight + scrollPosition) {
+            if (this.PROPERTIES.currentPage <= this.PROPERTIES.totalPage) {
+                if (this.PROPERTIES.etatScroll === false) {
                     this.PROPERTIES.etatScroll = true;
                     this.infiniteScrollActu();
                 }
             }
         }
     },
-    displayVinyles : function(){
+    displayVinyles: function () {
         pageHeight = document.documentElement.offsetHeight;
         windowHeight = window.innerHeight;
-        scrollPosition = window.scrollY ||  window.pageYOffset || document.body.scrollTop + (document.documentElement && document.documentElement.scrollTop || 0 );
+        scrollPosition = window.scrollY || window.pageYOffset || document.body.scrollTop + (document.documentElement && document.documentElement.scrollTop || 0);
 
-        if (pageHeight <= windowHeight+scrollPosition){
-            if (this.PROPERTIES.currentPage <= this.PROPERTIES.totalPage){
-                if (this.PROPERTIES.etatScroll === false ){
+        if (pageHeight <= windowHeight + scrollPosition) {
+            if (this.PROPERTIES.currentPage <= this.PROPERTIES.totalPage) {
+                if (this.PROPERTIES.etatScroll === false) {
                     this.PROPERTIES.etatScroll = true;
                     this.infiniteScrollVinyles();
                 }
@@ -164,20 +164,35 @@ const appli = {
         }
     },
 
-    showMap : function(){
+    showMap: async function () {
         // Interroger OpenStreetMap
-        latLgn = this.searchLatLgn(this.PROPERTIES.mapAddress);
+        latLgn = await this.searchLatLgn(this.PROPERTIES.mapAddress);
+        var mymap = L.map(this.SELECTOR.elMap).setView([latLng[0],latLng[1]], 13);
+
+        L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+            maxZoom: 18,
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+                '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+                'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+            id: 'mapbox.streets'
+        }).addTo(mymap);
+
+        L.marker([latLng[0],latLng[1]]).addTo(mymap)
+            .bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
     },
-    searchLatLgn : async function(address){
-        response = await fetch('https://nominatim.openstreetmap.org/search?format=json&limit=3&q='+address);
+    searchLatLgn: async function (address) {
+        response = await fetch('https://nominatim.openstreetmap.org/search?format=json&limit=3&q=' + address);
 
         data = await response.json();
         latLng = [];
-        if( data.length > 0 ){
+        if (data.length > 0) {
             latLng.push(data[0].lat);
             latLng.push(data[0].lon);
-            console.log(latLng);
+        } else {
+            latLng.push(45.2313);
+            latLng.push(6.3492);
         }
+        return latLng;
     }
 }
 
