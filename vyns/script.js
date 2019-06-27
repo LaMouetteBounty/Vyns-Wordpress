@@ -6,7 +6,9 @@
 const appli = {
     SELECTOR: {
         elActu: document.querySelector('#actu'),
-        elVinyles: document.querySelector('#vinyles')
+        elVinyles: document.querySelector('#vinyles'),
+        elMap: document.querySelector('#map')
+
     },
 
     PROPERTIES: {
@@ -16,7 +18,8 @@ const appli = {
         offset: 0,
         totalPage: 0,
         currentPage: 1,
-        etatScroll: false
+        etatScroll: false,
+        mapAddress : ''
     },
 
     EVENT : {
@@ -52,7 +55,13 @@ const appli = {
                 this.EVENT.defileVinyles();
             }
         }
-
+        
+        if( this.SELECTOR.elMap !== null){
+           this.PROPERTIES.mapAddress = this.SELECTOR.elMap.dataset.address;
+           if(this.PROPERTIES.mapAddress.length > 0 ){
+               this.showMap();
+           }
+        }
 
     },
     infiniteScrollActu: async function () {
@@ -95,7 +104,7 @@ const appli = {
             for (post of data) {
                 console.log(post);
                 if( post.featured_media!== 0 ){
-                    dispImg = `<img src="${post._embedded['wp:featuredmedia'][0].media_details.sizes.medium.source_url}" height="200" width="200"></img>`;
+                    dispImg = `<img src="${post._embedded['wp:featuredmedia'][0].source_url}" height="200" width="200"></img>`;
                 }else{
                     dispImg = `<img src="https://placeholder.com/400/400" class="card-img-top"></img>`;
                 }
@@ -152,6 +161,22 @@ const appli = {
                     this.infiniteScrollVinyles();
                 }
             }
+        }
+    },
+
+    showMap : function(){
+        // Interroger OpenStreetMap
+        latLgn = this.searchLatLgn(this.PROPERTIES.mapAddress);
+    },
+    searchLatLgn : async function(address){
+        response = await fetch('https://nominatim.openstreetmap.org/search?format=json&limit=3&q='+address);
+
+        data = await response.json();
+        latLng = [];
+        if( data.length > 0 ){
+            latLng.push(data[0].lat);
+            latLng.push(data[0].lon);
+            console.log(latLng);
         }
     }
 }

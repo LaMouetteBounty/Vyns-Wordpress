@@ -24,8 +24,8 @@ $query = new WP_Query(array(
               <div class="carousel-caption d-none d-md-block">
                 <h2><?php the_title(); ?></h2>
                 <p><?php the_excerpt(); ?></p>
-                <a class="liens" href="http://localhost:8080/category/articles/">  Lire l'article  </a>
-                <a class="lien_article_mobile" href="http://localhost:8080/category/articles/">  Lire l'article  </a>
+                <a class="liens" href="http://localhost:8080/category/articles/"> Lire l'article </a>
+                <a class="lien_article_mobile" href="http://localhost:8080/category/articles/"> Lire l'article </a>
               <?php endif; ?>
             </div>
           </div>
@@ -36,8 +36,8 @@ $query = new WP_Query(array(
               <div class="carousel-caption d-none d-md-block">
                 <h2><?php the_title(); ?></h2>
                 <p><?php the_excerpt(); ?></p>
-                <a class="liens" href="http://localhost:8080/category/articles/">  Lire l'article  </a>
-                <a class="lien_article_mobile" href="http://localhost:8080/category/articles/">  Lire l'article  </a>
+                <a class="liens" href="http://localhost:8080/category/articles/"> Lire l'article </a>
+                <a class="lien_article_mobile" href="http://localhost:8080/category/articles/"> Lire l'article </a>
               <?php endif; ?>
             </div>
           </div>
@@ -48,8 +48,8 @@ $query = new WP_Query(array(
               <div class="carousel-caption d-none d-md-block">
                 <h2><?php the_title(); ?></h2>
                 <p><?php the_excerpt(); ?></p>
-                <a  class="liens" href="http://localhost:8080/category/articles/">  Lire l'article  </a>
-                <a class="lien_article_mobile" href="http://localhost:8080/category/articles/">  Lire l'article  </a>
+                <a class="liens" href="http://localhost:8080/category/articles/"> Lire l'article </a>
+                <a class="lien_article_mobile" href="http://localhost:8080/category/articles/"> Lire l'article </a>
               <?php endif; ?>
             </div>
           </div>
@@ -70,7 +70,7 @@ $query = new WP_Query(array(
 
     </div>
   </div>
-</div>    
+</div>
 <!-- ###################################################### -->
 
 
@@ -143,122 +143,53 @@ $query = new WP_Query(array(
         <h1> CONTACT </h1>
       </div>
       <div class="row contact">
-        <form role="form" id="contactForm" data-toggle="validator" class="shake 
+        <form action="#" id="contactForm" method="post" class="
       xs-col-12 
       sm-col-12 
       md-col-12 
       lg-col-5 
       xl-col-5">
           <div class="row">
+
             <div class="form-group col-sm-6">
               <label for="name" class="h4">Name</label>
-              <input type="text" class="form-control" id="name" placeholder="Enter name" required >
+              <input type="text" class="form-control" id="name" name="name" placeholder="Entrer nom" required aria-describedby="emailHelp">
               <div class="help-block with-errors"></div>
             </div>
+
             <div class="form-group col-sm-6">
               <label for="email" class="h4">Email</label>
-              <input type="email" class="form-control" id="email" placeholder="Enter email" required>
+              <input type="email" name="email" class="form-control" id="email" placeholder="Entrer email" required aria-describedby="emailHelp">
               <div class="help-block with-errors"></div>
             </div>
           </div>
           <div class="form-group">
             <label for="message" class="h4 ">Message</label>
-            <textarea id="message" class="form-control" rows="5" placeholder="Enter your message" required></textarea>
+            <textarea id="message" class="form-control" rows="5" name="message" placeholder="Entrer votre message" required></textarea>
             <div class="help-block with-errors"></div>
           </div>
-          <button type="submit" id="form-submit" class="btn btn-success btn-lg pull-right ">Submit</button>
-          <div id="msgSubmit" class="h3 text-center hidden"></div>
-          <div class="clearfix"></div>
-        </form>
 
+          <input name="message-submit" type="submit" id="form-submit" class="btn btn-success btn-lg pull-right">
+          <input type="hidden" name="hidden" value="1">
+          <?php
+
+          if (isset($_GET['send']) && $_GET['send'] === "sent") {
+            echo 'Votre E-mail à bien été envoyé';
+          } else if (isset($_GET['send']) && $_GET['send'] === "notSent") {
+            echo 'Nous rencontrons un problème avec le serveur de mail';
+          } ?>
+        </form>
 
 
 
 
         <!-- <input type="text" class="input_map">
           <button id="btn-change">Changer d'adress</button> -->
-        <div id="map">
+        <div id="map" data-address="<?php echo get_option('vinyle_map_address')?>">
           <!-- Ici s'affichera la carte -->
-
         </div>
-
-
-
-
-
-        <!-- ############################################## -->
-
       </div>
     </div>
-  </div>  
-  
-  <?php
-  global $wpdb;
-
-  $query = "SELECT * FROM {$wpdb->prefix}options";
-
-  // Interrogation de la base de données
-  $resultats = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}options WHERE option_name = 'adress_client'");
-  // Parcours des resultats obtenus
-  foreach ($resultats as $post) {
-    // echo $post->option_value;
-    echo '<br/>';
-  }
-  ?>
-
-  <script>
-    var mymap = L.map('map');
-    var mondayLayer = L.geoJSON()
-    var adress_client = '<?PHP echo $post->option_value; ?>';
-    console.log(adress_client);
-
-
-    function Goto(adress) {
-
-      fetch('https://nominatim.openstreetmap.org/search?format=json&limit=3&q=' + adress)
-        .then(function(response) {
-          return response.json();
-        })
-        .then(function(data) {
-          var lat = data[0]['lat'];
-          var long = data[0]['lon'];
-          var marker = L.marker([lat, long]).addTo(mymap);
-
-          mymap.setView([lat, long], 15);
-
-        })
-        .catch(function(error) {
-          console.log("ici " + error.message);
-        });
-
-    }
-
-    // Fonction d'initialisation de la carte
-    function initMap() {
-      // Créer l'objet "macarte" et l'insèrer dans l'élément HTML qui a l'ID "map"
-      // L.tileLayer('https://api.mapbox.com/styles/v1/niska/cjw20ghtr0ove1co13ss3x4ya/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoibmlza2EiLCJhIjoiY2p3MXB4djQwMDE2eDQ0bzBucXJ6OXBuYyJ9.iXi5iGMj1Ea9FZdA2GDeBA', {
-      // Leaflet ne récupère pas les cartes (tiles) sur un serveur par défaut. Nous devons lui préciser où nous souhaitons les récupérer. Ici, mapbox.com
-      L.tileLayer('https://api.mapbox.com/styles/v1/mgaaintjrae/cjw1s9oo30hlo1co1l7mgq804/tiles/256/{z}/{x}/{y}?&access_token=pk.eyJ1IjoibWdhYWludGpyYWUiLCJhIjoiY2p3MXMzMzJqMG4xcDQwa3Q1a25heGtnbyJ9.DMXg-P_uxnVml82Ki6SmUQ#10.0/42.362400/-71.020000/0}', {
-       
-        // https://api.mapbox.com/styles/v1/{username}/{style_id}?access_token=pk.eyJ1IjoibGFtb3VldHRlYm91bnR5IiwiYSI6ImNqdzFwcnV6bjAxYXEzenFyYzA4aDB5d2MifQ.XZ-DlACC490xTvA7jnC_SA
-        // mapbox://styles/lamouettebounty/cjxd68jxz0oic1cp7bwl5jabn
-        // https://api.mapbox.com/styles/v1/mapbox/streets-v11.html?title=true&access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NDg1bDA1cjYzM280NHJ5NzlvNDMifQ.d6e-nNyBDtmQCVwVNivz7A#2/0/0
-        // Il est toujours bien de laisser le lien vers la source des données
-        // id: 'lamouettebounty.v1',
-        // accessToken: 'pk.eyJ1IjoibGFtb3VldHRlYm91bnR5IiwiYSI6ImNqdzFwcnV6bjAxYXEzenFyYzA4aDB5d2MifQ.XZ-DlACC490xTvA7jnC_SA',
-        attribution: 'Mapbox',
-        minZoom: 1,
-        maxZoom: 20
-      }).addTo(mymap);
-
-    }
-    window.onload = function() {
-      // Fonction d'initialisation qui s'exécute lorsque le DOM est chargé
-      initMap();
-    };
-
-    Goto(adress_client);
-    console.log('FINISH HIM')
-  </script>
+  </div>
 </section>
 <?php get_footer(); ?>

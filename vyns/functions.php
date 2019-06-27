@@ -369,44 +369,40 @@ add_action('save_post', 'vinyle_save_metaboxes');
 // ##############################################################
 // ####################### INPUT MAP ############################
 // ##############################################################
-?>
-
-
-
-<?php
 add_action('admin_menu', 'my_admin_menu');
 
 function my_admin_menu()
 {
-	add_menu_page('My Map Menu', 'Adresse', 'manage_options', 'myplugin/myplugin-admin-page.php', 'mymap_admin_page', 'dashicons-admin-site-alt2', 6);
+	add_menu_page('My Map Menu', 'Adresse', 'manage_options', 'myplugin/myplugin-admin-page.php', 'carte_google_options', 'dashicons-admin-site-alt2', 6);
 }
 
-function mymap_admin_page()
-{
-
-	echo '<h1>Changement adresse</h1> 
-<form id="adresse_input" method="post">
-
-<input type="text" id="new-value" name="new-value">
-<button type="submit" id="submit-position">envoyer</button>
-<span id="resultat"></span>
-</form>';
-if (!$_POST['new-value'] == '') {
-	global $wpdb;
-	
-	$wpdb->update(
-	$wpdb->prefix . 'options',
-	array('option_value' => $_POST['new-value']),
-	array('option_name' => 'adress_client')
-	);
+function vinyle_setting(){
+	register_setting('vinyle_options_map', 'vinyle_map_address');
+  }
+  
+  add_action('init', 'vinyle_setting');
+  
+  function carte_google_options(){
+	  echo '<div class="wrap">';
+	  echo '<h1>Carte</h1>';
+	  echo '<form action="options.php" method="post" >';
+	  settings_fields('vinyle_options_map');
+	  do_settings_sections('vinyle_options_map');
+	  echo '<h2>Options de la carte</h2>';
+	  echo '<table class="form-table">';
+	  echo '<tr>';
+	  echo '<th scope="row" >Adresse : </th>';
+	  echo "<td>";
+	  echo '<input type="text" name="vinyle_map_address" size="50" value="'.esc_attr( get_option( 'vinyle_map_address' ) ).'" />';
+	  echo "</td>";
+	  echo '</tr>';
+	  echo '</table>';
+	  echo submit_button();
+	  echo '</form>';    
+	  echo '</div>';
+  
 	}
-	}
-
-function register_my_menu()
-{
-	register_nav_menu('header-menu', __('Header Menu'));
-}
-add_action('init', 'register_my_menu');
+  
 
 
 // ###########################################################
@@ -482,21 +478,36 @@ add_action('rest_api_init', 'vinyles_rest_api_custom_values');
 
 
 
+// ################################################
+//  					EMAIL
+// ################################################
 
+function vinyle_save_contact(){
+	global $wpdb;
 
+	if( isset( $_POST['message-submit']) && $_POST['hidden'] === "1"){
+		$name = sanitize_text_field($_POST['name']);
+		$email = sanitize_email($_POST['email']);
+		$message = sanitize_text_field($_POST['message']);
 
+		$admin_email = get_option('admin_email');
+		$headers = "From: \"".$name."\" <".$email.">\r\n";
+		// $message = 'Allez voir votre tableau de bord, vous avez un nouveau message';
 
+		$envoie = wp_mail($admin_email, 'Message depuis le site', $message, $headers);
 
+		$textSend =($envoie === true)? 'sent':'notSent';
 
+		// $wpdb->insert ($table, $data, $format);
+		global $wp;
+		$wp->add_query_var('send');
+		$url = get_page_by_title('home');
+		wp_redirect(get_permalink($url).'?send='.$textSend);
 
+		exit();
+	}
+}
 
+add_action('init','vinyle_save_contact');
 
-
-
-
-// function add_theme_scripts_map()
-// {
-// 	wp_enqueue_script('script_map', get_stylesheet_directory_uri() . '/map_script.js');
-// }
-// add_action('wp_footer', 'add_theme_scripts_map');
 ?>

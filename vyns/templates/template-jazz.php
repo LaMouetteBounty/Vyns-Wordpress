@@ -13,7 +13,7 @@ Template Name: JAZZ
 				</div>
 			</div>
 			<div id="vinyles" data-url="<?php echo get_rest_url(null, '/wp/v2/jazz_api'); ?>" >
-			prout
+			
 		</div>
 		</div>
 	</section>

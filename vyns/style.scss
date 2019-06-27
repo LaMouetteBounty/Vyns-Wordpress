@@ -157,12 +157,12 @@ button:focus {
 // ############################################
 
 .main_home {
-  height: 115vh;
+  // height: 115vh;
   background-image: url("http://localhost:8080/wp-content/themes/vyns/assets/images/background/music-1645561_1920.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  margin-bottom: 5rem;
+  // margin-bottom: 5rem;
 
   // ############################################
   // ################ RUBRIQUE ##################
@@ -331,7 +331,7 @@ button:focus {
         font-weight: 100;
         font-size: 1em;
       }
-      button {
+      .btn-success {
         width: 100%;
         font-family: "oswald";
         font-weight: 700;
@@ -341,7 +341,7 @@ button:focus {
         border-color: white;
         align-items: center;
       }
-      button:hover {
+      .btn-success:hover {
         background-color: grey;
       }
     }

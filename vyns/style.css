@@ -202,12 +202,10 @@ button:focus {
 }
 
 .main_home {
-  height: 115vh;
   background-image: url("http://localhost:8080/wp-content/themes/vyns/assets/images/background/music-1645561_1920.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  margin-bottom: 5rem;
 }
 
 .main_home .rubriques {
@@ -404,7 +402,7 @@ button:focus {
   font-size: 1em;
 }
 
-.main_home .contact form button {
+.main_home .contact form .btn-success {
   width: 100%;
   font-family: "oswald";
   font-weight: 700;
@@ -417,7 +415,7 @@ button:focus {
           align-items: center;
 }
 
-.main_home .contact form button:hover {
+.main_home .contact form .btn-success:hover {
   background-color: grey;
 }
 
