@@ -174,6 +174,8 @@ button:focus {
   background-color: rgba(0, 0, 0, 0.6);
   right: 0;
   left: 0;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .carousel .carousel-caption h2 {
@@ -668,6 +670,7 @@ footer .content_footer .reseaux img:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  width: 50%;
 }
 
 .actu_type .ensemble_info .info_article .champ_info {
@@ -885,6 +888,7 @@ footer .content_footer .reseaux img:hover {
   .actu_content .content_post p {
     font-size: 1.3em;
     font-family: "lato";
+    text-align: justify;
   }
   .page_type .titre_article {
     display: -webkit-box;
@@ -1003,6 +1007,7 @@ footer .content_footer .reseaux img:hover {
   .page_type .articles .extrait_article {
     color: black;
     font-size: 1.2em;
+    width: 100%;
   }
   .page_type .link_article {
     padding-bottom: 3.5rem;
@@ -1016,6 +1021,9 @@ footer .content_footer .reseaux img:hover {
     margin-right: auto;
     margin-left: auto;
     padding-top: 5rem;
+  }
+  .actu_content .content_post p {
+    text-align: justify;
   }
 }
 

@@ -115,6 +115,8 @@ color:white;
     background-color: rgba($color: #000000, $alpha: 0.6);
     right: 0;
     left: 0;
+    padding-left: 15px;
+    padding-right: 15px;
     h2 {
       font-family: "oswald";
       color: white;
@@ -559,6 +561,7 @@ footer {
       box-shadow: 3px 3px 10px 1px #656565;
       display: flex;
       flex-direction: column;
+      width: 50%;
       .champ_info {
         padding-left: 2rem;
         padding-right: 2rem;
@@ -783,6 +786,7 @@ footer {
       p {
         font-size: 1.3em;
         font-family: "lato";
+        text-align: justify;
       }
     }
   }
@@ -902,6 +906,7 @@ footer {
       .extrait_article {
         color: black;
         font-size: 1.2em;
+        width: 100%;
       }
     }
     .link_article {
@@ -920,7 +925,13 @@ footer {
       padding-top: 5rem;
     }
   }
-}
+  .actu_content .content_post {
+      p {
+        text-align: justify;
+      }
+    }
+  }
+
 
 // ###############################################
 // Large devices (desktops, 992px and up)
