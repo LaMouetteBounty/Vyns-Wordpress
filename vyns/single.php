@@ -18,7 +18,11 @@
                         </div>
 
                         <div class="row ensemble_info">
-                            <div class="info_article col-5">
+                            <div class="info_article xs-col-12 
+      sm-col-12 
+      md-col-12 
+      lg-col-5 
+      xl-col-5">
                                 <div class="champ_info">
                                     <span>Titre du vinyle : </span>
                                     <p> <?php echo get_post_meta($post->ID, 'vinyle_titre', true); ?></p>
@@ -49,7 +53,12 @@
                                 </div>
 
                             </div>
-                            <div class="image_album offset-1 col-5">
+                            <div class="image_album 
+                            xs-col-12 
+      sm-col-12 
+      md-col-12 
+      lg-offset-1 lg-col-5 
+      xl-offset-1 xl-col-5">
                                 <?php the_post_thumbnail('large'); ?>
                             </div>
                         </div>

@@ -42,29 +42,15 @@ body {
     content: "";
     display: inline-block;
     height: 30px;
-    width: 3px;
-    margin: 0 3px;
-    animation: move-up-and-down 0.3s infinite alternate;
+    width: 1px;
+    margin: 0 5px;
+    animation: move-up-and-down 0.4s infinite alternate;
     transform-origin: bottom left;
   }
 }
 
+
 $delay: (0.3s, 0.1s, 0.2s, 0.1s, 0.2s, 0.2s, 0.1s, 0.2s, 0.2s, 0.1s, 0.3s, 0.2s);
-$bgcolors: (
-  #9400d3,
-  #4b0082,
-  #0000ff,
-  #00ff00,
-  #ffff00,
-  #ff7f00,
-  #ff0000,
-  #ff7f00,
-  #ffff00,
-  #00ff00,
-  #0000ff,
-  #4b0082,
-  #9400d3
-);
 
 @for $i from 1 through length($delay) {
   i:nth-of-type(#{$i}) {
@@ -87,6 +73,9 @@ $bgcolors: (
 // ######################################
 // ####################################
 // ######################################
+
+
+
 .navbar-brand {
   padding-right: 3rem;
   margin-right: 4rem;
@@ -121,7 +110,7 @@ button:focus {
 
 .carousel {
   margin: 2rem 0 2rem 0;
-
+color:white;
   .carousel-caption {
     background-color: rgba($color: #000000, $alpha: 0.6);
     right: 0;
@@ -135,13 +124,13 @@ button:focus {
       color: white;
     }
     .liens {
-      text-decoration:none;
+      text-decoration: none;
       font-family: "lato";
       padding: 2px;
       color: white;
     }
     .liens:hover {
-      text-decoration:none;
+      text-decoration: none;
       color: gray;
     }
     .lien_article_mobile {
@@ -198,8 +187,17 @@ button:focus {
         font-family: "oswald";
         font-weight: 100;
       }
+      img {
+        opacity: 0.8;
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+        -webkit-transition: .3s ease-in-out;
+        transition: .3s ease-in-out;
+      }
       img:hover {
-        opacity: 0.5;
+        opacity: 1;
+        -webkit-filter: grayscale(0);
+        filter: grayscale(0);
       }
       .rubrique_style:hover {
         color: grey;
@@ -230,8 +228,17 @@ button:focus {
         font-family: "oswald";
         font-weight: 100;
       }
+      img {
+        opacity: 0.8;
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+        -webkit-transition: .3s ease-in-out;
+        transition: .3s ease-in-out;
+      }
       img:hover {
-        opacity: 0.5;
+        opacity: 1;
+        -webkit-filter: grayscale(0);
+        filter: grayscale(0);
       }
       .rubrique_style:hover {
         color: grey;
@@ -262,8 +269,17 @@ button:focus {
         font-family: "oswald";
         font-weight: 100;
       }
+      img {
+        opacity: 0.8;
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+        -webkit-transition: .3s ease-in-out;
+        transition: .3s ease-in-out;
+      }
       img:hover {
-        opacity: 0.5;
+        opacity: 1;
+        -webkit-filter: grayscale(0);
+        filter: grayscale(0);
       }
       .rubrique_style:hover {
         color: grey;
@@ -293,8 +309,17 @@ button:focus {
         font-family: "oswald";
         font-weight: 100;
       }
+      img {
+        opacity: 0.8;
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+        -webkit-transition: .3s ease-in-out;
+        transition: .3s ease-in-out;
+      }
       img:hover {
-        opacity: 0.5;
+        opacity: 1;
+        -webkit-filter: grayscale(0);
+        filter: grayscale(0);
       }
       .rubrique_style:hover {
         color: grey;
@@ -450,7 +475,6 @@ footer {
   }
   .titre_article:hover {
     color: grey;
-
   }
   .articles {
     border: black 4px solid;
@@ -483,7 +507,6 @@ footer {
       font-family: "oswald";
       float: right;
       margin-right: 1rem;
-      
     }
   }
   .link_article a:hover {
@@ -584,7 +607,7 @@ footer {
   background-color: black;
   width: 15rem;
   margin-top: 5rem;
-margin-bottom: 2rem;
+  margin-bottom: 2rem;
   h2 {
     text-align: center;
     font-family: "anton";
@@ -595,32 +618,32 @@ margin-bottom: 2rem;
 
 .actu_content {
   #actu {
-  display: flex;
-  flex-direction: row;
-  .img_actu {
-    float: left;
-  }
-  .content_post {
-    margin-bottom: 2rem;
-    .titre_article_actu {
-      font-size: 1.5em;
-      color: black;
-      font-family: "oswald";
-      font-weight: 600;
+    display: flex;
+    flex-direction: row;
+    .img_actu {
+      float: left;
     }
-    .contenue_text_actu {
-      font-size: 1em;
-      font-family: "lato";
+    .content_post {
+      margin-bottom: 2rem;
+      .titre_article_actu {
+        font-size: 1.5em;
+        color: black;
+        font-family: "oswald";
+        font-weight: 600;
+      }
+      .contenue_text_actu {
+        font-size: 1em;
+        font-family: "lato";
+      }
     }
-  }
 
-  .underline_actu {
-    height: 25px;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    border-bottom: #d1d2d4 solid 0.5px;
+    .underline_actu {
+      height: 25px;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      border-bottom: #d1d2d4 solid 0.5px;
+    }
   }
-}
 }
 // ##################################################################
 // ##################################################################
@@ -629,8 +652,12 @@ margin-bottom: 2rem;
 // ##################################################################
 // Small devices (landscape phones, 576px and up)
 @media (max-width: 576px) {
+  .navbar .header .row {
+    width: 100%;
+    justify-content: space-between;
+  }
   .equalizer {
-    display:none;
+    display: none;
   }
   .navbar-light .navbar-nav .nav-link {
     color: black;
@@ -787,12 +814,15 @@ margin-bottom: 2rem;
       }
       .extrait_article {
         color: black;
+        text-align: justify;
         font-size: 1.2em;
+        width: 100%;
+        padding-left: 0;
       }
     }
     .link_article {
       padding-bottom: 3.5rem;
-      border-bottom: #656565 1px solid;
+      border-bottom: #d1d2d4 solid 0.5px;
       font-size: 1.3em;
     }
   }
@@ -800,80 +830,15 @@ margin-bottom: 2rem;
 // ###############################################
 // ###  Medium devices (tablets, 768px and up) ###
 // ###############################################
-@media (min-width: 576px) and (max-width: 767.98px) {
+@media (min-width: 576px) and (max-width: 768.98px) {
+  .navbar .header .row {
+    width: 100%;
+    justify-content: space-between;
+  }
   .equalizer {
-    display:none;
-  }
-
-  .main_home {
-    height: 260vh;
-    .rubriques {
-      padding-top: 2rem;
-      margin-left: 5.5rem;
-      margin-right: 4.5rem;
-      .rubrique_blues {
-        margin-bottom: 1rem;
-      }
-      .rubrique_rock {
-        margin-bottom: 1rem;
-      }
-      .rubrique_disco {
-        margin-bottom: 1rem;
-      }
-      .rubrique_jazz {
-        margin-bottom: 3rem;
-      }
-    }
-  }
-
-  // TEMPLATES
-  .page_type {
-    .titre_article {
-      display: flex;
-      flex-direction: row;
-      margin: 0;
-      width: 100%;
-      padding-top: 1rem;
-      margin-right: auto;
-      margin-left: auto;
-      p {
-        padding: 0;
-        color: black;
-        font-size: 1.7em;
-        margin-right: auto;
-        margin-left: auto;
-      }
-    }
-    .articles {
-      background-color: white;
-      border-color: white;
-      .img_article {
-        float: none;
-        margin-right: auto;
-        margin-left: auto;
-      }
-      .extrait_article {
-        color: black;
-        font-size: 1.2em;
-      }
-    }
-    .link_article {
-      padding-bottom: 3.5rem;
-      border-bottom: #656565 1px solid;
-      font-size: 1.3em;
-    }
-  }
-}
-
-// ###############################################
-// Large devices (desktops, 992px and up)
-// ###############################################
-@media (min-width: 768px) and (max-width: 991.98px) {
-  .equalizer {
-    display:none;
+    display: none;
   }
   .main_home {
-    height: 130vh;
     .rubriques {
       padding-top: 2rem;
       .rubrique_blues {
@@ -941,7 +906,117 @@ margin-bottom: 2rem;
     }
     .link_article {
       padding-bottom: 3.5rem;
-      border-bottom: #656565 1px solid;
+      border-bottom: #d1d2d4 solid 0.5px;
+      font-size: 1.3em;
+    }
+  }
+  .actu_type .ensemble_info {
+    .info_article {
+      width: 100%;
+    }
+    .image_album {
+      margin-right: auto;
+      margin-left: auto;
+      padding-top: 5rem;
+    }
+  }
+}
+
+// ###############################################
+// Large devices (desktops, 992px and up)
+// ###############################################
+@media (min-width: 769px) and (max-width: 991.98px) {
+  nav.stroke ul li a{
+    position: relative;
+  }
+  nav.stroke ul li a:after{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 0%;
+    content: '.';
+    color: transparent;
+    background: #aaa;
+    height: 1px;
+    transition: all .5s;
+  }
+  nav.stroke ul li a:hover:after {
+    width: 80%;
+  }
+  .equalizer {
+    display: none;
+  }
+  .main_home {
+    .rubriques {
+      padding-top: 2rem;
+      .rubrique_blues {
+        margin-bottom: 1rem;
+      }
+      .rubrique_rock {
+        margin-bottom: 1rem;
+      }
+      .rubrique_disco {
+        margin-bottom: 1rem;
+      }
+      .rubrique_jazz {
+        margin-bottom: 4rem;
+      }
+    }
+    .titre_contact {
+      margin-top: 0;
+      width: 160px;
+    }
+    .contact {
+      form {
+        width: 100%;
+      }
+    }
+    #map {
+      margin-left: 0;
+      margin-top: 2rem;
+      width: 100%;
+    }
+  }
+  footer {
+    height: 5vh;
+  }
+
+  // TEMPLATES
+  .page_type {
+    .titre_article {
+      display: flex;
+      flex-direction: row;
+      margin: 0;
+      width: 100%;
+      padding-top: 1rem;
+      margin-right: auto;
+      margin-left: auto;
+      p {
+        padding: 0;
+        color: black;
+        font-size: 1.7em;
+        margin-right: auto;
+        margin-left: auto;
+      }
+    }
+    .articles {
+      background-color: white;
+      border-color: white;
+      .img_article {
+        float: none;
+        margin-right: auto;
+        margin-left: auto;
+      }
+      .extrait_article {
+        color: black;
+        font-size: 1.2em;
+      }
+    }
+    .link_article {
+      padding-bottom: 3.5rem;
+      border-bottom: #d1d2d4 solid 0.5px;
       font-size: 1.3em;
     }
   }
@@ -952,11 +1027,29 @@ margin-bottom: 2rem;
 // ###############################################
 
 @media (min-width: 992px) and (max-width: 1199.98px) {
+  nav.stroke ul li a{
+    position: relative;
+  }
+  nav.stroke ul li a:after{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 0%;
+    content: '.';
+    color: transparent;
+    background: #aaa;
+    height: 1px;
+    transition: all .5s;
+  }
+  nav.stroke ul li a:hover:after {
+    width: 80%;
+  }
   .navbar-brand {
     margin-right: 0;
   }
   .main_home {
-    height: 100vh;
     .rubriques {
       margin-right: 18rem;
       margin-left: 18rem;
@@ -1026,7 +1119,7 @@ margin-bottom: 2rem;
     }
     .link_article {
       padding-bottom: 3.5rem;
-      border-bottom: #656565 1px solid;
+      border-bottom: #d1d2d4 solid 0.5px;
       font-size: 1.3em;
     }
   }
@@ -1035,6 +1128,24 @@ margin-bottom: 2rem;
 // ###############################################
 // Extra large devices (large desktops, 1200px and up)
 // ###############################################
-// @media (min-width: 1200px) {
-
-// }
+@media (min-width: 1200px) {
+  nav.stroke ul li a{
+    position: relative;
+  }
+  nav.stroke ul li a:after{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 0%;
+    content: '.';
+    color: transparent;
+    background: #aaa;
+    height: 1px;
+    transition: all .5s;
+  }
+  nav.stroke ul li a:hover:after {
+    width: 80%;
+  }
+}

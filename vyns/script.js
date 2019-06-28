@@ -124,7 +124,7 @@ const appli = {
                     </div>
 				</div>
 				<div class="link_article">
-				    <a href="${post.guid.rendered}"> > Lire l'article complet </a>
+				    <a href="${post.guid.rendered}"> > Lire la suite </a>
 				    <a href="#"> > Haut de page </a>
 		        </div>
                  `
@@ -178,7 +178,7 @@ const appli = {
         }).addTo(mymap);
 
         L.marker([latLng[0],latLng[1]]).addTo(mymap)
-            .bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
+            .bindPopup("<b>Vyns</b> <br> Siège social").openPopup();
     },
     searchLatLgn: async function (address) {
         response = await fetch('https://nominatim.openstreetmap.org/search?format=json&limit=3&q=' + address);

@@ -29,7 +29,7 @@
         <!-- ########################################################## -->
         <!-- #########################NAVBAR########################## -->
         <!-- ########################################################## -->
-        <nav class="navbar navbar-expand-lg navbar-light">
+        <nav class="navbar navbar-expand-lg navbar-light stroke">
             <div class="container header">
                 <div class="row">
                     <a class="navbar-brand" href="http://localhost:8080/?page_id=88""><img src="http://localhost:8080/wp-content/themes/vyns/assets/images/logo.svg"></a>
@@ -40,21 +40,21 @@
                         <ul class="navbar-nav">
                                  
                     <div class="equalizer">
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
+  <i style="background-color:#b3b3b3"></i>
+  <i style="background-color:#c0c0c0"></i>
+  <i style="background-color:#c0c0c0"></i>
+  <i style="background-color:#cccccc"></i>
+  <i style="background-color:#cccccc"></i>
+  <i style="background-color:#d9d9d9"></i>
+  <i style="background-color:#d9d9d9"></i>
+  <i style="background-color:#e6e6e6"></i>
+  <i style="background-color:#e6e6e6"></i>
+  <i style="background-color:#f2f2f2"></i>
+  <i style="background-color:#f2f2f2"></i>
+  <i style="background-color:#f2f2f2"></i>
 </div>
-                            <li class="nav-item active">
-                                <a class="nav-link" href="http://localhost:8080/?page_id=88">HOME<span class="sr-only">(current)</span></a>
+                            <li class="nav-item">
+                                <a class="nav-link" href="http://localhost:8080/?page_id=88">HOME</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="http://localhost:8080/category/articles/">ACTUALITÉS</a>
@@ -72,18 +72,18 @@
                                 <a class="nav-link" href="http://localhost:8080/vinyles-jazz/">JAZZ</a>
                             </li>
                             <div class="equalizer">
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
+  <i style="background-color:#f2f2f2"></i>
+  <i style="background-color:#f2f2f2"></i>
+  <i style="background-color:#f2f2f2"></i>
+  <i style="background-color:#e6e6e6"></i>
+  <i style="background-color:#e6e6e6"></i>
+  <i style="background-color:#d9d9d9"></i>
+  <i style="background-color:#d9d9d9"></i>
+  <i style="background-color:#cccccc"></i>
+  <i style="background-color:#cccccc"></i>
+  <i style="background-color:#c0c0c0"></i>
+  <i style="background-color:#c0c0c0"></i>
+  <i style="background-color:#b3b3b3"></i>
 </div>
                         </ul>
                    

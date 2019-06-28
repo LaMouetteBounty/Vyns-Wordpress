@@ -20,7 +20,8 @@ $query = new WP_Query(array(
         <div class="carousel-inner  col-12">
           <div class="carousel-item active">
             <?php if ($query->have_posts()) : $query->the_post(); ?>
-              <img class="d-block w-100 img-fluid" src="http://localhost:8080/wp-content/themes/vyns/assets/images/jazz/pub-3284641_1920.jpg">
+              <img class="d-block w-100 img-fluid" <?php the_post_thumbnail();?> >
+
               <div class="carousel-caption d-none d-md-block">
                 <h2><?php the_title(); ?></h2>
                 <p><?php the_excerpt(); ?></p>
@@ -32,7 +33,7 @@ $query = new WP_Query(array(
 
           <div class="carousel-item">
             <?php if ($query->have_posts()) : $query->the_post(); ?>
-              <img class="d-block w-100 img-fluid" src="http://localhost:8080/wp-content/themes/vyns/assets/images/blues/guitar-839168_1280.jpg">
+            <img class="d-block w-100 img-fluid" <?php the_post_thumbnail();?> >
               <div class="carousel-caption d-none d-md-block">
                 <h2><?php the_title(); ?></h2>
                 <p><?php the_excerpt(); ?></p>
@@ -44,7 +45,7 @@ $query = new WP_Query(array(
 
           <div class="carousel-item">
             <?php if ($query->have_posts()) : $query->the_post(); ?>
-              <img class="d-block w-100 img-fluid" src="http://localhost:8080/wp-content/themes/vyns/assets/images/rock/musician-2708190_1920.jpg">
+            <img class="d-block w-100 img-fluid" <?php the_post_thumbnail();?> >
               <div class="carousel-caption d-none d-md-block">
                 <h2><?php the_title(); ?></h2>
                 <p><?php the_excerpt(); ?></p>
@@ -174,9 +175,9 @@ $query = new WP_Query(array(
           <?php
 
           if (isset($_GET['send']) && $_GET['send'] === "sent") {
-            echo 'Votre E-mail à bien été envoyé';
+            echo 'E-mail envoyé';
           } else if (isset($_GET['send']) && $_GET['send'] === "notSent") {
-            echo 'Nous rencontrons un problème avec le serveur de mail';
+            echo 'Problème de serveur';
           } ?>
         </form>
 

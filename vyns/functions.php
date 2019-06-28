@@ -14,7 +14,6 @@ add_action('wp_enqueue_scripts', 'wpm_enqueue_styles');
 function add_theme_scripts()
 {
 	wp_enqueue_script('script_validator', get_stylesheet_directory_uri() . '/validator.min.js');
-	wp_enqueue_script('script_map', get_stylesheet_directory_uri() . '/map_script.js');
 	wp_enqueue_script('script', get_stylesheet_directory_uri() . '/script.js');
 }
 add_action('wp_footer', 'add_theme_scripts');
